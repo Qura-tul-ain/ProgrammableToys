@@ -577,9 +577,9 @@ function start(){
         context.strokeStyle = "black";
         context.stroke();
     }
-	// end for 2nd stage
+	// end for 2nd stage........................................................................................................
 	// 3rd stage 
-	
+	// background image 
 	  function make_base_forThirdStage()
 	  {
 	  base_image = new Image();
@@ -588,81 +588,55 @@ function start(){
       context.drawImage(base_image, 0, 0,745,420);
 	  context.globalAlpha = 1.0;
 	  }
-	   // other images
+	   // 2nd hospital image
 	  function make_child_forThirdStage()
 	  {
-	  // base_image = new Image();
-	  // base_image.src = '/static/images/child.png';
-	  // // context.globalAlpha = 0.5;
-      // context.drawImage(base_image, 120, 130,70,40);
-	  // // context.globalAlpha = 1.0;
-	  // mage = new Image();
-	  // mage.src ='static/images/stop.png';
-	  // context.drawImage(mage, 520, 345,70,40);
-	  
-	  // mage = new Image();
-	  // mage.src = 'static/images/mom.jpg';
-	  // context.drawImage(mage, 620, 75,72,38);
-	  // // chilfren image
-	  // child = new Image();
-	  // child.src = './static/images/children.jpg';
-	  // // context.globalAlpha = 0.5;
-      // context.drawImage(child, 420, 235,70,40);
-	  // // context.globalAlpha = 1.0;
-	  
-	  // candey = new Image();
-	  // candey.src = '/static/images/candey.jpg';
+	  base_image = new Image();
+	  base_image.src = '/static/images/hospitall.jpg';
+      context.drawImage(base_image, 600, 330,100,65);
+    
 	
-      // context.drawImage(candey, 636, 345,50,40);
 	
 	  }
-	  // draw stop images
+	  // draw stop images, x difference =120 y=130
 	  function make_image_forThirdStage()
 	  {
 	  base_image = new Image();
 	  base_image.src = '/static/images/stop.png';
 	  context.globalAlpha = 0.5;
+      context.drawImage(base_image, 30, 90,60,30);
+	  context.globalAlpha = 1.0;
+	  context.globalAlpha = 0.5;
       context.drawImage(base_image, 150, 90,60,30);
 	  context.globalAlpha = 1.0;
 	  context.globalAlpha = 0.5;
-      context.drawImage(base_image, 35, 220,60,30);
+      context.drawImage(base_image, 380, 150,60,30);
+	  context.globalAlpha = 1.0;
+
+	  context.globalAlpha = 0.5;
+      context.drawImage(base_image, 500, 150,60,30);
 	  context.globalAlpha = 1.0;
 	  context.globalAlpha = 0.5;
-      context.drawImage(base_image, 270, 220,60,30);
+      context.drawImage(base_image, 500, 280,60,30);
+	  context.globalAlpha = 1.0;
+	
+	
+	  context.globalAlpha = 0.5;
+      context.drawImage(base_image, 260, 280,60,30);
 	  context.globalAlpha = 1.0;
 	  context.globalAlpha = 0.5;
-      context.drawImage(base_image, 270, 155,60,30);
+      context.drawImage(base_image, 380, 25,60,30);
 	  context.globalAlpha = 1.0;
-	  context.globalAlpha = 0.5;
-      context.drawImage(base_image, 270, 280,60,30);
-	  context.globalAlpha = 1.0;
-	   context.globalAlpha = 0.5;
-      context.drawImage(base_image, 150, 280,60,30);
-	  context.globalAlpha = 1.0;
-	  context.globalAlpha = 0.5;
-      context.drawImage(base_image, 500, 345,60,30);
-	  context.globalAlpha = 1.0;
-	  context.globalAlpha = 0.5;
-      context.drawImage(base_image, 500, 220,60,30);
-	  context.globalAlpha = 1.0;
-	  context.globalAlpha = 0.5;
-      context.drawImage(base_image, 500, 90,60,30);
-	  context.globalAlpha = 1.0;
-	  context.globalAlpha = 0.5;
-	  context.drawImage(base_image, 610, 90,60,30);
-	  context.globalAlpha = 1.0;
-	  context.globalAlpha = 0.5;
-	  context.drawImage(base_image, 610, 220,60,30);
-	  context.globalAlpha = 1.0;
-	  context.globalAlpha = 0.5;
-      context.drawImage(base_image, 615, 25,60,30);
-	  context.globalAlpha = 1.0;
+	 
+	  
+
+  
 	  }
 	  
-	 // for 3rd stage
 	function drawBoard_forThirdStage(){
 	 make_base_forThirdStage();
-	 make_image_forThirdStage()
+	 make_child_forThirdStage();
+	 make_image_forThirdStage();
 	
         for (var x = 0; x < bw; x += 116.5) {
             context.moveTo(0.5 + x + p, p);
@@ -677,8 +651,90 @@ function start(){
         context.strokeStyle = "black";
         context.stroke();
     }
+	// end for 3rd stage .......................................................................................................
+	
+	// For fourth stage 
 	
 	
+	
+	  function make_base_forFourthStage()
+	  {
+	  base_image = new Image();
+	  base_image.src = '/static/images/bottles.jpg';
+	  context.globalAlpha = 0.5;
+      context.drawImage(base_image, 0, 0,745,420);
+	  context.globalAlpha = 1.0;
+	  }
+	   // other images
+	  function make_child_forFourthStage()
+	  {
+	  base_image = new Image();
+	  base_image.src = '/static/images/bott.jpg';
+	  // context.globalAlpha = 0.5;
+      context.drawImage(base_image, 610, 330,90,50);
+	  
+	
+	  }
+	  // draw stop images, x difference =120 y=130
+	  function make_image_forFourthStage()
+	  {
+	  base_image = new Image();
+	  base_image.src = '/static/images/stop.png';
+	  // context.globalAlpha = 0.5;
+      context.drawImage(base_image, 30, 90,60,30);
+	  // context.globalAlpha = 1.0;
+	  // context.globalAlpha = 0.5;
+      context.drawImage(base_image, 130, 90,60,30);
+	  // context.globalAlpha = 1.0;
+	  // context.globalAlpha = 0.5;
+      context.drawImage(base_image, 230, 150,60,30);
+	  // context.globalAlpha = 1.0;
+
+	  // context.globalAlpha = 0.5;
+      context.drawImage(base_image, 330, 210,60,30);
+	  // context.globalAlpha = 1.0;
+	  // context.globalAlpha = 0.5;
+      context.drawImage(base_image, 430, 280,60,30);
+	  // context.globalAlpha = 1.0;
+	  // context.globalAlpha = 0.5;
+      context.drawImage(base_image, 430, 150,60,30);
+	  // context.globalAlpha = 1.0;
+	  // context.globalAlpha = 0.5;
+      context.drawImage(base_image, 330, 30,60,30);
+	  // context.globalAlpha = 1.0;
+	  // context.globalAlpha = 0.5;
+      context.drawImage(base_image, 130, 280,60,30);
+	  // context.globalAlpha = 1.0;
+	  
+	  // context.globalAlpha = 0.5;
+      context.drawImage(base_image, 530, 90,60,30);
+	  // context.globalAlpha = 1.0;
+	  // context.globalAlpha = 0.5;
+      // context.drawImage(base_image, 130, 170,60,30);
+	  // context.globalAlpha = 1.0;
+
+  
+	  }
+	  
+	function drawBoard_forFourthStage(){
+	 make_base_forFourthStage();
+	 make_image_forFourthStage();
+	 make_child_forFourthStage();
+	
+        for (var x = 0; x < bw; x += 100) {
+            context.moveTo(0.5 + x + p, p);
+            context.lineTo(0.5 + x + p, bh + p);
+        }
+
+        for (var x = 0; x < bh; x += 64) {
+            context.moveTo(p, 0.5 + x + p);
+            context.lineTo(bw + p, 0.5 + x + p);
+        }
+
+        context.strokeStyle = "black";
+        context.stroke();
+    }
+	// end for fourth stage 
 	
 	   // var stage_count
 	  // stage_count=0
@@ -686,26 +742,42 @@ function start(){
 		  // if(stage_count ==0){
 			  // drawBoard();
 			  // ball.draw();
-	         // // stage_count=goalCheck(stage_count);
-			  // // document.location.reload();
+	          // stage_count=goalCheck(stage_count);
+			 // document.location.reload();
 	          // console.log(stage_count);
 		  // }
 		  // else if(stage_count==1){
 			  // drawBoard_forSecondStage();
 			  // ball.draw();
 	          // stage_count=goalCheck(stage_count);
-		     // // console.log(stage_count);
+		    // console.log(stage_count);
 
 		  // }
-		  // else{
-			  
+		  // else if(stage_count==2){
+			  // drawBoard_forThirdStage();
+			  // ball.draw();
+	          // stage_count=goalCheck(stage_count);
+		     //console.log(stage_count);
+
 		  // }
 	  // }
 	
-	
+	drawBoard();
+    ball.draw();
+    stage_count=goalCheck(stage_count);
    
 
-     drawBoard_forThirdStage();
+   // drawBoard_forSecondStage();
+   // ball.draw();
+   // stage_count=goalCheck(stage_count);
+
+
+    // drawBoard_forThirdStage();
+    // ball.draw();
+	// stage_count=goalCheck(stage_count);
+
+     // drawBoard_forFourthStage();
+	 // ball.draw();
 
 
 }
