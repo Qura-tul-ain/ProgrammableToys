@@ -156,3 +156,171 @@ test_loss = []
 train_accuracy = []
 test_accuracy = []
 total_iterations=0
+
+
+
+
+
+
+
+if args.command == "train":
+    print('\nTraining the Model...')
+    with tf.Session() as sess:
+        sess.run(init)
+        for i in range(training_iters):
+            j=0
+            print("loading")
+            print("iteration NO#")
+            print(i)
+            test_accuracy_count = 0
+            avg_maker = 0
+            for batch in range(len(image_paths_train)//batch_size):
+                 total_iterations +=1
+                 batch_paths,batch_y=random_batch(image_paths_train, batch_size, labels_train)
+                 #print(batch_paths)
+                 batch_x = load_images(batch_paths)
+                 opt = sess.run(optimizer, feed_dict={x: batch_x, y: batch_y})
+
+                 if (total_iterations % 5 == 0) or (i == (j - 1)):
+                     # Calculate the accuracy on the training-batch.
+                     loss, acc = sess.run([cost, accuracy], feed_dict={x: batch_x, y: batch_y})
+
+                     print("Batch " + str(j) + ", Loss= " + \
+                      "{:.6f}".format(loss) + ", Training Accuracy= "+ \
+                      "{:.5f}".format(acc))
+                 j=j+1
+            print("Iter " + str(i) + ", Loss= " + \
+                      "{:.6f}".format(loss) + ", Training Accuracy= " + \
+                      "{:.5f}".format(acc))
+            print("Optimization Finished!")
+            #trying to load as batch data
+            for batch in range(len(image_paths_test) // batch_size):
+                    print(image_paths_test[batch * batch_size:min((batch + 1) * batch_size, len(image_paths_test))])
+                    batch_test_x = load_images( image_paths_test[batch * batch_size:min((batch + 1) * batch_size, len(image_paths_test))])
+                    batch_test_y = test_Y[batch * batch_size:min((batch + 1) * batch_size, len(test_Y))]
+                    test_acc,valid_loss = sess.run([accuracy,cost], feed_dict={x: batch_test_x , y:batch_test_y})
+                    train_loss.append(loss)
+                    test_loss.append(valid_loss)
+                    train_accuracy.append(acc)
+                    test_accuracy.append(test_acc)
+                    test_accuracy_count=test_accuracy_count+test_acc
+                    avg_maker=avg_maker+1
+                    print("Testing Accuracy:","{:.5f}".format(test_acc))
+            avg_test_accuracy=test_accuracy_count/avg_maker
+            print("Testing Accuracy on complete Test Data:", "{:.5f}".format(avg_test_accuracy))
+        saver.save(sess,'Models/modle.ckpt')
+        print("Model Saved Successfully:")
+# elif (args.command=="test"):
+#      with tf.Session() as sees:
+#          saver.restore(sees, "Models/modle.ckpt")
+#          print("Model Loaded Successfully:")
+#          for i in range(10):
+#              img=cv2.imread('FinalTesting/clastest('+str(i+1)+').png')
+#              cv2.imshow('image',img)
+#              cv2.waitKey(1)
+#              my_np_array = img.reshape(1, 80, 80, 3)
+#              output=tf.argmax(pred, 1)
+#              className=sees.run(output, feed_dict={x: my_np_array})
+#              print(className)
+elif (args.command == "final"):
+     with tf.Session() as sees:
+        saver.restore(sees, "Models/modle.ckpt")
+        print("Model Loaded Successfully:")
+        img_mask = 'FinalTesting/*.png'
+        img_names = glob(img_mask)
+
+        for fn in img_names:
+            img = cv2.imread(fn)
+            print('processing %s...' % fn, )
+
+            my_np_array = img.reshape(1, 80, 80, 3)
+            output=tf.argmax(pred, 1)
+            className=sees.run(output, feed_dict={x: my_np_array})
+            print(className)
+
+            if className == 0:
+                print("Predicted: Downward")
+                #        cozmo.run_program(cozmo_down_program)
+
+            elif className == 1:
+                print("Predicted: Downleft")
+                #        cozmo.run_program(cozmo_left_program)
+            elif className == 2:
+                print("Predicted: Down Right")
+            #        cozmo.run_program(cozmo_right_program)
+            elif className == 3:
+                print("Predicted: Left")
+            elif className == 4:
+                print("Predicted: Left Down")
+            elif className == 5:
+                print("Predicted: Left Up")
+            elif className == 6:
+                print("Predicted: Right")
+            elif className == 7:
+                print("Predicted: Right Down")
+            elif className == 8:
+                print("Predicted: Right Up")
+            elif className == 9:
+                print("Predicted: Up")
+            elif className == 10:
+                print("Predicted: Up Left")
+            elif className == 11:
+                print("Predicted: Up Right")
+
+
+         # dataset = tf.data.Dataset.from_tensor_slices((files, labels))
+         # img_mask = 'FinalTesting/*.png'
+         # img_names = glob(img_mask)
+         #
+         #
+         # for fn in img_names:
+         #     img = cv2.imread(fn)
+         #     print('processing %s...' % fn, )
+         #
+         #
+         #
+         #
+         #     test_image = image.load_img(fn, target_size=(80, 80))
+         #     test_image = image.img_to_array(test_image)
+         #     test_image = np.expand_dims(test_image, axis=0)
+         #     array = classifier.predict(test_image)
+         #     # array = pred.sees(test_image)
+         #     result = array[0]
+         #     #    training_set.class_indices
+         #     # train_generator.class_indices
+         #     # print(result)
+         #     answer = np.argmax(result)
+         #
+         #     if answer == 0:
+         #         print("Predicted: downward")
+         #     #        cozmo.run_program(cozmo_down_program)
+         #
+         #     elif answer == 1:
+         #         print("Predicted: downleft")
+         #     #        cozmo.run_program(cozmo_left_program)
+         #     elif answer == 2:
+         #         print("Predicted: Down Right")
+         # #        cozmo.run_program(cozmo_right_program)
+         #
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
