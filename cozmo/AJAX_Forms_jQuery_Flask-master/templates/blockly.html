@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Blockly</title>
+  <link rel="icon" href="data:,">
   <script src="./static/js/blockly_compressed.js"></script>
   <script src="./static/js/blocks_compressed.js"></script>
   <script src="./static/js/msg/js/en.js"></script>
@@ -85,18 +86,19 @@ canvas{
      <!-- <img src="{{url_for('static', filename='stop.png')}}" /> -->
 	  <!-- <img src="static/stop.png" /> -->
 	
-	  <script src="{{ url_for('static', filename='js/maze.js') }}"></script>
+	  <!-- <script src="{{ url_for('static', filename='js/close.js') }}"></script> -->
 	  
      </div>
 	 <div>
-	   <button id="moveright" onclick="ball.moveRight()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Right</button>
+	   <button id="moveright" onclick="callfunctionRight()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Right</button>
 	
 	
-	   <button id="moveup" onclick="ball.moveUp()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Up</button>
+	   <button id="moveup" onclick="callfunctionUp()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Up</button>
 	 
-	   <button id="movedown" onclick="ball.moveDown()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Down</button>
+	   <button id="movedown" onclick="callfunctionDown()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Down</button>
+	   <!-- <button id="movedown" onclick="callfunction()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Down</button> -->
 	
-	   <button id="moveleft" onclick="ball.moveLeft()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Left</button>
+	   <button id="moveleft" onclick="callfunctionLeft()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Left</button>
 	 </div>
   </div>
 
