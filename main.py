@@ -221,7 +221,82 @@ elif (args.command == "final"):
         saver.restore(sees, "Models/modle.ckpt")
         print("Model Loaded Successfully:")
 
+
+
+        
+        
+
 #Cozmo functions
+        #import cozmo
+from cozmo.util import degrees, distance_mm ,speed_mmps
+
+#For Left,Right,Down,Up
+        def cozmo_program(robot: cozmo.robot.Robot):
+    
+        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
+
+#For moving Right_Upward
+        def cozmo_RightUpward_program(robot: cozmo.robot.Robot):
+   
+        Drive forwards for 150 millimeters at 50 millimeters-per-second.
+ 
+        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
+        robot.turn_in_place(degrees(90)).wait_for_completed()
+        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
+
+        # Turn 90 degrees to the left.
+        # Note: To turn to the right, just use a negative number.
+ 
+
+        #cozmo.run_program(cozmo_RightUpward_program)
+        ##For moving Left_Upward
+        def cozmo_LeftUpward_program(robot: cozmo.robot.Robot):
+  
+        Drive forwards for 150 millimeters at 50 millimeters-per-second.
+        robot.turn_in_place(degrees(270)).wait_for_completed()
+        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
+        robot.turn_in_place(degrees(-90)).wait_for_completed()
+        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
+        # Turn 90 degrees to the left
+        # Note: To turn to the right, just use a negative number.
+ 
+
+
+        ##cozmo.run_program(cozmo_LeftUpward_program)
+        def cozmo_UpwardRight_program(robot: cozmo.robot.Robot):
+   
+        Drive forwards for 150 millimeters at 50 millimeters-per-second.
+        robot.turn_in_place(degrees(270)).wait_for_completed()
+        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
+        robot.turn_in_place(degrees(-90)).wait_for_completed()
+        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
+
+        # Turn 90 degrees to the left
+        #  Note: To turn to the right, just use a negative number.
+ 
+
+
+         ##cozmo.run_program(cozmo_UpwardRight_program)
+        ##For moving Upward_Left
+
+        def cozmo_UpwardLeft_program(robot: cozmo.robot.Robot):
+   
+        Drive forwards for 150 millimeters at 50 millimeters-per-second.
+  
+        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
+        robot.turn_in_place(degrees(90)).wait_for_completed()
+        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
+        # Turn 90 degrees to the left.
+        # Note: To turn to the right, just use a negative number.
+ 
+
+
+        ##cozmo.run_program(cozmo_UpwardLeft_program)
+        
+
+        
+        
+        
         # For moving DownwardRight
 
         def cozmo_DownwardRight_program(robot: cozmo.robot.Robot):
@@ -234,6 +309,7 @@ elif (args.command == "final"):
 
 
         # cozmo.run_program(cozmo_DownwardRight_program)
+        
 
         # For moving Downward_Left
 
@@ -316,13 +392,16 @@ elif (args.command == "final"):
                 cozmo.run_program(cozmo_DownwardRight_program)
             elif className == 3:
                 print("Predicted: Left")
+                cozmo.run_program(cozmo_program)
             elif className == 4:
                 print("Predicted: Left Down")
                 cozmo.run_program(cozmo_LeftDown_program)
             elif className == 5:
                 print("Predicted: Left Up")
+                cozmo.run_program(cozmo_LeftUpward_program)
             elif className == 6:
                 print("Predicted: Right")
+                cozmo.run_program(cozmo_program)
             elif className == 7:
                 print("Predicted: Right Down")
                 cozmo.run_program(cozmo_RightDown_program)
@@ -331,10 +410,13 @@ elif (args.command == "final"):
                 cozmo.run_program(cozmo_RightUp_program)
             elif className == 9:
                 print("Predicted: Up")
+                cozmo.run_program(cozmo_program)
             elif className == 10:
                 print("Predicted: Up Left")
+                cozmo.run_program(cozmo_UpwardLeft_program)
             elif className == 11:
                 print("Predicted: Up Right")
+                cozmo.run_program(cozmo_UpwardRight_program)
 
          #
          # # dataset = tf.data.Dataset.from_tensor_slices((files, labels))
