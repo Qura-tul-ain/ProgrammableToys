@@ -3,7 +3,8 @@ canvas.width = 730;
 canvas.height = 415;
 
 const c = canvas.getContext('2d');
-
+var stage_count;
+stage_count=0
 // Object that checks if key is pressed
 let keyPressed = {
 	left: false,
@@ -28,7 +29,7 @@ const Goal = {
 	}
 }
 // positions of stop and chlild images for checks.
-
+// 1st stage 
 const S1 = {
 	x: 120,
 	y:20,
@@ -135,7 +136,96 @@ const G5 = {
 	height: 40,
 
 }
-// Ball object
+
+// for 2nd stage 
+const se1 = {
+	x: 150,
+	y: 90,
+	width: 40,
+	height: 40,
+
+}
+const se2 = {
+	x: 35,
+	y: 220,
+	width: 40,
+	height: 40,
+
+}
+const se3 = {
+	x: 270,
+	y: 220,
+	width: 40,
+	height: 40,
+
+}
+const se4 = {
+	x: 270,
+	y: 155,
+	width: 40,
+	height: 40,
+
+}
+const se5 = {
+	x: 270,
+	y: 280,
+	width: 40,
+	height: 40,
+
+}
+const se6 = {
+	x: 150,
+	y: 280,
+	width: 40,
+	height: 40,
+
+}
+const se7 = {
+	x: 500,
+	y: 345,
+	width: 40,
+	height: 40,
+
+}
+const se8 = {
+	x: 500,
+	y: 220,
+	width: 40,
+	height: 40,
+
+}
+const se9 = {
+	x: 500,
+	y: 90,
+	width: 40,
+	height: 40,
+
+}
+const se10 = {
+	x: 610,
+	y: 90,
+	width: 40,
+	height: 40,
+
+}
+const se11 = {
+	x: 610,
+	y: 220,
+	width: 40,
+	height: 40,
+
+}
+const se12 = {
+	x: 615,
+	y: 25,
+	width: 40,
+	height: 40,
+
+}
+
+
+// Ball object 
+// 1st stage 
 function Ball(x, y, radius, dx, dy){
 	this.x = x;
 	this.y = y;
@@ -150,6 +240,7 @@ function Ball(x, y, radius, dx, dy){
 		c.fill();
 		c.stroke();
 		c.closePath();
+	    console.log("hahaha");
 	}
 
 	this.moveRight = function(){
@@ -193,9 +284,192 @@ function Ball(x, y, radius, dx, dy){
 		   this.draw();
 		
 	}
+	// for 2nd stage 
+	
+	
+	this.moveSecRight = function(){
+
+		   if(this.x + radius < canvas.width){
+				this.x += this.dx +118;
+		   }
+
+		  this.draw();
+	}
+	
+	this.moveSecDown = function(){
+		
+			if(this.y + radius < canvas.height){
+				this.y += this.dy +57;
+			}
+			
+		   this.draw();
+		
+	}
+	
+	
+	this.moveSecUp = function(){
+		
+			 if(this.y - radius > 0){
+				this.y -= this.dy +63;
+			 }
+			
+		   this.draw();
+		
+	}
+	
+	
+	
+	this.moveSecLeft = function(){
+		
+			if(this.x - radius > 0){
+				this.x -= this.dx +116;
+			}
+			
+		   this.draw();
+		
+	}
+	
 }
 
 
+// Ball object 
+// 2nd stage 
+// function BallForSecondStage(x, y, radius, dx, dy){
+	// this.x = x;
+	// this.y = y;
+	// this.radius = radius;
+	// this.dx = dx;
+	// this.dy = dy;
+
+	// this.draw = function(){
+		// c.beginPath();
+		// c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+		// c.fillStyle = "#FF225A";
+		// c.fill();
+		// c.stroke();
+		// c.closePath();
+		// console.log("hahaha");
+	// }
+
+	// this.moveRight = function(){
+
+		   // if(this.x + radius < canvas.width){
+				// this.x += this.dx +121;
+		   // }
+
+		  // this.draw();
+	// }
+	
+	// this.moveDown = function(){
+		
+			// if(this.y + radius < canvas.height){
+				// this.y += this.dy +60;
+			// }
+			
+		   // this.draw();
+		
+	// }
+	
+	
+	// this.moveUp = function(){
+		
+			 // if(this.y - radius > 0){
+				// this.y -= this.dy +67;
+			 // }
+			
+		   // this.draw();
+		
+	// }
+	
+	
+	
+	// this.moveLeft = function(){
+		
+			// if(this.x - radius > 0){
+				// this.x -= this.dx +119;
+			// }
+			
+		   // this.draw();
+		
+	// }
+// }
+
+function callfunctionDown(){
+	console.log("infunctionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",stage_count);
+	// ball.moveDown();
+	if(stage_count ==0){
+			
+			  ball.moveDown();
+	       
+	          console.log("courjhrhff",stage_count);
+			
+	  }
+	  else if(stage_count==1){
+		  secondball.moveSecDown();
+		  console.log("button",stage_count);
+
+	  }
+	  else if(stage_count==2){
+		
+
+	  }
+}
+function callfunctionUp(){
+	if(stage_count ==0){
+			 // drawBoard();
+			  ball.moveUp();
+	         // stage_count=goalCheck(stage_count);
+			 // document.location.reload();
+	          console.log(stage_count);
+			
+		  }
+		  else if(stage_count==1){
+			   secondball.moveSecUp();
+			   console.log(stage_count);
+
+		  }
+		  else if(stage_count==2){
+			
+
+		  }
+}
+function callfunctionLeft(){
+	if(stage_count ==0){
+			 // drawBoard();
+			  ball.moveLeft();
+	         // stage_count=goalCheck(stage_count);
+			 // document.location.reload();
+	          console.log(stage_count);
+			
+		  }
+		  else if(stage_count==1){
+			  secondball.moveSecLeft();
+			  console.log(stage_count);
+
+		  }
+		  else if(stage_count==2){
+			
+
+		  }
+}
+function callfunctionRight(){
+	if(stage_count ==0){
+			 // drawBoard();
+			  ball.moveRight();
+	         // stage_count=goalCheck(stage_count);
+			 // document.location.reload();
+	          console.log(stage_count);
+			
+		  }
+		  else if(stage_count==1){
+			  secondball.moveSecRight();
+
+		  }
+		  else if(stage_count==2){
+			
+
+		  }
+}
 // Wall object
 function Wall(x, y, width, height){
 	this.x = x;
@@ -227,7 +501,7 @@ function Wall(x, y, width, height){
 
 // Create the ball using the object 
 let ball = new Ball(50, 35, 20, 7, 7);
-
+let secondball=new Ball(50,35,20,7,7);
 
 // Check function if ball touchs walls
 function RectCircleColliding(circle,rect){
@@ -284,69 +558,80 @@ function RectCircleColliding(circle,rect){
 // for 1st stage 
 function goalCheck(count){
 	if(RectCircleColliding(ball, S1)){
-		alert("YOU LOST!");
-		count=0
-		document.location.reload();
-		return count
+		if(alert('Alert For your User!')){}
+        else    window.location.reload();
+		//setTimeout( function ( ) { alert( "moo" ); }, 1000000 );
+		// if(confirm('Successful Message')){
+        // window.location.reload();  
+
+		 //window.location.reload();
+	return count
+		
+		
 	}
 	if(RectCircleColliding(ball, S2)){
-		alert("YOU LOST");
-		count=0
+		if(alert('Alert For your User!')){}
+		 else    window.location.reload();
+
         return count
-		document.location.reload();
+		// document.location.reload();
 	}
 	if(RectCircleColliding(ball, S3)){
-		alert("YOU LOST");
-		count=0
+		if(alert('Alert For your User!')){}
+		 else    window.location.reload();
+
 		return count
-		document.location.reload();
+	
 		
 	}
 	if(RectCircleColliding(ball, S4)){
-		alert("YOU LOST");
-		count=0
+		 if(alert('Alert For your User!')){}
+		 else    window.location.reload();
+
 		return count
-		document.location.reload();
+	
 	}
 	if(RectCircleColliding(ball, S5)){
-		alert("YOU LOST");
-		count=0
+		 if(alert('Alert For your User!')){}
+		 else    window.location.reload();
+	
 		return count
-		document.location.reload();
+		
 	}
 	if(RectCircleColliding(ball, S6)){
-		alert("YOU LOST");
-		count=0
+         if(alert('Alert For your User!')){}
+		 else    window.location.reload();
 		return count
-		document.location.reload();
+	
 	}
 	if(RectCircleColliding(ball, S7)){
-		alert("YOU LOST");
-		count=0
+		 if(alert('Alert For your User!')){}
+		 else    window.location.reload();
+
 		return count
-		document.location.reload();
+		
 	}
 	if(RectCircleColliding(ball, S8)){
-		alert("YOU LOST");
-		count=0
-		return count
-		document.location.reload();
+		 if(alert('Alert For your User!')){}
+		 else    window.location.reload();
+		  return count
+		
 	}
 	if(RectCircleColliding(ball, S9)){
-		alert("YOU LOST");
-		count=0
+		 if(alert('Alert For your User!')){}
+		 else    window.location.reload();
 		return count
-		document.location.reload();
+		
 	}
 	if(RectCircleColliding(ball, S10)){
-		alert("YOU LOST");
-		count=0
+		 if(alert('Alert For your User!')){}
+		 else    window.location.reload();
 		return count
-		document.location.reload();
+		
 	}
 	if(RectCircleColliding(ball, G1)){
-		alert("YOU SHARED");
-		count=0
+	     if(alert('Alert For your User!')){}
+		 else    window.location.reload();
 		return count
 	    		
 		// document.location.reload();
@@ -356,19 +641,104 @@ function goalCheck(count){
 		//document.location.reload();
 	// }
 	if(RectCircleColliding(ball, G3)){
-		alert("YOU SHARED");
-		count=0
+		 if(alert('Alert For your User!')){}
+		 else    window.location.reload();
+		return count
+		
+	}
+	if(RectCircleColliding(ball, G5)){
+	     // if(alert('Alert For your User!')){count=count+1}
+		 // else   { 
+		 count=count+1
+		 stage_count=stage_count+1
+	 
+	   	return count
+	}
+}
+
+// checkes for 2nd stage 
+ function goalCheckForSecond(count){
+	if(RectCircleColliding(secondball, Se1)){
+		alert("YOU LOST!");
+		
+		document.location.reload();
+		return count
+	}
+	if(RectCircleColliding(secondball, Se2)){
+		alert("YOU LOST");
+	
+        return count
+		document.location.reload();
+	}
+	if(RectCircleColliding(secondball, Se3)){
+		alert("YOU LOST");
+	
+		return count
+		document.location.reload();
+		
+	}
+	if(RectCircleColliding(secondball, Se4)){
+		alert("YOU LOST");
+		
 		return count
 		document.location.reload();
 	}
-	if(RectCircleColliding(ball, G5)){
+	if(RectCircleColliding(secondball, Se5)){
+		alert("YOU LOST");
+	
+		return count
+		document.location.reload();
+	}
+	if(RectCircleColliding(secondball, Se6)){
+		alert("YOU LOST");
+	
+		return count
+		document.location.reload();
+	}
+	if(RectCircleColliding(secondball, Se7)){
+		alert("YOU LOST");
+	
+		return count
+		document.location.reload();
+	}
+	if(RectCircleColliding(secondball, Se8)){
+		alert("YOU LOST");
+	
+		return count
+		document.location.reload();
+	}
+	if(RectCircleColliding(secondball, Se9)){
+		alert("YOU LOST");
+	
+		return count
+		document.location.reload();
+	}
+	if(RectCircleColliding(secondball, Se10)){
+		alert("YOU LOST");
+	
+		return count
+		document.location.reload();
+	}
+	if(RectCircleColliding(secondball, Se11)){
+	
+		return count
+		document.location.reload();
+	}
+	if(RectCircleColliding(secondball, Se12)){
+		alert("YOU LOST");
+		
+		return count
+		document.location.reload();
+	}
+
+	
+	if(RectCircleColliding(secondball, G5)){
 		alert("YOU Won");
 		count=count+1
 	 
 	   	return count
 	}
 }
- //adding images to array
 
 
 function start(){
@@ -736,45 +1106,53 @@ function start(){
     }
 	// end for fourth stage 
 	
-	   // var stage_count
-	  // stage_count=0
-	  // for (var x = 0; x < 2; x += 1){
-		  // if(stage_count ==0){
-			  // drawBoard();
-			  // ball.draw();
-	          // stage_count=goalCheck(stage_count);
-			 // document.location.reload();
-	          // console.log(stage_count);
-		  // }
-		  // else if(stage_count==1){
-			  // drawBoard_forSecondStage();
-			  // ball.draw();
-	          // stage_count=goalCheck(stage_count);
-		    // console.log(stage_count);
+	  var stage=0;
+	  // stage=0;
+	  for (var x = 0; x < 3; x += 1){
+		  if(stage ==0){
+			  drawBoard();
+			  ball.draw();
+	          stage=goalCheck(stage);
+		
+	          console.log("myalert",stage);
+			
+		  }
+		  else if(stage==1){
+			 // let ball = new Ball(50, 35, 20, 7, 7);
+			  c.clearRect(0, 0, innerWidth, innerHeight);
+			 //window.location.reload();
+			  drawBoard_forSecondStage();
+			  secondball.draw();
+			 // setTimeout( function ( ) { alert( "moo" ); }, 1000000 );
+	         // stage=goalCheckForSecond(stage);
+			 stage_count=stage;
+		       console.log("2ndstafe",stage_count,stage);
 
-		  // }
-		  // else if(stage_count==2){
-			  // drawBoard_forThirdStage();
-			  // ball.draw();
-	          // stage_count=goalCheck(stage_count);
-		     //console.log(stage_count);
+		  }
+		  else if(stage==2){
+			  c.clearRect(0, 0, innerWidth, innerHeight);
+			  drawBoard_forThirdStage();
+			  ball.draw();
+	        
+		    console.log(stage_count);
 
-		  // }
-	  // }
+		  }
+	  }
 	
-	drawBoard();
-    ball.draw();
-    stage_count=goalCheck(stage_count);
+	// drawBoard();
+    // ball.draw();
+    // stage_count=goalCheck(stage_count);
    
 
    // drawBoard_forSecondStage();
    // ball.draw();
-   // stage_count=goalCheck(stage_count);
+   // secondball.Draw();
+ //  stage_count=goalCheck(stage_count);
 
 
     // drawBoard_forThirdStage();
     // ball.draw();
-	// stage_count=goalCheck(stage_count);
+	// stage=goalCheck(stage);
 
      // drawBoard_forFourthStage();
 	 // ball.draw();
