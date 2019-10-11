@@ -237,35 +237,38 @@ elif (args.command == "final"):
             output=tf.argmax(pred, 1)
             className=sees.run(output, feed_dict={x: my_np_array})
             print(className)
+                        if className == "down":
+                print("Predicted: downward")
+                cozmo.run_program(cozmo_down_program)
 
-            if className == 0:
-                print("Predicted: Downward")
-                #        cozmo.run_program(cozmo_down_program)
-
-            elif className == 1:
-                print("Predicted: Downleft")
-                #        cozmo.run_program(cozmo_left_program)
-            elif className == 2:
+            elif className == "Down_Left":
+                print("Predicted: downleft")
+                cozmo.run_program(cozmo_left_program)
+            elif answer == "down_right":
                 print("Predicted: Down Right")
-            #        cozmo.run_program(cozmo_right_program)
-            elif className == 3:
+                cozmo.run_program(cozmo_right_program)
+
+            elif answer == "Left":
                 print("Predicted: Left")
-            elif className == 4:
+                cozmo.run_program(cozmo_up_program)
+
+            elif answer == "Left_Down":
                 print("Predicted: Left Down")
-            elif className == 5:
-                print("Predicted: Left Up")
-            elif className == 6:
+                cozmo.run_program(cozmo_up_program)
+
+            elif answer == "Right":
                 print("Predicted: Right")
-            elif className == 7:
+                cozmo.run_program(cozmo_up_program)
+
+            elif answer == "Right_Down":
                 print("Predicted: Right Down")
-            elif className == 8:
+                cozmo.run_program(cozmo_up_program)
+            elif answer == "Right_Up":
                 print("Predicted: Right Up")
-            elif className == 9:
-                print("Predicted: Up")
-            elif className == 10:
-                print("Predicted: Up Left")
-            elif className == 11:
-                print("Predicted: Up Right")
+                cozmo.run_program(cozmo_up_program)
+
+
+ 
 
 
          # dataset = tf.data.Dataset.from_tensor_slices((files, labels))
