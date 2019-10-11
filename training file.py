@@ -8,7 +8,7 @@ from glob import glob
 from keras.preprocessing import image
 import random
 
-# Parse command line arguments
+ Parse command line arguments
 parser = argparse.ArgumentParser(description='Train CNN to classify images into N number of Classes.')
 parser.add_argument("command", metavar="<command>", help="'train' or 'test'")
 args = parser.parse_args()
@@ -30,7 +30,7 @@ n_input_W = 80
 n_input_H = 80
 n_classes = 12
 
-#both placeholders are of type float
+both placeholders are of type float
 x = tf.placeholder("float", [None, n_input_H,n_input_W,3])
 
 y = tf.placeholder("float", [None, n_classes])
@@ -136,15 +136,15 @@ cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=pred, label
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=learning_rate).minimize(cost)
 
 
-#Here you check whether the index of the maximum value of the predicted image is equal to the actual labelled image.
-# and both will be a column vector.
+Here you check whether the index of the maximum value of the predicted image is equal to the actual labelled image.
+ and both will be a column vector.
 correct_prediction = tf.equal(tf.argmax(pred, 1), tf.argmax(y, 1))
 
-#calculate accuracy across all the given images and average them out.
+calculate accuracy across all the given images and average them out.
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 
-# Initializing the variables
+ Initializing the variables
 init = tf.global_variables_initializer()
 test_X = load_images(image_paths_test)
 
@@ -210,18 +210,18 @@ if args.command == "train":
             print("Testing Accuracy on complete Test Data:", "{:.5f}".format(avg_test_accuracy))
         saver.save(sess,'Models/modle.ckpt')
         print("Model Saved Successfully:")
-# elif (args.command=="test"):
-#      with tf.Session() as sees:
-#          saver.restore(sees, "Models/modle.ckpt")
-#          print("Model Loaded Successfully:")
-#          for i in range(10):
-#              img=cv2.imread('FinalTesting/clastest('+str(i+1)+').png')
-#              cv2.imshow('image',img)
-#              cv2.waitKey(1)
-#              my_np_array = img.reshape(1, 80, 80, 3)
-#              output=tf.argmax(pred, 1)
-#              className=sees.run(output, feed_dict={x: my_np_array})
-#              print(className)
+ elif (args.command=="test"):
+      with tf.Session() as sees:
+          saver.restore(sees, "Models/modle.ckpt")
+          print("Model Loaded Successfully:")
+          for i in range(10):
+              img=cv2.imread('FinalTesting/clastest('+str(i+1)+').png')
+              cv2.imshow('image',img)
+              cv2.waitKey(1)
+              my_np_array = img.reshape(1, 80, 80, 3)
+              output=tf.argmax(pred, 1)
+              className=sees.run(output, feed_dict={x: my_np_array})
+              print(className)
 elif (args.command == "final"):
      with tf.Session() as sees:
         saver.restore(sees, "Models/modle.ckpt")
