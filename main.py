@@ -379,6 +379,35 @@ from cozmo.util import degrees, distance_mm ,speed_mmps
             output=tf.argmax(pred, 1)
             className=sees.run(output, feed_dict={x: my_np_array})
             print(className)
+            dest_array.append(className)
+        # print(dest_array)
+        np_arr=np.array(dest_array)
+        # print(np_arr)
+        for item in np_arr:
+            result=np.where(np_arr==0)
+            np_arr[result]=270
+            result2=np.where(np_arr==3)
+            np_arr[result2]=180
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
 
             if className == 0:
                 print("Predicted: Downward")
