@@ -388,6 +388,19 @@ from cozmo.util import degrees, distance_mm ,speed_mmps
             np_arr[result]=270
             result2=np.where(np_arr==3)
             np_arr[result2]=180
+             result = np.where(np_arr == 6)
+            np_arr[result] = 360
+            result = np.where(np_arr == 9)
+            np_arr[result] = 90
+        print(np_arr)
+        current=0
+        my_dict={"North/Up":"90","South/Down":"270","East/Right":"360","West/Left":"180"}
+        print(my_dict)
+        for item in range(len(np_arr)):
+            destination=np_arr[item]
+            rotation=destination-current
+            print(rotation)
+            current=destination
 
 
 
