@@ -33,7 +33,8 @@ canvas{
 			background: white;
 			border: 5px solid black;
 			width:600px;
-			height:400px
+			padding-top: 90px
+			height:600px
 		}
 
 .split {
@@ -59,16 +60,50 @@ canvas{
 }
 
 
+.btn-group button {
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
 
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
 
 </style>
   
 </head>
 <body>
+<br>
+  <div class="btn-group" style="width:100%">
+  <button  id ="1" style="width:15%" onClick="reply_click1(this.id)"> 1st stage</button>
+  <button  id ="2" style="width:15%" onClick="reply_click2(this.id)">2nd stage</button>
+  <button  id ="3" style="width:15%" onClick="reply_click3(this.id)">3rd stage</button>
+  <button  id ="4" style="width:15%" onClick="reply_click4(this.id)">4th stage</button>
+  <button  id ="5" style="width:15%" onClick="reply_click5(this.id)">5th stage</button>
+  <button  id ="6" style="width:15%" onClick="reply_click5(this.id)">6th stage</button>
+  </div>
+  <br/>
 
   <button id="dartButton">Dart</button>
   <button id="javascriptButton">Javascript</button>
   <button id="runButton"  style="background-color: red;">Run</button>
+<!-- <img src="{{url_for('static', filename='stop.png')}}" -->
+
  
    <!-- <form  action="http://127.0.0.1:5000/cozmo_program" method="post"> -->
   <!-- <button id="Button" type="submit" style="background-color: red;">Cozmo</button> -->
@@ -77,11 +112,12 @@ canvas{
   <!-- <div class="split left"> -->
      
   <!-- </div> -->
-   <div  id="blocklyDiv" style="width:50%;height:70%" ></div>
+   <div  id="blocklyDiv" style="width:50%;height:50%" ></div>
   <div class ="split right">
     
      <div>
-
+<br>
+<br>
 	 <canvas id="canvas" style="background: #fff;magrin-left:30px;"></canvas>
      <!-- <img src="{{url_for('static', filename='stop.png')}}" /> -->
 	  <!-- <img src="static/stop.png" /> -->
@@ -89,6 +125,7 @@ canvas{
 	  <!-- <script src="{{ url_for('static', filename='js/close.js') }}"></script> -->
 	  
      </div>
+	 
 	 <div>
 	   <button id="moveright" onclick="callfunctionRight()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Right</button>
 	
@@ -100,6 +137,7 @@ canvas{
 	
 	   <button id="moveleft" onclick="callfunctionLeft()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Left</button>
 	 </div>
+	   <!-- <button id="1" onClick="reply_click(this.id)">B1</button> -->
   </div>
 
   <xml id="toolbox" style="display: none; background-color:black">
@@ -109,7 +147,7 @@ canvas{
 	       <block type="move_Right"></block>
 		   <block type="move_Left"></block>
 		   <block type="move_Down"></block>
-		   <block type="move_Up_Right"></block>
+		   <block type="move_Forward"></block>
       </category>
       <category name="Logic" colour="210">
 			<!-- <block type="logic_boolean"></block> -->
@@ -123,6 +161,7 @@ canvas{
      <category name="Loops" colour="120">
 	       <block type="controls_whileUntil"></block>
 	 	   <block type="controls_for"></block>
+	 	   <block type="controls_repeat_ext"></block>
      </category>
 	 <category name="Math" colour="230">
 	    <block type="math_number"></block>
@@ -176,7 +215,30 @@ canvas{
       // alert(JSON.stringify(e));
       }
     });
-	
+
+  function reply_click1(clicked_id)
+  {
+      setstagefromblockly(clicked_id);
+	  start();
+  }
+  function reply_click2(clicked_id)
+  {
+      setstagefromblockly(clicked_id);
+	  startsec();
+  }
+  function reply_click3(clicked_id)
+  {
+      setstagefromblockly(clicked_id);
+      startthird();
+  }
+  function reply_click4(clicked_id)
+  {   setstagefromblockly(clicked_id);
+      startfourth();
+  }
+  function reply_click5(clicked_id)
+  {
+  
+  }
   </script>
 
 </body>
