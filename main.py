@@ -7,6 +7,9 @@ import cv2
 from glob import glob
 from keras.preprocessing import image
 import random
+from cozmo.util import degrees, distance_mm ,speed_mmps,Angle
+import cozmo
+import sys
 
 # Parse command line arguments
 parser = argparse.ArgumentParser(description='Train CNN to classify images into N number of Classes.')
@@ -23,17 +26,17 @@ num_classes_Validation = datasetValidation.num_classes
 image_paths_train, cls_train, labels_train = datasetTrain.get_training_set()
 image_paths_test, cls_test, labels_test = datasetValidation.get_training_set()
 
-training_iters = 10
-learning_rate = 0.0001
+training_iters = 300
+learning_rate = 0.001
 batch_size = 1
 n_input_W = 80
 n_input_H = 80
-n_classes = 12
+n_classes = 4
 
 #both placeholders are of type float
-x = tf.compat.v1.placeholder("float", [None, n_input_H,n_input_W,3])
+x = tf.placeholder("float", [None, n_input_H,n_input_W,3])
 
-y = tf.compat.v1.placeholder("float", [None, n_classes])
+y = tf.placeholder("float", [None, n_classes])
 
 def conv2d(x, W, b, strides=1):
     # Conv2D wrapper, with bias and relu activation
@@ -42,7 +45,7 @@ def conv2d(x, W, b, strides=1):
     return tf.nn.relu(x)
 
 def maxpool2d(x, k=2):
-    return tf.nn.max_pool2d(x, ksize=[1, k, k, 1], strides=[1, k, k, 1],padding='SAME')
+    return tf.layers.max_pooling2d(x, pool_size=[k, k], strides=[k, k, ], padding='SAME')
 
 weights = {
     'wc1': tf.get_variable('W0', shape=(5,5,3,32), initializer=tf.contrib.layers.xavier_initializer()),
@@ -72,7 +75,7 @@ biases = {
     'Bcrowd6': tf.get_variable('Bcrowd6', shape=(64), initializer=tf.contrib.layers.xavier_initializer()),
     'bd1': tf.get_variable('B3', shape=(32), initializer=tf.contrib.layers.xavier_initializer()),
     'bd2': tf.get_variable('B4', shape=(32), initializer=tf.contrib.layers.xavier_initializer()),
-    'out': tf.get_variable('B5', shape=(12), initializer=tf.contrib.layers.xavier_initializer()),
+    'out': tf.get_variable('B5', shape=(4), initializer=tf.contrib.layers.xavier_initializer()),
 }
 
 
@@ -133,7 +136,7 @@ pred = conv_net(x, weights, biases)
 
 cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=pred, labels=y))
 
-optimizer = tf.compat.v1.train.GradientDescentOptimizer(learning_rate=learning_rate).minimize(cost)
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=learning_rate).minimize(cost)
 
 
 #Here you check whether the index of the maximum value of the predicted image is equal to the actual labelled image.
@@ -145,11 +148,11 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 
 # Initializing the variables
-init = tf.compat.v1.global_variables_initializer()
+init = tf.global_variables_initializer()
 test_X = load_images(image_paths_test)
 
 test_Y=labels_test
-saver = tf.compat.v1.train.Saver()
+saver = tf.train.Saver()
 
 train_loss = []
 test_loss = []
@@ -215,192 +218,29 @@ if args.command == "train":
 #              my_np_array = img.reshape(1, 80, 80, 3)
 #              output=tf.argmax(pred, 1)
 #              className=sees.run(output, feed_dict={x: my_np_array})
-#              print(className)
+#           print(className)
+
 elif (args.command == "final"):
+     dest_array=[]
      with tf.Session() as sees:
         saver.restore(sees, "Models/modle.ckpt")
         print("Model Loaded Successfully:")
-
-
-
-        
-        
-
-#Cozmo functions
-        #import cozmo
-from cozmo.util import degrees, distance_mm ,speed_mmps
-
-#For Left,Right,Down,Up
-        def cozmo_program(robot: cozmo.robot.Robot):
-    
-        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-
-#For moving Right_Upward
-        def cozmo_RightUpward_program(robot: cozmo.robot.Robot):
-   
-        Drive forwards for 150 millimeters at 50 millimeters-per-second.
- 
-        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-        robot.turn_in_place(degrees(90)).wait_for_completed()
-        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-
-        # Turn 90 degrees to the left.
-        # Note: To turn to the right, just use a negative number.
- 
-
-        #cozmo.run_program(cozmo_RightUpward_program)
-        ##For moving Left_Upward
-        def cozmo_LeftUpward_program(robot: cozmo.robot.Robot):
-  
-        Drive forwards for 150 millimeters at 50 millimeters-per-second.
-        robot.turn_in_place(degrees(270)).wait_for_completed()
-        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-        robot.turn_in_place(degrees(-90)).wait_for_completed()
-        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-        # Turn 90 degrees to the left
-        # Note: To turn to the right, just use a negative number.
- 
-
-
-        ##cozmo.run_program(cozmo_LeftUpward_program)
-        def cozmo_UpwardRight_program(robot: cozmo.robot.Robot):
-   
-        Drive forwards for 150 millimeters at 50 millimeters-per-second.
-        robot.turn_in_place(degrees(270)).wait_for_completed()
-        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-        robot.turn_in_place(degrees(-90)).wait_for_completed()
-        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-
-        # Turn 90 degrees to the left
-        #  Note: To turn to the right, just use a negative number.
- 
-
-
-         ##cozmo.run_program(cozmo_UpwardRight_program)
-        ##For moving Upward_Left
-
-        def cozmo_UpwardLeft_program(robot: cozmo.robot.Robot):
-   
-        Drive forwards for 150 millimeters at 50 millimeters-per-second.
-  
-        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-        robot.turn_in_place(degrees(90)).wait_for_completed()
-        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-        # Turn 90 degrees to the left.
-        # Note: To turn to the right, just use a negative number.
- 
-
-
-        ##cozmo.run_program(cozmo_UpwardLeft_program)
-        
-
-        
-        
-        
-        # For moving DownwardRight
-
-        def cozmo_DownwardRight_program(robot: cozmo.robot.Robot):
-
-            # Drive forwards for 150 millimeters at 50 millimeters-per-second.
-
-            robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-            robot.turn_in_place(degrees(90)).wait_for_completed()
-            robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-
-
-        # cozmo.run_program(cozmo_DownwardRight_program)
-        
-
-        # For moving Downward_Left
-
-        def cozmo_DownwardLeft_program(robot: cozmo.robot.Robot):
-
-            # Drive forwards for 150 millimeters at 50 millimeters-per-second.
-
-            robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-            robot.turn_in_place(degrees(-90)).wait_for_completed()
-            robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-
-
-        # cozmo.run_program(cozmo_DownwardLeft_program)
-
-        # For moving Right_Down
-        def cozmo_RightDown_program(robot: cozmo.robot.Robot):
-
-            # Drive forwards for 150 millimeters at 50 millimeters-per-second.
-
-            robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-            robot.turn_in_place(degrees(90)).wait_for_completed()
-            robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-
-
-        # cozmo.run_program(cozmo_RightDown_program)
-        # For moving Right_Up
-
-        def cozmo_RightUp_program(robot: cozmo.robot.Robot):
-
-            # Drive forwards for 150 millimeters at 50 millimeters-per-second.
-
-            robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-            robot.turn_in_place(degrees(-90)).wait_for_completed()
-            robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-
-
-        #
-        # cozmo.run_program(cozmo_RightUp_program)
-        # For moving Left_Down
-
-        # import cozmo
-        # from cozmo.util import degrees, distance_mm ,speed_mmps
-        def cozmo_LeftDown_program(robot: cozmo.robot.Robot):
-
-            # Drive forwards for 150 millimeters at 50 millimeters-per-second.
-
-            robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-            robot.turn_in_place(degrees(90)).wait_for_completed()
-            robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-
-
-        # cozmo.run_program(cozmo_LeftDown_program)
-        import image_slicer
-
-        tiles = image_slicer.slice("n2.png", 12, save=False)
-        image_slicer.save_tiles(tiles, directory='./slicing', \
-                                prefix='slice', format='png')
-        img_mask = 'slicing/*.png'
+        img_mask = 'FinalTesting/*.png'
         img_names = glob(img_mask)
-
+        #for every images one by one print the class name
         for fn in img_names:
             img = cv2.imread(fn)
             print('processing %s...' % fn, )
-
-
             my_np_array = img.reshape(1, 80, 80, 3)
             output=tf.argmax(pred, 1)
             className=sees.run(output, feed_dict={x: my_np_array})
             print(className)
+
             dest_array.append(className)
         # print(dest_array)
         np_arr=np.array(dest_array)
+
         # print(np_arr)
-        for item in np_arr:
-            result=np.where(np_arr==0)
-            np_arr[result]=270
-            result2=np.where(np_arr==3)
-            np_arr[result2]=180
-             result = np.where(np_arr == 6)
-            np_arr[result] = 360
-            result = np.where(np_arr == 9)
-            np_arr[result] = 90
-        print(np_arr)
-        current=0
-        my_dict={"North/Up":"90","South/Down":"270","East/Right":"360","West/Left":"180"}
-        print(my_dict)
-        for item in range(len(np_arr)):
-            destination=np_arr[item]
-            rotation=destination-current
-            print(rotation)
-            current=destination
 
 
 
@@ -415,51 +255,243 @@ from cozmo.util import degrees, distance_mm ,speed_mmps
 
 
 
+        def cozmo_program(robot: cozmo.robot.Robot):
+            #for converting the values according to the south,north,east,west
+            for item in np_arr:
+                result = np.where(np_arr == 0)
+                #for down
+                np_arr[result] = 270
+                result2 = np.where(np_arr == 1)
+                #for left
+                np_arr[result2] = 180
+                result3 = np.where(np_arr == 2)
+                #for right
+                np_arr[result3] = 360
+                result4 = np.where(np_arr == 3)
+                #for up
+                np_arr[result4] = 90
+
+            # print(np_arr)
+            #starting position of the robot
+            current = 270
+
+            my_dict = {"North": "90", "South": "270", "East": "360", "West": "180"}
+            print(my_dict)
+            x=0
+            y=0
+            #according to the 2D array
+            for item in range(len(np_arr)):
+                #if it is the first element
+                if item==0:
+                    #Finding the Conditions with respect to the every point
+                    find4conditions(0,0)
+                    #Finding the next state of the current position but its for the first position with x and y 0
+                    e, o = nextstate2(0, 0, np_arr[item],robot)
+                    robot.drive_straight(distance_mm(210), speed_mmps(50)).wait_for_completed()
+                elif np_arr[item] == current:
+                    # Finding the Conditions with respect to the every point
+                    find4conditions(e,o)
+                    # Finding the next state of the current position but its for the first position with e and o of the previous values
+                    e, o = nextstate2(e, o, np_arr[item],robot)
+                    robot.drive_straight(distance_mm(210), speed_mmps(50)).wait_for_completed()
+                else:
+                    # Finding the Conditions with respect to the every point
+                    find4conditions(e, o)
+                    # Finding the next state of the current position but its for the first position with e and o of the previous values
+                    e, o = nextstate2(e, o, np_arr[item],robot)
+                    destination = np_arr[item]
+                    #For the rotation of the robot according to the direction
+                    rotation = destination - current
+                    print(rotation)
+                    robot.turn_in_place(degrees(rotation)).wait_for_completed()
+                    robot.drive_straight(distance_mm(190), speed_mmps(50)).wait_for_completed()
+                    current = destination
+        rows=0
+        #for finding the number of columns
+        with open("file.txt") as f:
+            line = f.readline()
+            columns=len(line.split())
+        # print(columns,"columns")
+        #for finding the number of the rows
+        with open("file.txt") as foo:
+            for line in foo:
+                rows=rows+1
+            # print(rows,"rows")
+        #for insertig the file values into the 2D array
+        with open("file.txt") as textFile:
+            lines = [line.split() for line in textFile]
+        print(lines)
 
 
 
 
+        #for finding the next state with respect to the current position
+        def nextstate2(x,y,Action,robot: cozmo.robot.Robot):
+            #It depends on the Action to be performed if it is right we add the y value
+            if Action == 360:
+                y = y + 1
+                if y >= columns or y < 0:
+                    #if the y is greater then the columns or less than 0 for the top left and the top right corner
+                    robot.say_text("There is No Path Here").wait_for_completed()
+                    # cozmo.run_program(cozmo_program1)
+                    print("There is No Path Here")
+                else:
 
-            
+                    #if the next direction the child taken is where there is block then the system stops and the childre
+                    #must start its game again
+                    if lines[x][y]=='B':
+                        robot.say_text("Here is the path blocked").wait_for_completed()
+                        # cozmo.run_program(cozmo_program1)
+                        print("Here is the path blocked")
+                        sys.exit()
+                    else:
+                        print("I am here ",lines[x][y])
 
-            if className == 0:
-                print("Predicted: Downward")
-                cozmo.run_program(cozmo_down_program)
+            elif Action == 270:
+                x = x + 1
+                if x >= rows or x < 0:
+                    robot.say_text("There is no path here").wait_for_completed()
+                    # cozmo.run_program(cozmo_program1)
+                    print("There is No Path Here")
+                    sys.exit()
+                else:
+                    if lines[x][y]=='B':
+                        robot.say_text("Here is the path blocked").wait_for_completed()
+                        # cozmo.run_program(cozmo_program1)
+                        print("Here is the path blocked")
+                        sys.exit()
+                    else:
+                        print("I am here ",lines[x][y])
 
-            elif className == 1:
-                print("Predicted: Downleft")
-                cozmo.run_program(cozmo_DownwardLeft_program)
-            elif className == 2:
-                print("Predicted: Down Right")
-                cozmo.run_program(cozmo_DownwardRight_program)
-            elif className == 3:
-                print("Predicted: Left")
-                cozmo.run_program(cozmo_program)
-            elif className == 4:
-                print("Predicted: Left Down")
-                cozmo.run_program(cozmo_LeftDown_program)
-            elif className == 5:
-                print("Predicted: Left Up")
-                cozmo.run_program(cozmo_LeftUpward_program)
-            elif className == 6:
-                print("Predicted: Right")
-                cozmo.run_program(cozmo_program)
-            elif className == 7:
-                print("Predicted: Right Down")
-                cozmo.run_program(cozmo_RightDown_program)
-            elif className == 8:
-                print("Predicted: Right Up")
-                cozmo.run_program(cozmo_RightUp_program)
-            elif className == 9:
-                print("Predicted: Up")
-                cozmo.run_program(cozmo_program)
-            elif className == 10:
-                print("Predicted: Up Left")
-                cozmo.run_program(cozmo_UpwardLeft_program)
-            elif className == 11:
-                print("Predicted: Up Right")
-                cozmo.run_program(cozmo_UpwardRight_program)
+            elif Action == 90:
+                x = x - 1
+                if x >= rows or x < 0:
+                    robot.say_text("There is no path here").wait_for_completed()
+                    # cozmo.run_program(cozmo_program1)
+                    print("There is No Path Here")
+                    sys.exit()
+                else:
+                    if lines[x][y]=='B':
+                        robot.say_text("Here is the path blocked").wait_for_completed()
+                        # cozmo.run_program(cozmo_program1)
+                        print("Here is the path blocked")
+                        sys.exit()
+                    else:
+                        print("I am here ",lines[x][y])
 
+            elif Action == 180:
+                y = y - 1
+                if y >= columns or y < 0:
+                    robot.say_text("There is no path here").wait_for_completed()
+                    # cozmo.run_program(cozmo_program1)
+                    print("There is No Path Here")
+                    sys.exit()
+                else:
+                    if lines[x][y]=='B':
+                        robot.say_text("Here is the path blocked").wait_for_completed()
+                        # cozmo.run_program(cozmo_program1)
+                        print("Here is the path blocked")
+                        sys.exit()
+                    else:
+                        print("I am here ",lines[x][y])
+
+            return x, y
+
+
+        def find4conditions(x,y):
+            #It is without adding the 1 in y
+            #If the robot move out of the bondary as expected in the case of top right y>columns
+            if y>columns or y<0:
+                robot.say_text("There is No Path Here").wait_for_completed()
+                # cozmo.run_program(cozmo_program1)
+                print("There is No Path Here")
+                sys.exit()
+            # It is without adding the 1 in x
+            # If the robot move out of the bondary as expected in the case of bottom left x>rows
+            if x>rows or x<0:
+                robot.say_text("There is No Path Here").wait_for_completed()
+                # cozmo.run_program(cozmo_program1)
+                print("There is No Path Here")
+                sys.exit()
+            #for right word
+            #For printing current position
+            print(lines[x][y],"The current position of the robot")
+            y=y+1
+            if y>=columns:
+                #FOr the next state if it is out of the boundary
+                print("Null"," is the Right Word with respect to the current position")
+            else:
+                right_word=lines[x][y]
+                # if right_word=='B':
+                    # sys.exit()
+
+                print(right_word,"is the Right Word with respect to the current position")
+            y = y - 1
+            #for left word
+
+            y=y-1
+            if y<0:
+                #After y=y-1 if it is negative for the Top left and the bottom left
+                print("Null","Left Word")
+            else:
+                 left_word=lines[x][y]
+                 print(left_word," is the Left Word with respect to the current position")
+            y = y + 1
+            #for up word
+            x=x-1
+            if x<0:
+                #for the top left
+                print("Null","Up Word")
+            else:
+                 up_word=lines[x][y]
+                 print(up_word,"is the Up Word with repsect to the current position")
+            x = x + 1
+            #for down word
+            x=x+1
+            if x>=rows:
+                print("Null","Down Word")
+            else:
+                down_word=lines[x][y]
+                print(down_word,"is the Down Word with respect to the current position")
+            x = x - 1
+            return x,y
+
+        # def cozmo_program1(robot:cozmo.robot.Robot):
+        #     robot.say_text("Hello World").wait_for_completed()
+
+        cozmo.run_program(cozmo_program)
+
+
+        #    if className == "down":
+         #        print("Predicted: downward")
+         #        cozmo.run_program(cozmo_down_program)
+         #
+         #    elif className == "Down_Left":
+         #        print("Predicted: downleft")
+         #        cozmo.run_program(cozmo_left_program)
+         #    elif answer == "down_right":
+         #        print("Predicted: Down Right")
+         #        cozmo.run_program(cozmo_right_program)
+         #
+         #    elif answer == "Left":
+         #        print("Predicted: Left")
+         #        cozmo.run_program(cozmo_up_program)
+         #
+         #    elif answer == "Left_Down":
+         #        print("Predicted: Left Down")
+         #        cozmo.run_program(cozmo_up_program)
+         #
+         #    elif answer == "Right":
+         #        print("Predicted: Right")
+         #        cozmo.run_program(cozmo_up_program)
+         #
+         #    elif answer == "Right_Down":
+         #        print("Predicted: Right Down")
+         #        cozmo.run_program(cozmo_up_program)
+         #    elif answer == "Right_Up":
+         #        print("Predicted: Right Up")
+         #        cozmo.run_program(cozmo_up_program)
+         #
          #
          # # dataset = tf.data.Dataset.from_tensor_slices((files, labels))
          # # img_mask = 'FinalTesting/*.png'
@@ -495,3 +527,64 @@ from cozmo.util import degrees, distance_mm ,speed_mmps
          # #         print("Predicted: Down Right")
          # # #        cozmo.run_program(cozmo_right_program)
          # #
+
+        # # i = 1
+        # # mystring = []
+        # mystring2 = []
+        # list1 = []
+        # # contents = f.read()
+        # # mystring.append(contents)
+        #
+        # # for line in contents:
+        # #     for c in line.split():
+        # #         mystring2.append(c)
+        # # print(mystring2)
+        # # for index in range(len(mystring2)):
+        #     # The current index value
+        #     indexw = index
+        #     if mystring2[indexw] == '/':
+        #         continue
+        #     else:
+        #         print(mystring2[indexw])
+        #         list1.append(mystring2[indexw])
+        #
+        #     # for right value with respect to that index
+        #     indexu = index + 1
+        #     if mystring2[indexu] == '/':
+        #         print("Null")
+        #         list1.append("Null")
+        #     else:
+        #         print(mystring2[indexu])
+        #         list1.append(mystring2[indexu])
+        #         index = indexu - 1
+        #     # for down value with respect to that index
+        #
+        #     indexc = index + 9
+        #     if mystring2[indexc] == '/':
+        #         list1.append("Null")
+        #         print("Null")
+        #     else:
+        #         print(mystring2[indexc])
+        #         list1.append(mystring2[indexc])
+        #         index = indexc - 9
+        #
+        #     # for upward value with respect to that index
+        #     indext = index - 9
+        #     if mystring2[indext] == '/':
+        #         list1.append("Null")
+        #         print("Null")
+        #     else:
+        #         print(mystring2[indext])
+        #         list1.append(mystring2[indext])
+        #         index = indext + 9
+        #     # for left value with respect to that index
+        #     indexf = index - 1
+        #     if mystring2[indexf] == '/':
+        #         list1.append("Null")
+        #         print("Null")
+        #     else:
+        #         print(mystring2[indexf])
+        #         list1.append(mystring2[indexf])
+        #         index = indexf + 1
+        #     print(list1)
+        #     list1.clear()
