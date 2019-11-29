@@ -88,16 +88,7 @@ canvas{
   
 </head>
 <body>
-<br>
-  <div class="btn-group" style="width:100%">
-  <button  id ="1" style="width:15%" onClick="reply_click1(this.id)"> 1st stage</button>
-  <button  id ="2" style="width:15%" onClick="reply_click2(this.id)">2nd stage</button>
-  <button  id ="3" style="width:15%" onClick="reply_click3(this.id)">3rd stage</button>
-  <button  id ="4" style="width:15%" onClick="reply_click4(this.id)">4th stage</button>
-  <button  id ="5" style="width:15%" onClick="reply_click5(this.id)">5th stage</button>
-  <button  id ="6" style="width:15%" onClick="reply_click5(this.id)">6th stage</button>
-  </div>
-  <br/>
+  <p id="call"></p>
 
   <button id="dartButton">Dart</button>
   <button id="javascriptButton">Javascript</button>
@@ -113,16 +104,15 @@ canvas{
      
   <!-- </div> -->
    <div  id="blocklyDiv" style="width:50%;height:50%" ></div>
-  <div class ="split right">
+   <div class ="split right">
     
      <div>
 <br>
-<br>
-	 <canvas id="canvas" style="background: #fff;magrin-left:30px;"></canvas>
+	  <canvas id="canvas" style="background: #fff;magrin-left:30px;"></canvas>
      <!-- <img src="{{url_for('static', filename='stop.png')}}" /> -->
 	  <!-- <img src="static/stop.png" /> -->
 	
-	  <!-- <script src="{{ url_for('static', filename='js/close.js') }}"></script> -->
+	  <script src="{{ url_for('static', filename='js/maze.js') }}"></script>
 	  
      </div>
 	 
@@ -216,20 +206,34 @@ canvas{
       }
     });
 
-  function reply_click1(clicked_id)
+  function stage()
   {
-      setstagefromblockly(clicked_id);
-	  start();
-  }
-  function reply_click2(clicked_id)
-  {
-      setstagefromblockly(clicked_id);
-	  startsec();
-  }
-  function reply_click3(clicked_id)
-  {
-      setstagefromblockly(clicked_id);
-      startthird();
+      var no;
+	  no={{number}};
+	  //setstagefromblockly(no);
+	  if(no==1){
+	
+	  start();}
+	  if(no==2){
+	  startsec();}
+	  if(no==3){
+	  startthird();}
+	  if(no==4){
+	  startfourth();}
+	  if(no==5){
+	  startfivth();}
+	  if(no==6){
+	  startsixth();}
+	  if(no==7){
+	  startseventh();}
+	  if(no==8){
+	  starteighth();}
+	  if(no==9){
+	  startninth();}
+	  if(no==10){
+	  starttenth();}
+  
+ 
   }
   function reply_click4(clicked_id)
   {   setstagefromblockly(clicked_id);
@@ -239,7 +243,10 @@ canvas{
   {
   
   }
+  document.getElementById("call").innerHTML = stage(); 
+  
   </script>
-
+  <br>
+  <b><a href="http://127.0.0.1:5000/">Back To HomePage</a></b>
 </body>
 </html>

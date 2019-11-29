@@ -31,6 +31,10 @@
   width: 33.33%;
   padding: 5px;
 }
+.circular--square {
+  border-radius: 50%;
+}
+
 
 /* Clearfix (clear floats) */
 .row::after {
@@ -49,30 +53,124 @@
 </style>
   
 </head>
-<body>
-<p>How to create side-by-side images with the CSS float property:</p>
+<body style="background-color:grey;">
+
+<center><h1 style="font-family:verdana;  padding: 1em; background-color: #005544;color: white;" align="center">Programmable Toys To Teach Programming To Kids</h1></center>
+<br> 
+  <p id="call"></p>
 <div class="row">
   <div class="column">
-  <a href="http://127.0.0.1:5000/flask_function">
+  <a href="http://127.0.0.1:5000/StageOne">
 
-    <img src="/static/images/candey.jpg" alt="Snow" style="width:80%; border:5px solid black; height:40%;;margin-left: 50px">
+    <img src="/static/images/background.jpg" id="1" class="circular--square" alt="Snow" style="width:80%; border:5px solid black; height:30%;;margin-left: 50px">
 	</a>
+	<br>
+	<center><h2>Stage One</h2></center>
   </div>
   <div class="column">
-  <a href="http://127.0.0.1:5000/flask_function">
-    <img src="/static/images/stop.png" alt="Forest" style="width:85%; border:5px solid black;height:40%">
+  <a href="http://127.0.0.1:5000/StageTwo">
+    <img src="/static/images/images.jpg" class="circular--square" alt="Forest" style="width:85%; border:5px solid black;height:30%">
 	</a>
+	<br>
+	<center><h2>Stage Two</h2></center>
   </div>
   <div class="column">
-  <a href="http://127.0.0.1:5000/flask_function">
-    <img src="/static/images/candey.jpg" alt="Mountains" style="width:80%; border:5px solid black ; height:40%">
+  <a href="http://127.0.0.1:5000/StageThree">
+    <img src="/static/images/hospitall.jpg" class="circular--square" alt="Mountains" style="width:80%; border:5px solid black ; height:30%">
 	</a>
+	<br>
+	<center><h2>Stage Three</h2></center>
+  </div>
+</div>
+<br>
+<br>
+<!-- second row -->
+<div class="row">
+  <div class="column">
+
+  
+  {% if data==1 %}
+  <a href="http://127.0.0.1:5000/StageFour">
+
+    <img src="/static/images/bott.jpg" class="circular--square" alt="Snow" style="width:80%;filter: brightness(50%); border:5px solid black; height:30%;;margin-left: 50px">
+	</a>
+	{%else%}
+	<a href="http://127.0.0.1:5000/StageFour">
+
+    <img src="/static/images/bott.jpg" class="circular--square" alt="Snow" style="width:80%; border:5px solid black; height:30%;;margin-left: 50px">
+	</a>
+	{% endif %}
+	<br>
+	<center><h2>Stage Four</h2></center>
+  </div>
+  <div class="column">
+  <a href="http://127.0.0.1:5000/StageFive">
+    <img src="/static/images/a.jpeg" class="circular--square" alt="Forest" style="width:85%; border:5px solid black;height:30%">
+	</a>
+	<br>
+	<center><h2>Stage Five</h2></center>
+  </div>
+  <div class="column">
+  <a href="http://127.0.0.1:5000/StageSix">
+    <img src="/static/images/10.jpg" class="circular--square" alt="Mountains" style="width:80%; border:5px solid black ; height:30%">
+	</a>
+	<br>
+	<center><h2>Stage Six</h2></center>
   </div>
 </div>
 
+<br>
+<br>
+<!-- 3rd row -->
+<div class="row">
+  <div class="column">
+  <a href="http://127.0.0.1:5000/StageSeven">
 
+    <img src="/static/images/work.jpeg" class="circular--square" alt="Snow" style="width:80%; border:5px solid black; height:30%;;margin-left: 50px">
+	</a>
+	<br>
+	<center><h2>Stage Seven</h2></center>
+  </div>
+  <div class="column">
+  <a href="http://127.0.0.1:5000/StageEight">
+    <img src="/static/images/grapes.png" class="circular--square" alt="Forest" style="width:85%; border:5px solid black;height:30%">
+	</a>
+	<br>
+	<center><h2>Stage Eight</h2></center>
+  </div>
+  <div class="column">
+  <a href="http://127.0.0.1:5000/StageNine">
+    <img src="/static/images/close_background.jpg" class="circular--square" alt="Mountains" style="width:80%; border:5px solid black ; height:30%">
+	</a>
+	<br>
+	<center><h2>Stage Nine</h2></center>
+  </div>
+</div>
 
+<div class="row">
+  <div class="column">
+  <a href="http://127.0.0.1:5000/StageTen">
 
+    <img src="/static/images/stage10.jpg" class="circular--square" alt="Snow" style="width:80%; border:5px solid black; height:30%;;margin-left: 50px">
+	</a>
+	<br>
+	<center><h2>Stage Ten</h2></center>
+  </div>
+ 
+</div>
+<!-- <script> -->
+  <!-- function getstage() -->
+  <!-- { -->
+      <!-- var no; -->
+	  <!-- no={{data}}; -->
+	  <!-- if(no==null){ -->
+	  <!-- no=0;} -->
+	  <!-- console.log(no);	  -->
+  
+ 
+  <!-- } -->
+  <!-- <!-- document.getElementById("call").innerHTML = getstage();  --> -->
+<!-- </script> -->
 <!-- <div id="1"> -->
 <!-- <a href="http://127.0.0.1:5000/flask_function"> -->
 <!-- <img src="/static/images/candey.jpg"  width="100"  height="150" /></div>  -->

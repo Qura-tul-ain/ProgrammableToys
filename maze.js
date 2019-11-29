@@ -1,5 +1,5 @@
 var canvas = document.getElementById("canvas");
-canvas.width = 730;
+canvas.width = 710;
 canvas.height = 415;
 
 const c = canvas.getContext('2d');
@@ -17,6 +17,7 @@ function setstagefromblockly(stage){
 	stage_count=stage;
 	
 }
+
 
 // Goal object
 const Goal = {
@@ -235,6 +236,317 @@ const seGoal = {
 	height: 40,
 
 }
+//............... checks for 3rd stage 
+const th1 = {
+	x: 30,
+	y: 90,
+	width: 40,
+	height: 40,
+
+}
+
+const th2 = {
+	x: 150,
+	y: 90,
+	width: 40,
+	height: 40,
+
+}
+const th3 = {
+	x: 380,
+	y: 150,
+	width: 40,
+	height: 40,
+
+}
+const th4 = {
+	x: 500,
+	y: 150,
+	width: 40,
+	height: 40,
+
+}
+const th5 = {
+	x: 500,
+	y: 280,
+	width: 40,
+	height: 40,
+
+}
+const th6 = {
+	x: 260,
+	y: 280,
+	width: 40,
+	height: 40,
+
+}
+const th7 = {
+	x: 390,
+	y: 25,
+	width: 40,
+	height: 40,
+
+}
+
+//  checks for 4th stage
+
+const fo1 = {
+	x: 30,
+	y: 90,
+	width: 40,
+	height: 40,
+
+}
+const fo2 = {
+	x: 130,
+	y: 90,
+	width: 40,
+	height: 40,
+
+}
+const fo3 = {
+	x: 230,
+	y: 150,
+	width: 40,
+	height: 40,
+
+}
+const fo4 = {
+	x: 330,
+	y: 210,
+	width: 40,
+	height: 40,
+
+}
+const fo5 = {
+	x: 430,
+	y: 280,
+	width: 40,
+	height: 40,
+
+}
+const fo6 = {
+	x: 430,
+	y: 150,
+	width: 40,
+	height: 40,
+
+}
+const fo7 = {
+	x: 330,
+	y: 30,
+	width: 40,
+	height: 40,
+
+}
+const fo8 = {
+	x: 130,
+	y: 280,
+	width: 40,
+	height: 40,
+
+}
+const fo9 = {
+	x: 530,
+	y: 50,
+	width: 40,
+	height: 40,
+
+}
+
+// checks for 5th stage
+const fi1 = {
+	x: 35,
+	y: 82,
+	width: 40,
+	height: 40,
+
+}
+
+const fi2 = {
+	x: 310,
+	y: 82,
+	width: 40,
+	height: 40,
+
+}
+const fi3 = {
+	x: 310,
+	y: 5,
+	width: 40,
+	height: 40,
+
+}
+const fi4 = {
+	x: 310,
+	y: 241,
+	width: 40,
+	height: 40,
+
+}
+const fi5 = {
+	x: 450,
+	y: 241,
+	width: 40,
+	height: 40,
+
+}
+const fi6 = {
+	x: 450,
+	y: 50,
+	width: 40,
+	height: 40,
+
+}
+
+
+// checks for 7th stage
+const si1 = {
+	x: 50,
+	y: 120,
+	width: 40,
+	height: 40,
+
+}
+
+const si2 = {
+	x: 580,
+	y: 120,
+	width: 40,
+	height: 40,
+
+}
+const si3 = {
+	x: 580,
+	y: 220,
+	width: 40,
+	height: 40,
+
+}
+const si4 = {
+	x: 400,
+	y: 220,
+	width: 40,
+	height: 40,
+
+}
+// checks for seven stage
+const sev1 = {
+	x: 30,
+	y: 70,
+	width: 40,
+	height: 40,
+
+}
+const sev2 = {
+	x: 30,
+	y: 166,
+	width: 40,
+	height: 40,
+
+}
+const sev3 = {
+	x: 117,
+	y: 166,
+	width: 40,
+	height: 40,
+
+}
+const sev4 = {
+	x: 117,
+	y: 214,
+	width: 40,
+	height: 40,
+
+}
+const sev5 = {
+	x: 204,
+	y: 262,
+	width: 40,
+	height: 40,
+
+}
+const sev6 = {
+	x: 552,
+	y: 118,
+	width: 40,
+	height: 40,
+
+}
+const sev7 = {
+	x: 552,
+	y: 214,
+	width: 40,
+	height: 40,
+
+}
+const sev8 = {
+	x: 465,
+	y: 354,
+	width: 40,
+	height: 40,
+
+}
+const sev9 = {
+	x: 204,
+	y: 25,
+	width: 40,
+	height: 40,
+
+}
+const sev10 = {
+	x: 291,
+	y: 115,
+	width: 40,
+	height: 40,
+
+}
+// checks for 8th stage 
+const ei1 = {
+	x: 10,
+	y: 240,
+	width: 40,
+	height: 40,
+
+}
+const ei2 = {
+	x: 290,
+	y: 240,
+	width: 40,
+	height: 40,
+
+}
+const ei3 = {
+	x: 150,
+	y: 317,
+	width: 40,
+	height: 40,
+
+}
+const ei4 = {
+	x: 150,
+	y: 86,
+	width: 40,
+	height: 40,
+
+}
+const ei5 = {
+	x: 430,
+	y: 163,
+	width: 40,
+	height: 40,
+
+}
+const ei6 = {
+	x: 570,
+	y: 9,
+	width: 40,
+	height: 40,
+
+}
+
+
+
 
 // Ball object 
 // 1st stage 
@@ -347,7 +659,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveThiRight = function(){
 
 		   if(this.x + radius < canvas.width){
-				this.x += this.dx +118;
+				this.x += this.dx +111;
 		   }
 
 		  this.draw();
@@ -356,7 +668,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveThiDown = function(){
 		
 			if(this.y + radius < canvas.height){
-				this.y += this.dy +57;
+				this.y += this.dy +58.3;
 			}
 			
 		   this.draw();
@@ -367,7 +679,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveThiUp = function(){
 		
 			 if(this.y - radius > 0){
-				this.y -= this.dy +63;
+				this.y -= this.dy +58.3;
 			 }
 			
 		   this.draw();
@@ -379,7 +691,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveThiLeft = function(){
 		
 			if(this.x - radius > 0){
-				this.x -= this.dx +116;
+				this.x -= this.dx +111;
 			}
 			
 		   this.draw();
@@ -393,7 +705,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveFouRight = function(){
 
 		   if(this.x + radius < canvas.width){
-				this.x += this.dx +118;
+				this.x += this.dx +93.28;
 		   }
 
 		  this.draw();
@@ -402,7 +714,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveFouDown = function(){
 		
 			if(this.y + radius < canvas.height){
-				this.y += this.dy +57;
+				this.y += this.dy +58.83;
 			}
 			
 		   this.draw();
@@ -413,7 +725,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveFouUp = function(){
 		
 			 if(this.y - radius > 0){
-				this.y -= this.dy +63;
+				this.y -= this.dy +58.83;
 			 }
 			
 		   this.draw();
@@ -425,7 +737,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveFouLeft = function(){
 		
 			if(this.x - radius > 0){
-				this.x -= this.dx +116;
+				this.x -= this.dx +93.28;
 			}
 			
 		   this.draw();
@@ -439,7 +751,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveFivRight = function(){
 
 		   if(this.x + radius < canvas.width){
-				this.x += this.dx +118;
+				this.x += this.dx +135;
 		   }
 
 		  this.draw();
@@ -448,7 +760,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveFivDown = function(){
 		
 			if(this.y + radius < canvas.height){
-				this.y += this.dy +57;
+				this.y += this.dy +72.2;
 			}
 			
 		   this.draw();
@@ -459,7 +771,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveFivUp = function(){
 		
 			 if(this.y - radius > 0){
-				this.y -= this.dy +63;
+				this.y -= this.dy +72.2;
 			 }
 			
 		   this.draw();
@@ -471,7 +783,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveFivLeft = function(){
 		
 			if(this.x - radius > 0){
-				this.x -= this.dx +116;
+				this.x -= this.dx +135;
 			}
 			
 		   this.draw();
@@ -485,7 +797,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveSixRight = function(){
 
 		   if(this.x + radius < canvas.width){
-				this.x += this.dx +118;
+				this.x += this.dx +171.5;
 		   }
 
 		  this.draw();
@@ -494,7 +806,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveSixDown = function(){
 		
 			if(this.y + radius < canvas.height){
-				this.y += this.dy +57;
+				this.y += this.dy +92.5;
 			}
 			
 		   this.draw();
@@ -505,7 +817,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveSixUp = function(){
 		
 			 if(this.y - radius > 0){
-				this.y -= this.dy +63;
+				this.y -= this.dy +92.5;
 			 }
 			
 		   this.draw();
@@ -517,7 +829,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveSixLeft = function(){
 		
 			if(this.x - radius > 0){
-				this.x -= this.dx +116;
+				this.x -= this.dx +171.5;
 			}
 			
 		   this.draw();
@@ -531,7 +843,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveSevRight = function(){
 
 		   if(this.x + radius < canvas.width){
-				this.x += this.dx +118;
+				this.x += this.dx +79.95;
 		   }
 
 		  this.draw();
@@ -540,7 +852,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveSevDown = function(){
 		
 			if(this.y + radius < canvas.height){
-				this.y += this.dy +57;
+				this.y += this.dy +40.25;
 			}
 			
 		   this.draw();
@@ -551,7 +863,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveSevUp = function(){
 		
 			 if(this.y - radius > 0){
-				this.y -= this.dy +63;
+				this.y -= this.dy +40.25;
 			 }
 			
 		   this.draw();
@@ -563,7 +875,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveSevLeft = function(){
 		
 			if(this.x - radius > 0){
-				this.x -= this.dx +116;
+				this.x -= this.dx +79.95;
 			}
 			
 		   this.draw();
@@ -577,7 +889,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveEigRight = function(){
 
 		   if(this.x + radius < canvas.width){
-				this.x += this.dx +118;
+				this.x += this.dx +135.4;
 		   }
 
 		  this.draw();
@@ -586,7 +898,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveEigDown = function(){
 		
 			if(this.y + radius < canvas.height){
-				this.y += this.dy +57;
+				this.y += this.dy +72.2;
 			}
 			
 		   this.draw();
@@ -597,7 +909,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveEigUp = function(){
 		
 			 if(this.y - radius > 0){
-				this.y -= this.dy +63;
+				this.y -= this.dy +72.2;
 			 }
 			
 		   this.draw();
@@ -609,7 +921,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveEigLeft = function(){
 		
 			if(this.x - radius > 0){
-				this.x -= this.dx +116;
+				this.x -= this.dx +135.4;
 			}
 			
 		   this.draw();
@@ -623,7 +935,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveNinRight = function(){
 
 		   if(this.x + radius < canvas.width){
-				this.x += this.dx +118;
+				this.x += this.dx +93.2;
 		   }
 
 		  this.draw();
@@ -632,7 +944,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveNinDown = function(){
 		
 			if(this.y + radius < canvas.height){
-				this.y += this.dy +57;
+				this.y += this.dy +48.1;
 			}
 			
 		   this.draw();
@@ -643,7 +955,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveNinUp = function(){
 		
 			 if(this.y - radius > 0){
-				this.y -= this.dy +63;
+				this.y -= this.dy +48.1;
 			 }
 			
 		   this.draw();
@@ -655,7 +967,7 @@ function Ball(x, y, radius, dx, dy){
 	this.moveNinLeft = function(){
 		
 			if(this.x - radius > 0){
-				this.x -= this.dx +116;
+				this.x -= this.dx +93.2;
 			}
 			
 		   this.draw();
@@ -929,16 +1241,16 @@ function Wall(x, y, width, height){
 
 
 // Create walls and save it in an array
-// let wallArray = [
-// new Wall(0, 100, canvas.width - 150, 5),
-// new Wall(150, 200, canvas.width, 5),
-// new Wall(150, 200, 5, 125),
-// new Wall(250, canvas.height - 125, 5, 125),
-// new Wall(350, 200, 5, 125),
-// new Wall(450, canvas.height - 125, 5, 125),
-// new Wall(550, 200, 5, 125),
-// new Wall(650, canvas.height - 125, 5, 125)
-// ];
+let wallArray = [
+new Wall(0, 100, canvas.width - 150, 5),
+new Wall(150, 200, canvas.width, 5),
+new Wall(150, 200, 5, 125),
+new Wall(250, canvas.height - 125, 5, 125),
+new Wall(350, 200, 5, 125),
+new Wall(450, canvas.height - 125, 5, 125),
+new Wall(550, 200, 5, 125),
+new Wall(650, canvas.height - 125, 5, 125)
+];
 
 // Create the ball using the object 
 
@@ -946,7 +1258,7 @@ let ball = new Ball(50, 35, 20, 7, 7);
 let secondball=new Ball(50,35,20,7,7);
 let thirdball=new Ball(50,35,20,7,7);
 let fourthball=new Ball(50,35,20,7,7);
-let fivthball=new Ball(50,35,20,7,7);
+let fivthball=new Ball(50,43,25,7,7);
 let sixthball=new Ball(50,35,20,7,7);
 let seventhball=new Ball(50,35,20,7,7);
 let eighthball=new Ball(50,35,20,7,7);
@@ -969,138 +1281,151 @@ function RectCircleColliding(circle,rect){
     return (dx*dx+dy*dy<=(circle.radius*circle.radius));
 }
 
-// function wallsCheck(){
-	// if(RectCircleColliding(ball,imagesArr[0])){
-		// alert("You lost. Try Again!");
-		// document.location.reload();
-	// }
-	// if(RectCircleColliding(ball, imagesArr[1])){
-		// alert("You lost. Try Again!");
-		// document.location.reload();
-	// }
-	// if(RectCircleColliding(ball, imagesArr[2])){
-		// alert("You lost. Try Again!");
-		// document.location.reload();
-	// }
-	// if(RectCircleColliding(ball, imagesArr[3])){
-		// alert("You lost. Try Again!");
-		// document.location.reload();
-	// }
-	// if(RectCircleColliding(ball, imagesArr[4])){
-		// alert("You lost. Try Again!");
-		// document.location.reload();
-	// }
-	// if(RectCircleColliding(ball, imagesArr[5])){
-		// alert("You lost. Try Again!");
-		// document.location.reload();
-	// }
-	// if(RectCircleColliding(ball, wallArray[6])){
-		// alert("You lost. Try Again!");
-		// document.location.reload();
-	// }
-	// if(RectCircleColliding(ball, wallArray[7])){
-		// alert("You lost. Try Again!");
-		// document.location.reload();
-	// }
-// }
+function wallsCheck(){
+	if(RectCircleColliding(ball,wallArray[0])){
+		alert("You lost. Try Again!");
+		document.location.reload();
+	}
+	if(RectCircleColliding(ball, wallArray[1])){
+		alert("You lost. Try Again!");
+		document.location.reload();
+	}
+	if(RectCircleColliding(ball, wallArray[2])){
+		alert("You lost. Try Again!");
+		document.location.reload();
+	}
+	if(RectCircleColliding(ball, wallArray[3])){
+		alert("You lost. Try Again!");
+		document.location.reload();
+	}
+	if(RectCircleColliding(ball, wallArray[4])){
+		alert("You lost. Try Again!");
+		document.location.reload();
+	}
+	if(RectCircleColliding(ball, wallArray[5])){
+		alert("You lost. Try Again!");
+		document.location.reload();
+	}
+	if(RectCircleColliding(ball, wallArray[6])){
+		alert("You lost. Try Again!");
+		document.location.reload();
+	}
+	if(RectCircleColliding(ball, wallArray[7])){
+		alert("You lost. Try Again!");
+		document.location.reload();
+	}
+}
 
 // Check function if ball touchs goal square
 // for 1st stage 
 function goalCheck(count){
+
 	if(RectCircleColliding(ball, S1)){
 		if(alert('Alert For your User!')){}
-        else    window.location.reload();
+        else    
+			document.location.href="http://127.0.0.1:5000/";
 		//setTimeout( function ( ) { alert( "moo" ); }, 1000000 );
 		// if(confirm('Successful Message')){
         // window.location.reload();  
 
-		 //window.location.reload();
-	return count
-		
+		 //window.location.reload();		
 		
 	}
 	if(RectCircleColliding(ball, S2)){
 		if(alert('Alert For your User!')){}
-		 else    window.location.reload();
+		 else    
+			 document.location.href="http://127.0.0.1:5000/";
 
-        return count
+        
 		// document.location.reload();
 	}
 	if(RectCircleColliding(ball, S3)){
 		if(alert('Alert For your User!')){}
-		 else    window.location.reload();
+		 else    
+			 document.location.href="http://127.0.0.1:5000/";
 
-		return count
+		
 	
 		
 	}
 	if(RectCircleColliding(ball, S4)){
 		 if(alert('Alert For your User!')){}
-		 else    window.location.reload();
+		 else    
+			 document.location.href="http://127.0.0.1:5000/";
 
-		return count
+
 	
 	}
 	if(RectCircleColliding(ball, S5)){
 		 if(alert('Alert For your User!')){}
-		 else    window.location.reload();
+		 else    
+			 document.location.href="http://127.0.0.1:5000/";
 	
-		return count
+
 		
 	}
 	if(RectCircleColliding(ball, S6)){
          if(alert('Alert For your User!')){}
-		 else    window.location.reload();
-		return count
+		 else    
+			 document.location.href="http://127.0.0.1:5000/";
+	
 	
 	}
 	if(RectCircleColliding(ball, S7)){
 		 if(alert('Alert For your User!')){}
-		 else    window.location.reload();
+		 else    
+			 document.location.href="http://127.0.0.1:5000/";
 
-		return count
+		
 		
 	}
 	if(RectCircleColliding(ball, S8)){
 		 if(alert('Alert For your User!')){}
-		 else    window.location.reload();
-		  return count
+		 else    
+			 document.location.href="http://127.0.0.1:5000/";
+		 
 		
 	}
 	if(RectCircleColliding(ball, S9)){
 		 if(alert('Alert For your User!')){}
-		 else    window.location.reload();
-		return count
+		 else    
+			 document.location.href="http://127.0.0.1:5000/";
+	
 		
 	}
 	if(RectCircleColliding(ball, S10)){
 		 if(alert('Alert For your User!')){}
-		 else    window.location.reload();
-		return count
+		 else   
+			 document.location.href="http://127.0.0.1:5000/";
+	
 		
 	}
 	if(RectCircleColliding(ball, G1)){
 	     if(alert('Alert For your User!')){}
-		 else    window.location.reload();
-		return count
+		 else    
+			 document.location.href="http://127.0.0.1:5000/";
+		
 	    		
 		// document.location.reload();
 	}
 	
 	if(RectCircleColliding(ball, G3)){
 		 if(alert('Alert For your User!')){}
-		 else    window.location.reload();
-		return count
+		 else    
+			 document.location.href="http://127.0.0.1:5000/";
+		
 		
 	}
 	if(RectCircleColliding(ball, G5)){
 	     // if(alert('Alert For your User!')){count=count+1}
-		 // else   { 
+		 // else   {
+		 var data;
+		 data=1;
+         $.post("get_stage",{javascript_data: data
+	     });		 
 		 document.location.href="http://127.0.0.1:5000/";
 		 // count=count+1
 		 // stage_count=stage_count+1
-	 
-	   	return count
 	}
 }
 
@@ -1128,43 +1453,42 @@ function goalCheck(count){
 	if(RectCircleColliding(secondball, se4)){
 		alert("YOU LOST");
 		
-		return count
+	
 		document.location.reload();
 	}
 	if(RectCircleColliding(secondball, se5)){
 		alert("YOU LOST");
 	
-		return count
+	
 		document.location.reload();
 	}
 	if(RectCircleColliding(secondball, se6)){
 		alert("YOU LOST");
 	
-		return count
+	
 		document.location.reload();
 	}
 	if(RectCircleColliding(secondball, se7)){
 		alert("YOU LOST");
 	
-		return count
+	
 		document.location.reload();
 	}
 	if(RectCircleColliding(secondball, se8)){
 		alert("YOU LOST");
 	
-		return count
 		document.location.reload();
 	}
 	if(RectCircleColliding(secondball, se9)){
 		alert("YOU LOST");
 	
-		return count
+
 		document.location.reload();
 	}
 	if(RectCircleColliding(secondball, se10)){
 		alert("YOU LOST");
 	
-		return count
+
 		document.location.reload();
 	}
 	if(RectCircleColliding(secondball, se11)){
@@ -1304,7 +1628,8 @@ function start(){
 	 c.clearRect(0, 0, innerWidth, innerHeight);
 	drawBoard();
     ball.draw();
-    //stage_count=goalCheck(stage_count);
+	//wallsCheck();
+    goalCheck(stage_count);
    
 
    // drawBoard_forSecondStage();
@@ -1793,9 +2118,9 @@ function startfivth(){
 	  	  // context.globalAlpha = 1.0;
 	  // context.globalAlpha = 0.5;
       context.drawImage(base_image, 450, 241,100,75);
-	  	 child = new Image();
+	  child = new Image();
 	  child.src = './static/images/f.jpg';
- context.globalAlpha = 1.0;
+      context.globalAlpha = 1.0;
 	  context.globalAlpha = 0.5;
       context.drawImage(child, 450, 320,100,75);
 	   context.globalAlpha = 1.0;
@@ -1845,7 +2170,7 @@ function startsixth(){
   function make_base_for6stage()
 	  {
 	  base_image = new Image();
-	  base_image.src = '/static/images/d.jpg';
+	  base_image.src = '/static/images/10.jpg';
 	  context.globalAlpha = 0.5;
       context.drawImage(base_image, 0, 0,745,420);
 	  context.globalAlpha = 1.0;
@@ -1862,14 +2187,14 @@ function startsixth(){
        context.drawImage(base_image, 580, 120,80,60);
 	  // // context.globalAlpha = 1.0;
 	  // // context.globalAlpha = 0.5;
-             context.drawImage(base_image, 580, 220,80,60);
-			              context.drawImage(base_image, 400, 220,80,60);
+       context.drawImage(base_image, 580, 220,80,60);
+	   context.drawImage(base_image, 400, 220,80,60);
 
 
 	
 	  	 child = new Image();
 	   child.src = './static/images/c.png';
- context.drawImage(child, 580, 320,80,60);
+       context.drawImage(child, 580, 320,80,60);
 	
 	  }
 	 
@@ -1922,11 +2247,11 @@ function startseventh(){
 	  function make_child_for7stage()
 	  {
 		  base_image = new Image();
-	  base_image.src = '/static/images/stop.png';
+	    base_image.src = '/static/images/stop.png';
 	 
-      context.drawImage(base_image, 30,70,40,20);
+        context.drawImage(base_image, 30,70,40,20);
 	    
-       context.drawImage(base_image, 30,166,40,20);
+        context.drawImage(base_image, 30,166,40,20);
 	    context.drawImage(base_image, 117,166,40,20);
 		context.drawImage(base_image, 117,214,40,20);
 
@@ -1937,67 +2262,33 @@ function startseventh(){
 		context.drawImage(base_image, 204,25,40,20);
 		context.drawImage(base_image, 291,115,40,20);
 				  
-	 
 
-	
-	  	 child = new Image();
+	   child = new Image();
 	   child.src = './static/images/work.jpeg';
 	      // context.globalAlpha = 1.0;
 	  // context.globalAlpha = 0.5;
- context.drawImage(child, 98,248,80,45);
-    // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
-  chi = new Image();
+       context.drawImage(child, 98,248,80,45);
+       chi = new Image();
 	   chi.src = './static/images/icece.png';
-	   // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
-	      context.drawImage(chi, 185,155,80,40);
-		  // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
-	  ch = new Image();
+	   context.drawImage(chi, 185,155,80,40);
+	   ch = new Image();
 	   ch.src = './static/images/sick.png';
-	   // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
-	      context.drawImage(ch, 185,299,80,40);
-		  // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
+	   context.drawImage(ch, 185,299,80,40);
 	   ch = new Image();
 	   ch.src = './static/images/ted.jpeg';
-	   // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
-	      context.drawImage(ch, 185,108,80,40);
-		  // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
-	    ch = new Image();
+	   context.drawImage(ch, 185,108,80,40);
+	   ch = new Image();
 	   ch.src = './static/images/c.png';
-	   // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
-	      context.drawImage(ch, 278,16,80,40);
-		  // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
-	    ch = new Image();
+	   context.drawImage(ch, 278,16,80,40);
+	   ch = new Image();
 	   ch.src = './static/images/fb.png';
-	   // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
-	      context.drawImage(ch, 624,60,80,40);
-		  // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
-	  ch = new Image();
+	   context.drawImage(ch, 624,60,80,40);
+	   ch = new Image();
 	   ch.src = './static/images/rb.jpg';
-	   // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
-	      context.drawImage(ch, 446,253,80,40);
-		  // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
+	   context.drawImage(ch, 446,253,80,40);
 	   ch = new Image();
 	   ch.src = './static/images/cry.jpg';
-	   // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
-	      context.drawImage(ch, 533,301,80,40);
-		  // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
-	  
-
+	   context.drawImage(ch, 533,301,80,40);
 
 	
 	  }
@@ -2415,6 +2706,11 @@ function stagesecondcall(){
 	console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
 	
 }
+//...................................................................................................................................
+
+
+
+
 
 // Event that check if keys are pressed
 document.addEventListener('keydown', (e) => {
