@@ -151,11 +151,12 @@ canvas{
      <category name="Loops" colour="120">
 	       <block type="controls_whileUntil"></block>
 	 	   <block type="controls_for"></block>
-	 	   <block type="controls_repeat_ext"></block>
+	 	   <block type="repeat"></block>
      </category>
 	 <category name="Math" colour="230">
-	    <block type="math_number"></block>
-		<block type="math_arithmetic">
+	    <block type="number"></block>
+	    <!-- <block type="account_number"></block> -->
+		<block type="math_arithmetic"></block>
 	 </category>
      <category name="Colour" colour="20">
 	     <block type="colour_blend"></block>
@@ -183,7 +184,7 @@ canvas{
     var code = Blockly.JavaScript.workspaceToCode(blockyWorkspace);
     alert(code);
 	
-	console.log(code);
+	//console.log(code);
 	function doWork() {
 	//ajax the JSON to the server
 	$.post("get_data",{javascript_data: code
@@ -197,8 +198,8 @@ canvas{
     var runButton = document.getElementById("runButton");
     runButton.addEventListener("click", function(){
       var code = Blockly.JavaScript.workspaceToCode(blockyWorkspace);
-     // console.log(code[0]); 
-	  //alert(code);
+     console.log(code[28]); 
+	  alert(code);
       try {
         eval(code);
       } catch (e) {

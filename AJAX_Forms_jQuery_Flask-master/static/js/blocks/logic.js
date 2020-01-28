@@ -29,6 +29,14 @@
  */
 'use strict';
 
+//goog.require('Blockly.FieldDropdown');
+// goog.require('Blockly.FieldLabel');
+// goog.require('Blockly.FieldNumber');
+// goog.require('Blockly.FieldVariable');
+// goog.require('Blockly.Warning');
+
+
+
 goog.provide('Blockly.Blocks.logic');  // Deprecated
 goog.provide('Blockly.Constants.Logic');
 
@@ -62,22 +70,26 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "tooltip": "%{BKY_LOGIC_BOOLEAN_TOOLTIP}",      
     "helpUrl": "%{BKY_LOGIC_BOOLEAN_HELPURL}"
   },
-  // block for repeatig commands
-  {
-  "type": "controls_repeat_ext",
-  "message0": "repeat %1 times",
-  "args0": [
-    {"type": "input_value", "name": "TIMES", "check": "Number"}
-  ],
-  "message1": "do %1",
-  "args1": [
-    {"type": "input_statement", "name": "DO"}
-  ],
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 120
- },
-  
+
+   {
+    "type": "controls_repeat_ext",
+    "message0": "%{BKY_CONTROLS_REPEAT_TITLE}",
+    "args0": [{
+      "type": "input_value",
+      "name": "TIMES",
+      "check": "Number"
+    }],
+    "message1": "%{BKY_CONTROLS_REPEAT_INPUT_DO} %1",
+    "args1": [{
+      "type": "input_statement",
+      "name": "DO"
+    }],
+    "previousStatement": null,
+    "nextStatement": null,
+    "style": "loop_blocks",
+    "tooltip": "%{BKY_CONTROLS_REPEAT_TOOLTIP}",
+    "helpUrl": "%{BKY_CONTROLS_REPEAT_HELPURL}"
+  },
   // Block for if/elseif/else condition.
   {
     "type": "controls_if",

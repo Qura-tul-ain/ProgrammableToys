@@ -115,6 +115,69 @@ Blockly.Blocks['move_TeacherDown'] = {
    this.setHelpUrl('http://www.example.com/');
   }
 };
+Blockly.Blocks['repeat'] = {
+  init: function() {
+    this.jsonInit({
+    "type": "controls_repeat_ext",
+    "message0": "%{BKY_CONTROLS_REPEAT_TITLE}",
+    "args0": [{
+      "type": "input_value",
+      "name": "TIMES",
+      "check": "Number"
+    }],
+    "message1": "%{BKY_CONTROLS_REPEAT_INPUT_DO} %1",
+    "args1": [{
+      "type": "input_statement",
+      "name": "DO"
+    }],
+    "previousStatement": null,
+    "nextStatement": null,
+    "style": "loop_blocks",
+    "tooltip": "%{BKY_CONTROLS_REPEAT_TOOLTIP}",
+    "helpUrl": "%{BKY_CONTROLS_REPEAT_HELPURL}"
+  });
+  
+  }
+};
+Blockly.Blocks['account_number'] = {
+  // Other type.
+  init: function() {
+    this.jsonInit({
+      "message0": " vh%2",
+      "args0": [{"type": "field_input", "name": "TYPE", "text": ""}],
+      "output": "Type",
+      "colour": 320,
+	
+      "tooltip": "Custom type to allow.",
+      "helpUrl": "https://www.youtube.com/watch?v=s2_xaEvcVI0#t=702"
+    });
+  }
+};
+
+Blockly.Blocks['number'] = {
+  init: function() {
+	  this.jsonInit({
+  
+	 "message0": " %1",
+     "args0": [{"type": "field_input", "name": "TYPE", "text" : ""}],
+     "output": "Number",
+     "colour": 120,
+	 
+      "tooltip": " ",
+	  "helpUrl": "http://www.example.com/'"
+ 
+ 
+ });
+	
+    // this.appendDummyInput()
+        // .appendField()
+        // .appendField(new Blockly.FieldTextInput('0'),
+            // 'FIELDNAME');
+    // this.setTooltip('Delay specific time');
+	// this.setColour(290);
+    // this.setOutput(true, 'Number');
+  }
+};
 
 
 Blockly.Blocks['move_Forward'] = {

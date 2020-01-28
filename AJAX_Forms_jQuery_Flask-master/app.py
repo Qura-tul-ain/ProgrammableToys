@@ -104,131 +104,132 @@ app = Flask(__name__)
 ##        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
 
 
-##
-##@app.route('/StageOne',methods=['GET','POST'])
-##def StageOne():
-##        number=1
-##        return render_template('blockly.html',number=number)
-##
-##@app.route('/StageTwo',methods=['GET','POST'])
-##def StageTwo():
-##        number=2
-##        return render_template('blockly.html',number=number)
-##
-##@app.route('/StageThree',methods=['GET','POST'])
-##def StageThree():
-##        number=3
-##        return render_template('blockly.html',number=number)
-##
-##@app.route('/StageFour',methods=['GET','POST'])
-##def StageFour():
-##        number=4
-##        return render_template('blockly.html',number=number)
-##
-##@app.route('/StageFive',methods=['GET','POST'])
-##def StageFive():
-##        number=5
-##        return render_template('blockly.html',number=number)
-##
-##@app.route('/StageSix',methods=['GET','POST'])
-##def StageSix():
-##        number=6
-##        return render_template('blockly.html',number=number)
-##
-##@app.route('/StageSeven',methods=['GET','POST'])
-##def StageSeven():
-##        number=7
-##        return render_template('blockly.html',number=number)
-##
-##@app.route('/StageEight',methods=['GET','POST'])
-##def StageEight():
-##        number=8
-##        return render_template('blockly.html',number=number)
-##
-##@app.route('/StageNine',methods=['GET','POST'])
-##def StageNine():
-##        number=9
-##        return render_template('blockly.html',number=number)
-##
-##
-##@app.route('/StageTen',methods=['GET','POST'])
-##def StageTen():
-##        number=10
-##        return render_template('blockly.html',number=number)
-##
-##
-##@app.route('/get_stage',methods=['GET','POST'])
-##def getstageone():
-####        
-####        data=request.form['javascript_data']
-####        data = request.get_json()
-####        print(data)
-##        data='1'
-##     
-##        return render_template('homepage.html',data=data)
-##
+
+@app.route('/StageOne',methods=['GET','POST'])
+def StageOne():
+        number=1
+        return render_template('blockly.html',number=number)
+
+@app.route('/StageTwo',methods=['GET','POST'])
+def StageTwo():
+        number=2
+        return render_template('blockly.html',number=number)
+
+@app.route('/StageThree',methods=['GET','POST'])
+def StageThree():
+        number=3
+        return render_template('blockly.html',number=number)
+
+@app.route('/StageFour',methods=['GET','POST'])
+def StageFour():
+        number=4
+        return render_template('blockly.html',number=number)
+
+@app.route('/StageFive',methods=['GET','POST'])
+def StageFive():
+        number=5
+        return render_template('blockly.html',number=number)
+
+@app.route('/StageSix',methods=['GET','POST'])
+def StageSix():
+        number=6
+        return render_template('blockly.html',number=number)
+
+@app.route('/StageSeven',methods=['GET','POST'])
+def StageSeven():
+        number=7
+        return render_template('blockly.html',number=number)
+
+@app.route('/StageEight',methods=['GET','POST'])
+def StageEight():
+        number=8
+        return render_template('blockly.html',number=number)
+
+@app.route('/StageNine',methods=['GET','POST'])
+def StageNine():
+        number=9
+        return render_template('blockly.html',number=number)
+
+
+@app.route('/StageTen',methods=['GET','POST'])
+def StageTen():
+        number=10
+        return render_template('blockly.html',number=number)
+
+
+@app.route('/get_stage',methods=['GET','POST'])
+def getstageone():
+##        
+##        data=request.form['javascript_data']
+##        data = request.get_json()
+##        print(data)
+        data='1'
+     
+        return render_template('homepage.html',data=data)
+
 ####read rows and columns from file
 
 
         
 @app.route('/')
 def index():
-        filename="file.txt"
-        numlines=0
-        columns=0
-        count=0
-        #calculate number of rows
-        with open(filename,'r') as file:
-                for line in file:
-                        numlines += 1
-        #calculate number of columns            
-        with open(filename) as f:
-                line = f.readline()
-                columns=len(line.split())
-
-       # read position from file where B(hurdles) is present 
-       # i and j will use to get row and column of that row
-        RowIndexofhurdles=[]
-        ColIndexofhurdles=[]
-        listofImages=[]
-        rowIndexofImages=[]
-        colIndexofImages=[]
-        with open(filename,'r') as file:
-                i=0 # row no
-                text = file.readlines()# list of lines
-                for line in text:
-                     
-                        j=1 #column no
-                        words=line.split()# words of first list
-                        
-                        for word in words:
-                                
-                                
-                                 if word == 'B':
-                                         RowIndexofhurdles.append(i) # get row that has B in it
-                                         ColIndexofhurdles.append(j)# get col of that row
-                                         count+=1
-                                
-                                 elif word != 'O' and word !='B' and word !='G':
-                                         listofImages.append(word)
-                                         rowIndexofImages.append(i)
-                                         colIndexofImages.append(j)
-                                 j+=1       
-       
-                        i+=1
-                    
-
-        # save imags in list to load them
-       
-
-
-
-        
-        listdata = {'columns': columns, 'rows': numlines-1, 'hurdlerowposition':RowIndexofhurdles, 'hurdlecolposition':ColIndexofhurdles,'imagelist':listofImages,'imagerowlist':rowIndexofImages,'imagecollist':colIndexofImages}
-        print(numlines,columns,count,RowIndexofhurdles,ColIndexofhurdles)
-       # print(listofImages,rowIndexofImages,colIndexofImages)  
-        return render_template('scenarioFromFile.html',listdata=listdata)
-
+##        filename="file.txt"
+##        numlines=0
+##        columns=0
+##        count=0
+##        #calculate number of rows
+##        with open(filename,'r') as file:
+##                for line in file:
+##                        numlines += 1
+##        #calculate number of columns            
+##        with open(filename) as f:
+##                line = f.readline()
+##                columns=len(line.split())
+##
+##       # read position from file where B(hurdles) is present 
+##       # i and j will use to get row and column of that row
+##        RowIndexofhurdles=[]
+##        ColIndexofhurdles=[]
+##        listofImages=[]
+##        rowIndexofImages=[]
+##        colIndexofImages=[]
+##        with open(filename,'r') as file:
+##                i=0 # row no
+##                text = file.readlines()# list of lines
+##                for line in text:
+##                     
+##                        j=1 #column no
+##                        words=line.split()# words of first list
+##                        
+##                        for word in words:
+##                                
+##                                
+##                                 if word == 'B':
+##                                         RowIndexofhurdles.append(i) # get row that has B in it
+##                                         ColIndexofhurdles.append(j)# get col of that row
+##                                         count+=1
+##                                
+##                                 elif word != 'O' and word !='B' and word !='G':
+##                                         listofImages.append(word)
+##                                         rowIndexofImages.append(i)
+##                                         colIndexofImages.append(j)
+##                                 j+=1       
+##       
+##                        i+=1
+##                    
+##
+##        # save imags in list to load them
+##       
+##
+##
+##
+##        
+##        listdata = {'columns': columns, 'rows': numlines-1, 'hurdlerowposition':RowIndexofhurdles, 'hurdlecolposition':ColIndexofhurdles,'imagelist':listofImages,'imagerowlist':rowIndexofImages,'imagecollist':colIndexofImages}
+##        print(numlines,columns,count,RowIndexofhurdles,ColIndexofhurdles)
+##       # print(listofImages,rowIndexofImages,colIndexofImages)  
+##        return render_template('scenarioFromFile.html',listdata=listdata)
+##
+         return render_template('homepage.html')
 
 if __name__ == '__main__':
 	app.run()

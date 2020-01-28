@@ -564,7 +564,7 @@ function Ball(x, y, radius, dx, dy){
 		c.fill();
 		c.stroke();
 		c.closePath();
-	    console.log("hahaha");
+	    //console.log("hahaha");
 	}
 
 	this.moveRight = function(){
@@ -1026,8 +1026,19 @@ function Ball(x, y, radius, dx, dy){
 function callfunctionDown(){
 	console.log(stage_count);
 	if(stage_count ==1){
-			
-		ball.moveDown();
+		setTimeout(function(){ ball.moveDown(); },1500);
+		// function makeSlection(cat) {
+			 // // drawBoard();
+	       // setInterval(function(){ pelay(cat); },1500);
+	     // }
+
+	    // function pelay(cate){
+	     // // ball.moveUp();
+		   // ball.moveDown();
+	     // }
+	// makeSlection('foo');
+console.log("button");	
+		
 
 	  }
 	  else if(stage_count==2){
@@ -1069,11 +1080,14 @@ function callfunctionDown(){
 		  }	
 }
 function callfunctionUp(){
+	
+	
+	
 	if(stage_count ==1){
-			 // drawBoard();
-	   ball.moveUp();
+		
+	    ball.moveUp();
 			
-		  }
+  }
 	else if(stage_count==2){
 	   secondball.moveSecUp();
 	   console.log(stage_count);
@@ -1629,7 +1643,7 @@ function start(){
 	drawBoard();
     ball.draw();
 	//wallsCheck();
-    goalCheck(stage_count);
+   // goalCheck(stage_count);
    
 
    // drawBoard_forSecondStage();

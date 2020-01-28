@@ -59,17 +59,13 @@ Blockly.JavaScript['move_Up'] = function(block) {
 Blockly.JavaScript['move_Right'] = function(block) {
 	var msg;
 	msg="Right";
-	 function makeSlection(cat) {
-    //alert('hello im inside makeselection function');
-    setTimeout(function(){ pelay(cat); },1500);
-	}
-
-	function pelay(cate){
-	    callfunctionRight();
+	 setInterval(function (){
+		 callfunctionRight();
+	 },100000);
+     //setTimeout(callfunctionRight,100000);
+	//callfunctionRight();
 		
-	}
 
-	makeSlection('foo');
     return msg + "\n";
 
   
@@ -81,7 +77,7 @@ Blockly.JavaScript['move_Down'] = function(block) {
 	//alert(msg);
   function makeSlection(cat) {
     //alert('hello im inside makeselection function');
-    setTimeout(function(){ pelay(cat); },1500);
+    setTimeout(function(){ pelay(cat); },5500);
 }
 
 	function pelay(cate){
@@ -196,12 +192,46 @@ Blockly.JavaScript['move_TeacherDown'] = function(block) {
   
  };
  
+ Blockly.JavaScript['repeat'] = function(block) {
+  // Repeat n times.
+  console.log("looooop");
+  // if (block.getField('TIMES')) {
+    // // Internal number.
+     var repeats = block.getFieldValue('TIMES');
+	 var code = block.getFieldValue('Number');
+  // } else {
+    // // External number.
+    // var repeats = Blockly.JavaScript.valueToCode(block, 'TIMES',
+        // Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
+  // }
+  // var branch = Blockly.JavaScript.statementToCode(block, 'DO');
+  // branch = Blockly.JavaScript.addLoopTrap(branch, block);
+  // var code = '';
+  // var loopVar = Blockly.JavaScript.variableDB_.getDistinctName(
+      // 'count', Blockly.VARIABLE_CATEGORY_NAME);
+  // var endVar = repeats;
+  // if (!repeats.match(/^\w+$/) && !Blockly.isNumber(repeats)) {
+    // endVar = Blockly.JavaScript.variableDB_.getDistinctName(
+        // 'repeat_end', Blockly.VARIABLE_CATEGORY_NAME);
+    // code += 'var ' + endVar + ' = ' + repeats + ';\n';
+  // }
+  // code += 'for (var ' + loopVar + ' = 0; ' +
+      // loopVar + ' < ' + endVar + '; ' +
+      // loopVar + '++) {\n' +
+      // branch + '}\n';
+ console.log(repeats);
+console.log(code);
+  return code;
+};
  
  
- Blockly.JavaScript['controls_repeat_ext'] = function(block) {
-	var  no=block.getFieldValue('TIMES');
-	console.log(no);
- };
+ 
+ Blockly.JavaScript['number'] = function(block) {
+    var code = block.getFieldValue('TYPE');
+	console.log(code);
+    return code;
+}
+
  
 Blockly.JavaScript['controls_if'] = function(block) {
   // If/elseif/else condition.
