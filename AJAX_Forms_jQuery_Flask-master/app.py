@@ -11,7 +11,7 @@ app = Flask(__name__)
 # First we will get data from js file then store data in word
 # replace spaces with 1
 # apply condition base on 1 ,seprate the words(up,right,down...)
-# and then store in final array after reversing .
+### and then store in final array after reversing .
 ##@app.route('/get_data', methods=['GET','POST'])
 ##def data():
 ##    data=request.form['javascript_data']
@@ -84,25 +84,45 @@ app = Flask(__name__)
 ##
 ##
 ###move down_left				
-###@app.route('/left',methods=['GET','POST'])		
+##@app.route('/left',methods=['GET','POST'])		
 ##def Left(robot):
 ##        
 ##       #Drive forwards for 150 millimeters at 50 millimeters-per-second.
 ##        #robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
 ##        robot.turn_in_place(degrees(-90)).wait_for_completed()
-##        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()	
+##        robot.drive_straight(distance_mm(100), speed_mmps(50)).wait_for_completed()	
+##
+##
+###move down_left				
+##@app.route('/Up',methods=['GET','POST'])		
+##def Left(robot):
+##        
+##       #Drive forwards for 150 millimeters at 50 millimeters-per-second.
+##        #robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
+##        robot.turn_in_place(degrees(90)).wait_for_completed()
+##        robot.drive_straight(distance_mm(100), speed_mmps(50)).wait_for_completed()	
+##
+##
+###move down_left				
+##@app.route('/down',methods=['GET','POST'])		
+##def Left(robot):
+##        
+##       #Drive forwards for 150 millimeters at 50 millimeters-per-second.
+##        #robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
+##        robot.turn_in_place(degrees(-270)).wait_for_completed()
+##        robot.drive_straight(distance_mm(100), speed_mmps(50)).wait_for_completed()	
 ##
 ##
 ##
 ###move down_right
-###@app.route('/right',methods=['GET','POST'])
+##@app.route('/right',methods=['GET','POST'])
 ##def Right(robot: cozmo.robot.Robot):
 ##     # Drive forwards for 150 millimeters at 50 millimeters-per-second.
 ## 
 ##        #robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-##        robot.turn_in_place(degrees(90)).wait_for_completed()
-##        robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
-
+##        robot.turn_in_place(degrees(360)).wait_for_completed()
+##        robot.drive_straight(distance_mm(100), speed_mmps(50)).wait_for_completed()
+##
 
 
 @app.route('/StageOne',methods=['GET','POST'])
