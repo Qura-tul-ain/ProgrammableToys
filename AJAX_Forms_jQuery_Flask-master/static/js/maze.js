@@ -1,4 +1,11 @@
+
+document.getElementById("canvas").style.marginLeft = "auto";
+document.getElementById("canvas").style.marginRight = "auto";
+document.getElementById("canvas").style.marginTop = 155;
 var canvas = document.getElementById("canvas");
+
+canvas.style.display= 'block';
+
 canvas.width = 710;
 canvas.height = 415;
 

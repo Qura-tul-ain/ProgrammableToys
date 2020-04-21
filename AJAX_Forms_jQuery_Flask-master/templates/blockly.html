@@ -88,27 +88,21 @@ canvas{
   
 </head>
 <body>
+<center><h1 style="font-family:verdana;padding: 1em; background-color: #005544;color: white;" align="center">Programmable Toys To Teach Programming To Kids</h1></center>
+
   <p id="call"></p>
 
-  <button id="dartButton">Dart</button>
-  <button id="javascriptButton">Javascript</button>
-  <button id="runButton"  style="background-color: red;">Run</button>
-<!-- <img src="{{url_for('static', filename='stop.png')}}" -->
-
- 
-   <!-- <form  action="http://127.0.0.1:5000/cozmo_program" method="post"> -->
-  <!-- <button id="Button" type="submit" style="background-color: red;">Cozmo</button> -->
-   <!-- </form> -->
-  <!-- split the screen -->
-  <!-- <div class="split left"> -->
+ <button style=" background-color: #4CAF50;border: none; color: white;margin-left:10px; padding: 10px 32px; text-align: center; text-decoration: none;display: inline-block; font-size: 16px;" id="dartButton">Script</button>
+ <button style=" background-color: #008CBA;border: none; color: white; margin-left:10px;padding: 10px 32px; text-align: center; text-decoration: none;display: inline-block; font-size: 16px;"  id="javascriptButton">Run Cozmo</button>
+ <button id="runButton"  style=" background-color: #f44336 ;border: none; margin-left:10px;color: white; padding: 10px 32px; text-align: center; text-decoration: none;display: inline-block; font-size: 16px;" >Run on Screen</button>
      
   <!-- </div> -->
-   <div  id="blocklyDiv" style="width:50%;height:50%" ></div>
-   <div class ="split right">
+   <div  id="blocklyDiv" style="width:50%;height:50%;border:2px solid #000000;margin-left:10px;margin-top:5px" ></div>
+   <div class ="split right" style="width:50%;height:100%" >
     
      <div>
 <br>
-	  <canvas id="canvas" style="background: #fff;magrin-left:30px;"></canvas>
+	  <canvas id="canvas" style="border:2px solid #000000;"></canvas>
      <!-- <img src="{{url_for('static', filename='stop.png')}}" /> -->
 	  <!-- <img src="static/stop.png" /> -->
 	
@@ -116,18 +110,18 @@ canvas{
 	  
      </div>
 	 
-	 <div>
-	   <button id="moveright" onclick="callfunctionRight()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Right</button>
+	  <!--  <div  style="margin-left:80px">
+	   <button  id="moveright" onclick="callfunctionRight()" style="width:30px;background-color: #4CAF50;border: none; color: white; padding: 15px 42px; text-align: center; text-decoration: none;display: inline-block; font-size: 16px">Right</button>
 	
 	
-	   <button id="moveup" onclick="callfunctionUp()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Up</button>
+	   <button id="moveup" onclick="callfunctionUp()" style="background-color: #4CAF50;border: none; color: white; padding: 15px 42px; text-align: center; text-decoration: none;display: inline-block; font-size: 16px">Up</button>
 	 
-	   <button id="movedown" onclick="callfunctionDown()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Down</button>
-	   <!-- <button id="movedown" onclick="callfunction()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Down</button> -->
+	   <button id="movedown" onclick="callfunctionDown()" style="background-color: #4CAF50;border: none; color: white; padding: 15px 42px; text-align: center; text-decoration: none;display: inline-block; font-size: 16px">Down</button>
+	   <!-- <button id="movedown" onclick="callfunction()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Down</button> 
 	
-	   <button id="moveleft" onclick="callfunctionLeft()" style="width:70px;height:30px;padding-left:10px;background-color:blue;color:white">Left</button>
-	 </div>
-	   <!-- <button id="1" onClick="reply_click(this.id)">B1</button> -->
+	   <button id="moveleft" onclick="callfunctionLeft()" style="background-color: #4CAF50;border: none; color: white; padding: 15px 42px; text-align: center; text-decoration: none;display: inline-block; font-size: 16px">Left</button>
+	 </div>-->
+	
   </div>
 
   <xml id="toolbox" style="display: none; background-color:black">
@@ -248,6 +242,6 @@ canvas{
   
   </script>
   <br>
-  <b><a href="http://127.0.0.1:5000/">Back To HomePage</a></b>
+  <h2 style="margin-left:30px"><a href="http://127.0.0.1:5000/">Back To HomePage</a></h2>
 </body>
 </html>
