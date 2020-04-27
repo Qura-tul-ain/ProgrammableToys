@@ -188,8 +188,17 @@ def getstageone():
         return render_template('homepage.html',data=data)
 
 ####read rows and columns from file
+@app.route('/homepage',methods=['GET','POST'])
+def gethome():
+        data='2'
+       
+        return render_template('homepage.html',data=data)
 
-
+@app.route('/Teacherinterface',methods=['GET','POST'])
+def getteacher():
+        data='3'
+       
+        return render_template('Teacherinterface.html',data=data)
         
 @app.route('/')
 def index():
@@ -249,7 +258,7 @@ def index():
 ##       # print(listofImages,rowIndexofImages,colIndexofImages)  
 ##        return render_template('scenarioFromFile.html',listdata=listdata)
 ##
-         return render_template('homepage.html')
+         return render_template('home.html')
 
 if __name__ == '__main__':
 	app.run()
