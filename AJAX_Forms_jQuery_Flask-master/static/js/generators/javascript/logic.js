@@ -39,17 +39,9 @@ document.head.appendChild(importtwo);
 Blockly.JavaScript['move_Up'] = function(block) {
 	var msg;
 	msg="Up";
-
-	 function makeSlection(cat) {
-    //alert('hello im inside makeselection function');
-    setTimeout(function(){ pelay(cat); },1500);
-	}
-
-	function pelay(cate){
-	     // ball.moveUp();
+    setTimeout(function (){
 		 callfunctionUp();
-	}
-	makeSlection('foo');
+	 },50000);
 	
     return msg + "\n";
 		
@@ -59,11 +51,8 @@ Blockly.JavaScript['move_Up'] = function(block) {
 Blockly.JavaScript['move_Right'] = function(block) {
 	var msg;
 	msg="Right";
-	 setInterval(function (){
-		 callfunctionRight();
-	 },100000);
-     //setTimeout(callfunctionRight,100000);
-	//callfunctionRight();
+	 setTimeout(
+		 callfunctionRight, 20000);
 		
 
     return msg + "\n";
@@ -73,39 +62,16 @@ Blockly.JavaScript['move_Right'] = function(block) {
 Blockly.JavaScript['move_Down'] = function(block) {
 	var msg;
 	msg="down";
-	//console.log("rigjt");
-	//alert(msg);
-  function makeSlection(cat) {
-    //alert('hello im inside makeselection function');
-    setTimeout(function(){ pelay(cat); },5500);
-}
 
-	function pelay(cate){
-		callfunctionDown();
-	}
-	
-	makeSlection('foo');
-    return msg + "\n";
-  // ball.moveRight();
+   setTimeout( callfunctionDown,20000);
   
  };
  Blockly.JavaScript['move_Left'] = function(block) {
 	var msg;
 	msg="left";
-	//console.log("rigjt");
-	//alert(msg);
-	 function makeSlection(cat) {
-    //alert('hello im inside makeselection function');
-    setTimeout(function(){ pelay(cat); },1500);
-      }
-
-	function pelay(cate){
-	     callfunctionLeft();
-		
-	}
-	
-	makeSlection('foo');
-	
+ setTimeout(function (){
+		 callfunctionLeft();
+	 },20000);
     return msg + "\n";
   // ball.moveRight();
   
@@ -119,7 +85,7 @@ Blockly.JavaScript['move_TeacherUp'] = function(block) {
 
 	 function makeSlection(cat) {
     //alert('hello im inside makeselection function');
-    setTimeout(function(){ pelay(cat); },1500);
+    setTimeout(function(){ pelay(cat); },5000);
 	}
 
 	function pelay(cate){
@@ -138,7 +104,7 @@ Blockly.JavaScript['move_TeacherRight'] = function(block) {
 	msg="Right";
 	 function makeSlection(cat) {
     //alert('hello im inside makeselection function');
-    setTimeout(function(){ pelay(cat); },1500);
+    setTimeout(function(){ pelay(cat); },5000);
 	}
 
 	function pelay(cate){
@@ -158,7 +124,7 @@ Blockly.JavaScript['move_TeacherDown'] = function(block) {
 	//alert(msg);
   function makeSlection(cat) {
     //alert('hello im inside makeselection function');
-    setTimeout(function(){ pelay(cat); },1500);
+    setTimeout(function(){ pelay(cat); },5000);
 }
 
 	function pelay(cate){
@@ -177,7 +143,7 @@ Blockly.JavaScript['move_TeacherDown'] = function(block) {
 	//alert(msg);
 	 function makeSlection(cat) {
     //alert('hello im inside makeselection function');
-    setTimeout(function(){ pelay(cat); },1500);
+    setTimeout(function(){ pelay(cat); },5000);
       }
 
 	function pelay(cate){
@@ -199,29 +165,9 @@ Blockly.JavaScript['move_TeacherDown'] = function(block) {
     // // Internal number.
      var repeats = block.getFieldValue('TIMES');
 	 var code = block.getFieldValue('Number');
-  // } else {
-    // // External number.
-    // var repeats = Blockly.JavaScript.valueToCode(block, 'TIMES',
-        // Blockly.JavaScript.ORDER_ASSIGNMENT) || '0';
-  // }
-  // var branch = Blockly.JavaScript.statementToCode(block, 'DO');
-  // branch = Blockly.JavaScript.addLoopTrap(branch, block);
-  // var code = '';
-  // var loopVar = Blockly.JavaScript.variableDB_.getDistinctName(
-      // 'count', Blockly.VARIABLE_CATEGORY_NAME);
-  // var endVar = repeats;
-  // if (!repeats.match(/^\w+$/) && !Blockly.isNumber(repeats)) {
-    // endVar = Blockly.JavaScript.variableDB_.getDistinctName(
-        // 'repeat_end', Blockly.VARIABLE_CATEGORY_NAME);
-    // code += 'var ' + endVar + ' = ' + repeats + ';\n';
-  // }
-  // code += 'for (var ' + loopVar + ' = 0; ' +
-      // loopVar + ' < ' + endVar + '; ' +
-      // loopVar + '++) {\n' +
-      // branch + '}\n';
- console.log(repeats);
-console.log(code);
-  return code;
+     console.log(repeats);
+     console.log(code);
+     return code;
 };
  
  

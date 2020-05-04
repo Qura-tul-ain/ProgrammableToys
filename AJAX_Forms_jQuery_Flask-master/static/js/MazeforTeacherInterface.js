@@ -1,5 +1,13 @@
 
+
+document.getElementById("CanvasForTeacher").style.marginLeft = "auto";
+document.getElementById("CanvasForTeacher").style.marginRight = "auto";
+document.getElementById("CanvasForTeacher").style.marginTop = 160;
 var canvas = document.getElementById("CanvasForTeacher");
+
+canvas.style.display= 'block';
+
+
 canvas.width = 712;
 canvas.height = 408;
 
@@ -82,16 +90,18 @@ var imageslist;
 var imageRlist;
 var imageClist;
 var colvalueForMovement;
-function getcol(col,row,hurdlerowpos,hurdlecolpos,imagelist,imagerowlist,imagecollist){	
+var backGroundImage;
+function getcol(col,row,backgroundImage,hurdlerowpos,hurdlecolpos,imagelist,imagerowlist,imagecollist){	
 
 	columns=col;
 	rows=row;
+	backGroundImage=backgroundImage;
 	hurdlerowlist=hurdlerowpos;// all rows having hurdles
 	hurdlecollist=hurdlecolpos;// columns having hurdles
 	imageslist=imagelist;
 	imageRlist=imagerowlist;// rows having images except background
 	imageClist=imagecollist;
-	//console.log(hurdlerowlist,rows,"........................................................");
+//	console.log(hurdlerowlist,rows,backgroundImage,"........................................................");
 	
 }
 
@@ -99,6 +109,7 @@ function getcol(col,row,hurdlerowpos,hurdlecolpos,imagelist,imagerowlist,imageco
 function start(){
 	//document.location.reload();
 	requestAnimationFrame(start);
+	console.log(hurdlerowlist,rows,backGroundImage,imageslist,"........................................................");
 		
 	c.clearRect(0, 0, innerWidth, innerHeight);
 	var context = canvas.getContext("2d");
@@ -113,24 +124,22 @@ function start(){
 	colvalueForMovement=(colvalue-4);// only for col movement
 	rowvalue=rowvalue.toFixed(0); // get only one value after point and return in string form
 	rowvalue=Number(rowvalue);// convert string to int
-	console.log(rowvalue);
-    console.log(colvalue);
-	console.log(colvalueForMovement);
+	// console.log(rowvalue);
+    // console.log(colvalue);
+	// console.log(colvalueForMovement);
     var cw = bw + (p*2) + 2;
     var ch = bh + (p*2) + 2;
 	
 	// for 1st stage ....
 	// Draw backgroung image
 	
-	// function make_image()
-	  // {
-	  // base_image = new Image();
-	  // base_image.src = '/static/images/stop.png';
-	  // context.globalAlpha = 0.5;
-	  // context.drawImage(base_image,(colvalue-75)+((2-1)*colvalue),(rowvalue-35)+((2-1)*rowvalue),60,30);
-	  // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
-	// }
+	  base_image = new Image();
+	  base_image.src = backGroundImage;
+	  context.globalAlpha = 0.5;
+	  context.drawImage(base_image, 0, 0,712,408);
+	  context.globalAlpha = 1.0;
+	  context.globalAlpha = 0.5;
+	// other images
 	var imageRowNo,imageColNo;
 	for (var x =0 ;x<imageslist.length;x+=1){
 		
@@ -138,7 +147,7 @@ function start(){
         imageColNo=imageClist[x];
 		//console.log(imageColNo);
 		putimage=imageslist[x];
-		console.log(putimage);
+	//	console.log(putimage);
 		base_image = new Image();
 	    base_image.src = '/static/images/'+ putimage+'.jpg';
 	    context.globalAlpha = 0.5;
@@ -149,7 +158,7 @@ function start(){
 		
 		
 	}
-	
+	// hurdle images
     var rowNo;
 	var colNo;
     for (var x =0 ;x<hurdlecollist.length;x+=1){
@@ -165,13 +174,9 @@ function start(){
 	   
     } 
    
-	
-	  
-	
-
 	function drawBoard(){
-		//make_image();
-
+	
+       //  make_image()
         for (var x = 0; x < bw; x += colvalue) {
             context.moveTo(0.5 + x + p, p);
             context.lineTo(0.5 + x + p, bh + p);

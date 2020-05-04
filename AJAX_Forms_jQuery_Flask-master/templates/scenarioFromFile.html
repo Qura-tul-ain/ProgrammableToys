@@ -89,6 +89,9 @@ canvas{
   
 </head>
 <body>
+
+<center><h1 style="font-family:verdana;  padding: 1em; background-color: #005544;color: white;" align="center">Programmable Toys To Teach Programming To Kids</h1></center>
+<br>
   <p id="call"></p>
 
   <button style=" background-color: #4CAF50;border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none;display: inline-block; font-size: 16px;" id="dartButton">Dart</button>
@@ -104,12 +107,12 @@ canvas{
   <!-- <div class="split left"> -->
      
   <!-- </div> -->
-   <div  id="blocklyDiv" style="width:50%;height:50%" ></div>
-   <div class ="split right">
+   <div  id="blocklyDiv" style="width:50%;height:50%;border:2px solid #000000;margin-left:10px;margin-top:5px" ></div>
+   <div class ="split right" style="width:50%;height:100%">
     
      <div>
 <br>
-	  <canvas id="CanvasForTeacher" style="background: #fff;magrin-left:30px;"></canvas>
+	  <canvas id="CanvasForTeacher" style="border:2px solid #000000;"></canvas>
 	
 	  <script src="{{ url_for('static', filename='js/MazeforTeacherInterface.js') }}"></script>
 	
@@ -196,12 +199,13 @@ canvas{
       }
     });
 
-    function get_columns(){
+   function get_columns(){
 	var col;
 	var row;
-	var hurdlecolpos,hurdlerowpos,imagecollist,imagelist,imagerowlist;
+	var hurdlecolpos,hurdlerowpos,imagecollist,imagelist,imagerowlist,backgroundImage;
 	col={{listdata|tojson}}['columns'];
 	row={{listdata|tojson}}['rows'];
+	backgroundImage={{listdata|tojson}}['backGroundImage']
 	hurdlerowpos={{listdata|tojson}}['hurdlerowposition'];
 	hurdlecolpos={{listdata|tojson}}['hurdlecolposition'];
 	imagelist={{listdata|tojson}}['imagelist'];
@@ -210,7 +214,7 @@ canvas{
 	console.log(imagecollist);
 	
 	<!-- console.log(colpos); -->
-	getcol(col,row,hurdlerowpos,hurdlecolpos,imagelist,imagerowList,imagecolList);	
+	getcol(col,row,backgroundImage,hurdlerowpos,hurdlecolpos,imagelist,imagerowList,imagecolList);	
 	
 	};
    get_columns();

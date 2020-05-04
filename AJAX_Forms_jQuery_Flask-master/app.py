@@ -199,66 +199,71 @@ def getteacher():
         data='3'
        
         return render_template('Teacherinterface.html',data=data)
+
+@app.route('/MadeByTeacher',methods=['GET','POST'])
+def MadeByTeacher():
+
+        filename="TeacherDesignedStages/file.txt"
+        numlines=0
+        columns=0
+        count=0
+        #calculate number of rows
+        with open(filename,'r') as file:
+                for line in file:
+                        numlines += 1
+        #calculate number of columns            
+        with open(filename) as f:
+                line = f.readline()
+                columns=len(line.split())
+
+       # read position from file where B(hurdles) is present 
+       # i and j will use to get row and column of that row
+        RowIndexofhurdles=[]
+        ColIndexofhurdles=[]
+        listofImages=[]
+        rowIndexofImages=[]
+        colIndexofImages=[]
+        backGroundImage=''
+        with open(filename,'r') as file:
+                i=0 # row no
+                text=file.readlines()
+                print("row",text)
+                for line in text:
+                     
+                        j=1 #column no
+                        words=line.split()# words of first list
+                        print("words",words)
+                        for word in words:
+                                
+                                
+                                 if word == 'B':
+                                         RowIndexofhurdles.append(i) # get row that has B in it
+                                         ColIndexofhurdles.append(j)# get col of that row
+                                         count+=1
+                                 elif word =='url("static/images/self.jpg")':
+                                         backGroundImage="static/images/self.jpg"
+                                         
+                                 elif word != 'O' and word !='B':
+                                         listofImages.append(word)
+                                         rowIndexofImages.append(i)
+                                         colIndexofImages.append(j)                            
+                                         
+                                 j+=1       
+       
+                        i+=1
+                    
+
+        # save imags in list to load them
         
+        listdata = {'columns': columns, 'rows': numlines-2,'backGroundImage':backGroundImage, 'hurdlerowposition':RowIndexofhurdles, 'hurdlecolposition':ColIndexofhurdles,'imagelist':listofImages,'imagerowlist':rowIndexofImages,'imagecollist':colIndexofImages}
+        print(numlines,columns,backGroundImage,count,RowIndexofhurdles,ColIndexofhurdles)
+       # print(listofImages,rowIndexofImages,colIndexofImages)  
+        return render_template('scenarioFromFile.html',listdata=listdata)
+
 @app.route('/')
 def index():
-##        filename="file.txt"
-##        numlines=0
-##        columns=0
-##        count=0
-##        #calculate number of rows
-##        with open(filename,'r') as file:
-##                for line in file:
-##                        numlines += 1
-##        #calculate number of columns            
-##        with open(filename) as f:
-##                line = f.readline()
-##                columns=len(line.split())
-##
-##       # read position from file where B(hurdles) is present 
-##       # i and j will use to get row and column of that row
-##        RowIndexofhurdles=[]
-##        ColIndexofhurdles=[]
-##        listofImages=[]
-##        rowIndexofImages=[]
-##        colIndexofImages=[]
-##        with open(filename,'r') as file:
-##                i=0 # row no
-##                text = file.readlines()# list of lines
-##                for line in text:
-##                     
-##                        j=1 #column no
-##                        words=line.split()# words of first list
-##                        
-##                        for word in words:
-##                                
-##                                
-##                                 if word == 'B':
-##                                         RowIndexofhurdles.append(i) # get row that has B in it
-##                                         ColIndexofhurdles.append(j)# get col of that row
-##                                         count+=1
-##                                
-##                                 elif word != 'O' and word !='B' and word !='G':
-##                                         listofImages.append(word)
-##                                         rowIndexofImages.append(i)
-##                                         colIndexofImages.append(j)
-##                                 j+=1       
-##       
-##                        i+=1
-##                    
-##
-##        # save imags in list to load them
-##       
-##
-##
-##
-##        
-##        listdata = {'columns': columns, 'rows': numlines-1, 'hurdlerowposition':RowIndexofhurdles, 'hurdlecolposition':ColIndexofhurdles,'imagelist':listofImages,'imagerowlist':rowIndexofImages,'imagecollist':colIndexofImages}
-##        print(numlines,columns,count,RowIndexofhurdles,ColIndexofhurdles)
-##       # print(listofImages,rowIndexofImages,colIndexofImages)  
-##        return render_template('scenarioFromFile.html',listdata=listdata)
-##
-         return render_template('home.html')
+        return render_template('home.html')
+         
 
 if __name__ == '__main__':
 	app.run()

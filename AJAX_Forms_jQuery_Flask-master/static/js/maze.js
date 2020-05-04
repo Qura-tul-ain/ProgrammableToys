@@ -1698,25 +1698,6 @@ function startsec(){
 	   // other images
 	  function make_child_forSecondStage()
 	  {
-	  // base_image = new Image();
-	  // base_image.src = '/static/images/child.png';
-	  // // context.globalAlpha = 0.5;
-      // context.drawImage(base_image, 120, 130,70,40);
-	  // // context.globalAlpha = 1.0;
-	  // mage = new Image();
-	  // mage.src ='static/images/stop.png';
-	  // context.drawImage(mage, 520, 345,70,40);
-	  
-	  // mage = new Image();
-	  // mage.src = 'static/images/mom.jpg';
-	  // context.drawImage(mage, 620, 75,72,38);
-	  // // chilfren image
-	  // child = new Image();
-	  // child.src = './static/images/children.jpg';
-	  // // context.globalAlpha = 0.5;
-      // context.drawImage(child, 420, 235,70,40);
-	  // // context.globalAlpha = 1.0;
-	  
 	  candey = new Image();
 	  candey.src = '/static/images/candey.jpg';
 	

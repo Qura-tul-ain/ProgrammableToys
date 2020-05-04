@@ -205,10 +205,11 @@ console.log(myArray);
 
 var content = '';
   content = myArray.join('\r\n');
+  var t=content.replace( /,/g," ");
 // any kind of extension (.txt,.cpp,.cs,.bat)
 var filename = "hello.txt";
 
-var blob = new Blob([content], {
+var blob = new Blob([t], {
  type: "text/plain;charset=utf-8"
 });
 
