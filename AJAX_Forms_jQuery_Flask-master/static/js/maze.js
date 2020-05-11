@@ -1033,7 +1033,7 @@ function Ball(x, y, radius, dx, dy){
 function callfunctionDown(){
 	console.log(stage_count);
 	if(stage_count ==1){
-		setTimeout(function(){ ball.moveDown(); },1500);
+		setTimeout(ball.moveDown,5500);
 		// function makeSlection(cat) {
 			 // // drawBoard();
 	       // setInterval(function(){ pelay(cat); },1500);

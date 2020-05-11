@@ -224,10 +224,10 @@ def MadeByTeacher():
         rowIndexofImages=[]
         colIndexofImages=[]
         backGroundImage=''
-        with open(filename,'r') as file:
+        with open(filename,encoding='utf-8') as file:
                 i=0 # row no
                 text=file.readlines()
-                print("row",text)
+              
                 for line in text:
                      
                         j=1 #column no
@@ -240,10 +240,10 @@ def MadeByTeacher():
                                          RowIndexofhurdles.append(i) # get row that has B in it
                                          ColIndexofhurdles.append(j)# get col of that row
                                          count+=1
-                                 elif word =='url("static/images/self.jpg")':
-                                         backGroundImage="static/images/self.jpg"
-                                         
-                                 elif word != 'O' and word !='B':
+                                 elif word == 'url("/static/images/self.jpg")' :
+                                         backGroundImage= "static/images/self.jpg"
+                                                  
+                                 elif word != 'O' and word !='B' and word != 'url("/static/images/self.jpg")':
                                          listofImages.append(word)
                                          rowIndexofImages.append(i)
                                          colIndexofImages.append(j)                            
@@ -255,8 +255,8 @@ def MadeByTeacher():
 
         # save imags in list to load them
         
-        listdata = {'columns': columns, 'rows': numlines-2,'backGroundImage':backGroundImage, 'hurdlerowposition':RowIndexofhurdles, 'hurdlecolposition':ColIndexofhurdles,'imagelist':listofImages,'imagerowlist':rowIndexofImages,'imagecollist':colIndexofImages}
-        print(numlines,columns,backGroundImage,count,RowIndexofhurdles,ColIndexofhurdles)
+        listdata = {'columns': columns, 'rows': numlines-1,'backGroundImage':backGroundImage, 'hurdlerowposition':RowIndexofhurdles, 'hurdlecolposition':ColIndexofhurdles,'imagelist':listofImages,'imagerowlist':rowIndexofImages,'imagecollist':colIndexofImages}
+        print(numlines,listofImages)
        # print(listofImages,rowIndexofImages,colIndexofImages)  
         return render_template('scenarioFromFile.html',listdata=listdata)
 
