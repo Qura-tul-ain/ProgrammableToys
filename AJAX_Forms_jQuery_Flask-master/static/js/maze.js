@@ -1031,16 +1031,16 @@ function Ball(x, y, radius, dx, dy){
 
 // functions for movemant of balls when stages are interconnected.
 function callfunctionDown(){
-	console.log(stage_count);
+	//console.log(stage_count);
 	if(stage_count ==1){
-		setTimeout(ball.moveDown,5500);
+		ball.moveDown();
 		// function makeSlection(cat) {
-			 // // drawBoard();
-	       // setInterval(function(){ pelay(cat); },1500);
+			// drawBoard();
+	       // setTimeout(function(){ pelay },1500);
 	     // }
 
-	    // function pelay(cate){
-	     // // ball.moveUp();
+	    // function pelay(){
+	    // ball.moveUp();
 		   // ball.moveDown();
 	     // }
 	// makeSlection('foo');

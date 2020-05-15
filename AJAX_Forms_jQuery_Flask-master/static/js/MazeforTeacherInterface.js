@@ -2,7 +2,7 @@
 var canvas;
 document.getElementById("CanvasForTeacher").style.marginLeft = "auto";
 document.getElementById("CanvasForTeacher").style.marginRight = "auto";
-document.getElementById("CanvasForTeacher").style.marginTop = 160;
+document.getElementById("CanvasForTeacher").style.marginTop = 155;
 canvas = document.getElementById("CanvasForTeacher");
 
 canvas.style.display= 'block';
@@ -90,8 +90,10 @@ var colvalueForMovement;
 var backGroundImage;
 var XstopListForCheck=[];
 var YstopListForCheck=[];
-var rNo;
-var cNo,cvalue,rvalue;
+var XrewardListForCheck=[];
+var YrewardListForCheck=[];
+var hrNo,hcNo,hrvalue,hcvalue;
+var rNo,cNo,cvalue,rvalue;
 function getcol(col,row,backgroundImage,hurdlerowpos,hurdlecolpos,imagelist,imagerowlist,imagecollist){	
 
 	columns=col;
@@ -104,7 +106,7 @@ function getcol(col,row,backgroundImage,hurdlerowpos,hurdlecolpos,imagelist,imag
 	imageClist=imagecollist;
 //	console.log(hurdlerowlist,rows,backgroundImage,"........................................................");
 
-
+//                                      rewards
 	cvalue=697/columns;
 	cvalue=cvalue-0.3;
 	rvalue=433/rows;
@@ -112,12 +114,23 @@ function getcol(col,row,backgroundImage,hurdlerowpos,hurdlecolpos,imagelist,imag
 	rvalue=Number(rvalue);// convert string to int
 	cvalue=cvalue.toFixed(0); // get only one value after point and return in string form
 	cvalue=Number(cvalue);// convert string to int
-    for (var x =0 ;x<hurdlecollist.length;x+=1){
-	    rNo=hurdlerowlist[x];
-        cNo=hurdlecollist[x];		
-		XstopListForCheck[x]=(cvalue-75) +((cNo-1)*cvalue) ;
+    for (var x =0 ;x<imageslist.length;x+=1){
+	    rNo=imageRlist[x];
+        cNo=imageClist[x];		
+		XrewardListForCheck[x]=(cvalue-75) +((cNo-1)*cvalue) ;
 		//console.log("............",XstopListForCheck);
-		YstopListForCheck[x]=(rvalue-35)+((rNo-1)*rvalue);
+		YrewardListForCheck[x]=(rvalue-35)+((rNo-1)*rvalue);
+	   
+    } 
+	//                                   hurdles
+    hrvalue=rvalue;
+	hcvalue=cvalue;
+    for (var x =0 ;x<hurdlerowlist.length;x+=1){
+	    hrNo=hurdlerowlist[x];
+        hcNo=hurdlecollist[x];		
+		XstopListForCheck[x]=(hcvalue-75) +((hcNo-1)*hcvalue) ;
+		//console.log("............",XstopListForCheck);
+		YstopListForCheck[x]=(hrvalue-35)+((hrNo-1)*hrvalue);
 	   
     } 
 	
@@ -149,11 +162,59 @@ function CheckonHurdles(){
 		   height: 30,
 	        }
 	   if(RectCircleColliding(ball, stop)){
-		    //if(!alert('Alert For your User!')){window.location.reload();}
-		// if(confirm('Successful Message')){
-        // window.location.reload();  
+		    var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,500);
+			
+			// window.location.reload();
+			
+			//audio.currentTime=0;
+			 }
+         setTimeout(playsound, 10)
+		 
+		// window.location.reload();		
+		
+	}
+	   
+    } 
+	
+	
+}
 
-		   window.location.reload();		
+
+
+// for rewards of stage 
+function CheckonRewards(){
+
+    for (var x =0 ;x< XrewardListForCheck.length;x+=1){
+	   const reward= {
+		   x: XrewardListForCheck[x],
+	       y: YrewardListForCheck[x],
+	       width: 60, 
+		   height: 30,
+	        }
+	   if(RectCircleColliding(ball, reward)){
+		    var audio = new Audio('/static/images/Mario.mp3'); 
+		    function stop(){
+             audio.pause();
+			// audio.currentTime = 0;
+			// document.location.reload();
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,450);
+			 }
+         setTimeout(playsound, 10)		
 		
 	}
 	   
@@ -267,7 +328,8 @@ function start(){
    
      ball.draw();
     drawBoard();
-	CheckonHurdles();
+//	CheckonHurdles();
+//	CheckonRewards();
  
  
 

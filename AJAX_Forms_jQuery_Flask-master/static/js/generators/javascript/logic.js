@@ -41,7 +41,7 @@ Blockly.JavaScript['move_Up'] = function(block) {
 	msg="Up";
     setTimeout(function (){
 		 callfunctionUp();
-	 },50000);
+	 },5500);
 	
     return msg + "\n";
 		
@@ -52,7 +52,7 @@ Blockly.JavaScript['move_Right'] = function(block) {
 	var msg;
 	msg="Right";
 	 setTimeout(
-		 callfunctionRight, 20000);
+		 callfunctionRight, 10000);
 		
 
     return msg + "\n";
@@ -63,7 +63,8 @@ Blockly.JavaScript['move_Down'] = function(block) {
 	var msg;
 	msg="down";
 
-   setTimeout( callfunctionDown,20000);
+   setTimeout( callfunctionDown,10000);
+       return msg + "\n";
   
  };
  Blockly.JavaScript['move_Left'] = function(block) {
