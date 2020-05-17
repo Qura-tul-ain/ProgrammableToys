@@ -1,4 +1,3 @@
-
 document.getElementById("canvas").style.marginLeft = "auto";
 document.getElementById("canvas").style.marginRight = "auto";
 document.getElementById("canvas").style.marginTop = 155;
@@ -407,7 +406,7 @@ const fi6 = {
 }
 
 
-// checks for 7th stage
+// checks for 6th stage
 const si1 = {
 	x: 50,
 	y: 120,
@@ -551,9 +550,207 @@ const ei6 = {
 	height: 40,
 
 }
+// 9th stage 
+const ni1 = {
+	x: 29,
+	y:235,
+	width: 40,
+	height: 40,
 
+}
 
+const ni2 = {
+	x: 29,
+	y: 180,
+	width: 40,
+	height: 40,
 
+}
+const ni3 = {
+	x: 229,
+	y: 15,
+	width: 40,
+	height: 40,
+
+}
+const ni4 = {
+	x: 429,
+	y: 15,
+	width: 40,
+	height: 40,
+
+}
+const ni5 = {
+	x: 329,
+	y: 70,
+	width: 40,
+	height: 40,
+
+}
+const ni6 = {
+	x: 629,
+	y: 70,
+	width: 40,
+	height: 40,
+
+}
+const ni7 = {
+	x: 529,
+	y: 125,
+	width: 40,
+	height: 40,
+
+}
+const ni8 = {
+	x: 329,
+	y: 180,
+	width: 40,
+	height: 40,
+
+}
+const ni9 = {
+	x: 129,
+	y: 345,
+	width: 40,
+	height: 40,
+
+}
+
+// 10th stage 
+const te1 = {
+	x: 29,
+	y:228,
+	width: 40,
+	height: 40,
+
+}
+
+const te2 = {
+	x: 116,
+	y: 15,
+	width: 40,
+	height: 40,
+
+}
+const te3 = {
+	x: 547,
+	y: 57,
+	width: 40,
+	height: 40,
+
+}
+const te4 = {
+	x: 116,
+	y: 144,
+	width: 40,
+	height: 40,
+
+}
+const te5 = {
+	x: 290,
+	y: 96,
+	width: 40,
+	height: 40,
+
+}
+const te6 = {
+	x: 377,
+	y: 96,
+	width: 40,
+	height: 40,
+
+}
+const te7 = {
+	x: 640,
+	y: 96,
+	width: 40,
+	height: 40,
+
+}
+const te8 = {
+	x: 553,
+	y: 144,
+	width: 40,
+	height: 40,
+
+}
+const te9 = {
+	x: 466,
+	y: 182,
+	width: 40,
+	height: 40,
+
+}
+const te10 = {
+	x: 205,
+	y: 226,
+	width: 40,
+	height: 40,
+
+ }
+const te11 = {
+	x: 640,
+	y: 226,
+	width: 40,
+	height: 40,
+
+}
+const te12 = {
+	x: 29,
+	y: 312,
+	width: 40,
+	height: 40,
+
+}
+const te13 = {
+	x: 117,
+	y: 312,
+	width: 40,
+	height: 40,
+
+}
+const te14 = {
+	x: 291,
+	y: 312,
+	width: 40,
+	height: 40,
+
+}
+const te15 = {
+	x: 465,
+	y: 312,
+	width: 40,
+	height: 40,
+
+}
+const te16 = {
+	x: 552,
+	y: 312,
+	width: 40,
+	height: 40,
+
+}
+const te17 = {
+	x: 552,
+	y: 267,
+	width: 40,
+	height: 40,
+
+}
+const te18 = {
+	x: 194,
+	y: 352,
+	width: 40,
+	height: 40,
+
+}
+const te19 = {
+	x: 292,
+	y: 226,
+	width: 40,
+	height: 40,
+
+ }
 
 // Ball object 
 // 1st stage 
@@ -1031,20 +1228,10 @@ function Ball(x, y, radius, dx, dy){
 
 // functions for movemant of balls when stages are interconnected.
 function callfunctionDown(){
-	//console.log(stage_count);
+	console.log(stage_count);
 	if(stage_count ==1){
 		ball.moveDown();
-		// function makeSlection(cat) {
-			// drawBoard();
-	       // setTimeout(function(){ pelay },1500);
-	     // }
-
-	    // function pelay(){
-	    // ball.moveUp();
-		   // ball.moveDown();
-	     // }
-	// makeSlection('foo');
-console.log("button");	
+       console.log("button");	
 		
 
 	  }
@@ -1279,7 +1466,7 @@ let ball = new Ball(50, 35, 20, 7, 7);
 let secondball=new Ball(50,35,20,7,7);
 let thirdball=new Ball(50,35,20,7,7);
 let fourthball=new Ball(50,35,20,7,7);
-let fivthball=new Ball(50,43,25,7,7);
+let fivthball=new Ball(55,43,25,7,7);
 let sixthball=new Ball(50,35,20,7,7);
 let seventhball=new Ball(50,35,20,7,7);
 let eighthball=new Ball(50,35,20,7,7);
@@ -1342,140 +1529,260 @@ function wallsCheck(){
 function goalCheck(count){
 
 	if(RectCircleColliding(ball, S1)){
-		if(alert('Alert For your User!')){}
-        else    
-			document.location.href="http://127.0.0.1:5000/";
-		//setTimeout( function ( ) { alert( "moo" ); }, 1000000 );
-		// if(confirm('Successful Message')){
-        // window.location.reload();  
-
-		 //window.location.reload();		
-		
-	}
-	if(RectCircleColliding(ball, S2)){
-		if(alert('Alert For your User!')){}
-		 else    
-			 document.location.href="http://127.0.0.1:5000/";
-
-        
-		// document.location.reload();
-	}
-	if(RectCircleColliding(ball, S3)){
-		if(alert('Alert For your User!')){}
-		 else    
-			 document.location.href="http://127.0.0.1:5000/";
-
+		  var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		 setTimeout(playsound, 10)	
+}	
 		
 	
-		
+	if(RectCircleColliding(ball, S2)){
+	var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			
 	}
+	 setTimeout(playsound, 10);
+	}
+		if(RectCircleColliding(ball, S3)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+
+			}
+		setTimeout(playsound, 10);
+	
+	}
+	
 	if(RectCircleColliding(ball, S4)){
-		 if(alert('Alert For your User!')){}
-		 else    
-			 document.location.href="http://127.0.0.1:5000/";
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
 
-
+			}
+		setTimeout(playsound, 10);
 	
 	}
 	if(RectCircleColliding(ball, S5)){
-		 if(alert('Alert For your User!')){}
-		 else    
-			 document.location.href="http://127.0.0.1:5000/";
-	
-
-		
+	var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+	}
+	  setTimeout(playsound, 10);	
 	}
 	if(RectCircleColliding(ball, S6)){
-         if(alert('Alert For your User!')){}
-		 else    
-			 document.location.href="http://127.0.0.1:5000/";
+      var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
 	
+	}
+	 setTimeout(playsound, 10);	
 	
 	}
 	if(RectCircleColliding(ball, S7)){
-		 if(alert('Alert For your User!')){}
-		 else    
-			 document.location.href="http://127.0.0.1:5000/";
-
-		
-		
+		 var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+     setTimeout(playsound, 10);			
 	}
 	if(RectCircleColliding(ball, S8)){
-		 if(alert('Alert For your User!')){}
-		 else    
-			 document.location.href="http://127.0.0.1:5000/";
-		 
+	var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
 		
+	}
+	 setTimeout(playsound, 10);	
 	}
 	if(RectCircleColliding(ball, S9)){
-		 if(alert('Alert For your User!')){}
-		 else    
-			 document.location.href="http://127.0.0.1:5000/";
+		 var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
 	
-		
+			}	
+		setTimeout(playsound, 10);
 	}
 	if(RectCircleColliding(ball, S10)){
-		 if(alert('Alert For your User!')){}
-		 else   
-			 document.location.href="http://127.0.0.1:5000/";
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);	
+	}
 	
-		
-	}
-	if(RectCircleColliding(ball, G1)){
-	     if(alert('Alert For your User!')){}
-		 else    
-			 document.location.href="http://127.0.0.1:5000/";
-		
-	    		
-		// document.location.reload();
-	}
-	
-	if(RectCircleColliding(ball, G3)){
-		 if(alert('Alert For your User!')){}
-		 else    
-			 document.location.href="http://127.0.0.1:5000/";
-		
-		
-	}
-	if(RectCircleColliding(ball, G5)){
+		if(RectCircleColliding(ball, G5)){
+		var audio = new Audio('/static/images/Mario.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			//history.go(0);
+			document.location.href="http://127.0.0.1:5000/homepage";
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+			
+         setTimeout(playsound, 10);
+			
 	     // if(alert('Alert For your User!')){count=count+1}
 		 // else   {
-		 var data;
-		 data=1;
-         $.post("get_stage",{javascript_data: data
-	     });		 
-		 document.location.href="http://127.0.0.1:5000/";
+		 // var data;
+		 // data=1;
+         // $.post("get_stage",{javascript_data: data
+	     // });		 
+		 // document.location.href="http://127.0.0.1:5000/";
 		 // count=count+1
 		 // stage_count=stage_count+1
-	}
+	        
+    }
 }
 
 // checkes for 2nd stage 
- function goalCheckForSecond(count){
+ function goalCheckForSecond(){
 	if(RectCircleColliding(secondball, se1)){
-		alert("YOU LOST!");
-		
-		document.location.reload();
-		return count
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
 	}
 	if(RectCircleColliding(secondball, se2)){
-		alert("YOU LOST");
-	
-        return count
-		document.location.reload();
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
 	}
 	if(RectCircleColliding(secondball, se3)){
-		alert("YOU LOST");
-	
-		return count
-		document.location.reload();
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
 		
 	}
 	if(RectCircleColliding(secondball, se4)){
-		alert("YOU LOST");
-		
-	
-		document.location.reload();
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
 	}
 	if(RectCircleColliding(secondball, se5)){
 		alert("YOU LOST");
@@ -1484,56 +1791,1239 @@ function goalCheck(count){
 		document.location.reload();
 	}
 	if(RectCircleColliding(secondball, se6)){
-		alert("YOU LOST");
-	
-	
-		document.location.reload();
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
 	}
 	if(RectCircleColliding(secondball, se7)){
-		alert("YOU LOST");
-	
-	
-		document.location.reload();
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
 	}
 	if(RectCircleColliding(secondball, se8)){
-		alert("YOU LOST");
-	
-		document.location.reload();
+	var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
 	}
 	if(RectCircleColliding(secondball, se9)){
-		alert("YOU LOST");
-	
-
-		document.location.reload();
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
 	}
 	if(RectCircleColliding(secondball, se10)){
-		alert("YOU LOST");
-	
-
-		document.location.reload();
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
 	}
 	if(RectCircleColliding(secondball, se11)){
 	
-		return count
-		document.location.reload();
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
 	}
 	if(RectCircleColliding(secondball, se12)){
-		alert("YOU LOST");
-		
-		return count
-		document.location.reload();
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
 	}
 
 	
 	if(RectCircleColliding(secondball, seGoal)){
-		 // count=count+1
-		document.location.href="http://127.0.0.1:5000/";
-	
-	   	return count
+		var audio = new Audio('/static/images/Mario.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			//history.go(0);
+			document.location.href="http://127.0.0.1:5000/homepage";
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+			
+         setTimeout(playsound, 10);
 	}
 }
 
 
+// checkes for 3rdd stage 
+ function goalCheckForThird(){
+	if(RectCircleColliding(thirdball, th1)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(thirdball, th2)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(thirdball, th3)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+		
+	}
+	if(RectCircleColliding(thirdball, th4)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(thirdball, th5)){
+		alert("YOU LOST");
+	
+	
+		document.location.reload();
+	}
+	if(RectCircleColliding(thirdball, th6)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(thirdball, th7)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	
+}
+
+
+
+// checkes for 4th stage 
+ function goalCheckForFourth(){
+	if(RectCircleColliding(fourthball, fo1)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(fourthball, fo2)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(fourthball, fo3)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+		
+	}
+	if(RectCircleColliding(fourthball, fo4)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(fourthball, fo5)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(fourthball, fo6)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(fourthball, fo7)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(fourthball, fo8)){
+	var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(fourthball, fo9)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	
+}
+
+
+
+
+// checkes for 5th stage 
+ function goalCheckForFive(){
+	if(RectCircleColliding(fivthball, fi1)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(fivthball, fi2)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(fivthball, fi3)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+		
+	}
+	if(RectCircleColliding(fivthball, fi4)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(fivthball, fi5)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(fivthball, fi6)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	
+}
+
+
+
+// checkes for 6th stage 
+ function goalCheckForSix(){
+	if(RectCircleColliding(sixthball, si1)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(sixthball, si2)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(sixthball, si3)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+		
+	}
+	if(RectCircleColliding(sixthball, si4)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	
+}
+
+
+// checkes for 7th stage 
+ function goalCheckForSeven(){
+	if(RectCircleColliding(seventhball, sev1)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(seventhball, sev2)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(seventhball, sev3)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+		
+	}
+	if(RectCircleColliding(seventhball, sev4)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(seventhball, sev5)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(seventhball, sev6)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(seventhball, sev7)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(seventhball, sev8)){
+	var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(seventhball, sev9)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	
+	if(RectCircleColliding(seventhball, sev10)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	
+}
+
+
+
+
+// checkes for 8th stage 
+ function goalCheckForEight(){
+	if(RectCircleColliding(eighthball, ei1)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(eighthball, ei2)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(eighthball, ei3)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+		
+	}
+	if(RectCircleColliding(eighthball, ei4)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(eighthball, ei5)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(eighthball, ei6)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	
+	
+}
+
+
+// checkes for 9th stage 
+ function goalCheckForNine(){
+	if(RectCircleColliding(ninthball, ni1)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(ninthball, ni2)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(ninthball, ni3)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+		
+	}
+	if(RectCircleColliding(ninthball, ni4)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(ninthball, ni5)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(ninthball, ni6)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(ninthball, ni7)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(ninthball, ni8)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(ninthball, ni9)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	
+	
+}
+
+
+// checkes for 10th stage 
+ function goalCheckForTen(){
+	if(RectCircleColliding(tenthball, te1)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te2)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te3)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+		
+	}
+	if(RectCircleColliding(tenthball, te4)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te5)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te6)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te7)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te8)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te9)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te10)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te11)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te12)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te13)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te14)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te15)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te16)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te17)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te18)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	if(RectCircleColliding(tenthball, te19)){
+		var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
+		    function stop(){
+            audio.pause();
+			audio.currentTime = 0;
+			history.go(0);
+        }
+     
+		    function playsound(){
+		  
+            audio.play(); 
+			setTimeout(stop,300);
+			}
+		setTimeout(playsound, 10);
+	}
+	
+	
+}
+//............................................................................Hurdles check end for 10 stages
 function start(){
 	//document.location.reload();
 	requestAnimationFrame(start);
@@ -1650,7 +3140,7 @@ function start(){
 	drawBoard();
     ball.draw();
 	//wallsCheck();
-   // goalCheck(stage_count);
+    goalCheck(stage_count);
    
 
    // drawBoard_forSecondStage();
@@ -1768,52 +3258,10 @@ function startsec(){
     }
 	// end for 2nd stage........................................................................................................
 	
-  
-	
-	
-	  var stage=0;
-	  // stage=0;
-	  // for (var x = 0; x < 3; x += 1){
-		  // if(stage ==0){
-			  // drawBoard();
-			  // ball.draw();
-	          // stage=goalCheck(stage);
-		
-	          // console.log("myalert",stage);
-			
-		  // }
-		  // else if(stage==1){
-			
-			  // c.clearRect(0, 0, innerWidth, innerHeight);
-			 
-			  // drawBoard_forSecondStage();
-			  // secondball.draw();
-			
-	           // stage=goalCheckForSecond(stage);
-			   // stage_count=stage;
-		       // console.log("2ndstafe",stage_count,stage);
-
-		  // }
-		  // else if(stage==2){
-			  // c.clearRect(0, 0, innerWidth, innerHeight);
-			  // drawBoard_forThirdStage();
-			  // ball.draw();
-	        
-		    // console.log(stage_count);
-
-		  // }
-	  // }
-	  
-	
-	
-	// drawBoard();
-    // ball.draw();
-    // stage_count=goalCheck(stage_count);
-   stage_count=1;
  c.clearRect(0, 0, innerWidth, innerHeight);
    drawBoard_forSecondStage();
    secondball.draw();
-   stage_count=goalCheck(stage_count);
+   goalCheckForSecond();
  
 
 
@@ -1914,49 +3362,12 @@ function startthird(){
 	
 	
 	  var stage=0;
-	  // stage=0;
-	  // for (var x = 0; x < 3; x += 1){
-		  // if(stage ==0){
-			  // drawBoard();
-			  // ball.draw();
-	          // stage=goalCheck(stage);
-		
-	          // console.log("myalert",stage);
-			
-		  // }
-		  // else if(stage==1){
-			
-			  // c.clearRect(0, 0, innerWidth, innerHeight);
-			 
-			  // drawBoard_forSecondStage();
-			  // secondball.draw();
-			
-	           // stage=goalCheckForSecond(stage);
-			   // stage_count=stage;
-		       // console.log("2ndstafe",stage_count,stage);
-
-		  // }
-		  // else if(stage==2){
-			  // c.clearRect(0, 0, innerWidth, innerHeight);
-			  // drawBoard_forThirdStage();
-			  // ball.draw();
-	        
-		    // console.log(stage_count);
-
-		  // }
-	  // }
-	  
-	
-	
-	// drawBoard();
-    // ball.draw();
-    // stage_count=goalCheck(stage_count);
    
- c.clearRect(0, 0, innerWidth, innerHeight);
+     c.clearRect(0, 0, innerWidth, innerHeight);
  
     drawBoard_forThirdStage();
     thirdball.draw();
-	// stage=goalCheck(stage);
+	goalCheckForThird();
 
      // drawBoard_forFourthStage();
 	 // ball.draw();
@@ -2037,9 +3448,6 @@ function startfourth(){
 	  // context.globalAlpha = 0.5;
       context.drawImage(base_image, 530, 90,60,30);
 	  // context.globalAlpha = 1.0;
-	  // context.globalAlpha = 0.5;
-      // context.drawImage(base_image, 130, 170,60,30);
-	  // context.globalAlpha = 1.0;
 
   
 	  }
@@ -2063,19 +3471,12 @@ function startfourth(){
         context.stroke();
     }
 	// // end for fourth stage 
-	
-	  var stage=0;
-	
-	// drawBoard();
-    // ball.draw();
-    // stage_count=goalCheck(stage_count);
    
- c.clearRect(0, 0, innerWidth, innerHeight);
+   c.clearRect(0, 0, innerWidth, innerHeight);
   
-
-
      drawBoard_forFourthStage();
 	 fourthball.draw();
+	 goalCheckForFourth();
 
 
 }
@@ -2150,11 +3551,11 @@ function startfivth(){
         context.stroke();
     }
 	drawBoard_for5stage();
- //drawBoard()
     fivthball.draw();
-   // stage_count=goalCheck(stage_count);
+	goalCheckForFive();
+ 
 }	
-//fifth stage end
+//................................................................fivth stage end
 	
    
 
@@ -2222,9 +3623,9 @@ function startsixth(){
 	drawBoard_for6stage();
  //drawBoard()
     sixthball.draw();
-    stage_count=goalCheck(stage_count);
+    goalCheckForSix();
 }	
-//end of 6 stage
+//........................................................................end of 6 stage
 //start of 7 stage
 
 function startseventh(){
@@ -2315,11 +3716,10 @@ function startseventh(){
         context.stroke();
     }
 	drawBoard_for7stage();
- //drawBoard()
     seventhball.draw();
-    //stage_count=goalCheck(stage_count);
+     goalCheckForSeven();
 }	
-//end of 7 stage
+//.....................................................................end of 7 stage
 //start of stage8
 function starteighth(){
 	//document.location.reload();
@@ -2379,11 +3779,10 @@ function starteighth(){
         context.stroke();
     }
 	drawBoard_for8stage()
- //drawBoard()
     eighthball.draw();
-    //stage_count=goalCheck(stage_count);
+   goalCheckForEight();
 }
-//end of stage8
+//............................................................end of stage8
 //start of 9stage
 function startninth(){
 	//document.location.reload();
@@ -2428,7 +3827,7 @@ function startninth(){
 	   child.src = './static/images/f.jpg';
 	      // context.globalAlpha = 1.0;
 	  // context.globalAlpha = 0.5;
-context.drawImage(child,312,290,91,40);
+        context.drawImage(child,312,290,91,40);
     // context.globalAlpha = 1.0;
 	  // context.globalAlpha = 0.5;
 	  
@@ -2464,9 +3863,9 @@ context.drawImage(child,312,290,91,40);
 	drawBoard_for9stage();
  //drawBoard()
     ninthball.draw();
-   // stage_count=goalCheck(stage_count);
+    goalCheckForNine();
 }	
-//end of 9 stage
+//..............................................................end of 9 stage
 //start of 10stage
 
 function starttenth(){
@@ -2582,9 +3981,9 @@ function starttenth(){
    drawBoard_for10stage();
  //drawBoard()
     tenthball.draw();
-    stage_count=goalCheck(stage_count);
+   goalCheckForTen();
 }
-
+//...................................................................end
 
 
 

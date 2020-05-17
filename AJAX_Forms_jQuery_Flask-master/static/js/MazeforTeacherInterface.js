@@ -193,11 +193,17 @@ function CheckonHurdles(){
 
 // for rewards of stage 
 function CheckonRewards(){
-
-    for (var x =0 ;x< XrewardListForCheck.length;x+=1){
-	   const reward= {
-		   x: XrewardListForCheck[x],
-	       y: YrewardListForCheck[x],
+          var y = XrewardListForCheck.length;
+    // for (var x =0 ;x< XrewardListForCheck.length;x+=1){
+	   // const reward= {
+		   // x: XrewardListForCheck[x],
+	       // y: YrewardListForCheck[x],
+	       // width: 60, 
+		   // height: 30,
+	        // }
+			const reward= {
+		   x: XrewardListForCheck[y-1],
+	       y: YrewardListForCheck[y-1],
 	       width: 60, 
 		   height: 30,
 	        }
@@ -218,7 +224,7 @@ function CheckonRewards(){
 		
 	}
 	   
-    } 
+    
 	
 	
 }
@@ -328,8 +334,8 @@ function start(){
    
      ball.draw();
     drawBoard();
-//	CheckonHurdles();
-//	CheckonRewards();
+	CheckonHurdles();
+	CheckonRewards();
  
  
 
