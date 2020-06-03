@@ -176,3 +176,88 @@ Blockly.Blocks['number'] = {
    // this.setHelpUrl('http://www.example.com/');
   // }
 // };
+Blockly.Blocks['base_delay_example'] = {
+  helpUrl: 'http://arduino.cc/en/Reference/delay',
+  init: function() {
+    this.setColour(120);
+    this.appendValueInput("Motion", 'Number')
+        .appendField("Delay whee")
+        .setCheck('Number');
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setTooltip('Delay specific time');
+  }
+};
+Blockly.Blocks['example_dropdown'] = {
+  init: function() {
+    this.appendDummyInput()
+
+        .appendField('Reapeat:')
+        .appendField(new Blockly.FieldDropdown([
+            ['up', 'UP'],
+            ['down', 'DOWN'],
+			['left', 'LEFT'],
+            ['right', 'RIGHT']
+        ]), 'FIELDNAME');
+
+ this.appendValueInput("FIRST")
+        .setCheck(null)
+		   this.setPreviousStatement(true);
+    this.setNextStatement(true);
+  }
+};
+////////////////teacher loop///
+Blockly.Blocks['example_dropdownt'] = {
+  init: function() {
+    this.appendDummyInput()
+
+        .appendField('Reapeat:')
+        .appendField(new Blockly.FieldDropdown([
+            ['up', 'UP'],
+            ['down', 'DOWN'],
+			['left', 'LEFT'],
+            ['right', 'RIGHT']
+        ]), 'FIELDNAME');
+
+ this.appendValueInput("FIRST")
+        .setCheck(null)
+		   this.setPreviousStatement(true);
+    this.setNextStatement(true);
+  }
+};
+//////////////////////////////
+Blockly.Blocks['var_block'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Display var:")
+
+        .appendField(new Blockly.FieldVariable("item"), "MYVAR");
+		
+        
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+Blockly.Blocks['dynamic_dropdown'] = {
+  init: function() {
+    var input = this.appendDummyInput()
+      .appendField('day')
+      .appendField(new Blockly.FieldDropdown(
+        this.generateOptions), 'DAY');
+  },
+
+  generateOptions: function() {
+    var options = [];
+    var now = Date.now();
+    for(var i = 0; i < 7; i++) {
+      var dateString = String(new Date(now)).substring(0, 3);
+      options.push([dateString, dateString.toUpperCase()]);
+      now += 24 * 60 * 60 * 1000;
+    }
+    return options;
+  }
+};

@@ -158,28 +158,202 @@ Blockly.JavaScript['move_TeacherDown'] = function(block) {
   // ball.moveRight();
   
  };
- 
- Blockly.JavaScript['repeat'] = function(block) {
-  // Repeat n times.
-  console.log("looooop");
-  // if (block.getField('TIMES')) {
-    // // Internal number.
-     var repeats = block.getFieldValue('TIMES');
-	 var code = block.getFieldValue('Number');
-     console.log(repeats);
-     console.log(code);
-     return code;
+  Blockly.JavaScript['var_block'] = function(block) {
+  var myvar = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('MYVAR'), Blockly.Variables.NAME_TYPE);
+  console.log(myvar);
+  var code = '...';  //Build code here
+  return code;
 };
+////////student loop////////////
+Blockly.JavaScript['example_dropdown'] = function(block) {
+	
+ // var myvar = Blockly.JavaScript.(block.getFieldValue('MYVAR'), Blockly.Variables.NAME_TYPE);
+  //var myvar = Blockly.JavaScript.(block.getSelectedValue(FIELDNAME));
+   var myval = block.getFieldValue('FIELDNAME');
+    var va = Blockly.JavaScript.valueToCode(block, 'FIRST', Blockly.JavaScript.ORDER_ATOMIC);
+    //  var myval2 = block.getFieldValue('FIELDNAME2');
+  console.log(va);
+  console.log(myval);
+  if(myval=='UP' && va=='2')
+  {
  
+	 loopup();
+ }
+	if(myval=='UP' && va=='3')
+  {loopup2();
  
- 
- Blockly.JavaScript['number'] = function(block) {
-    var code = block.getFieldValue('TYPE');
-	console.log(code);
-    return code;
+ }
+		if(myval=='UP' && va=='4')
+  {
+	  loopup3();
+ }
+			if(myval=='DOWN' && va=='4')
+  {loopdn3();
 }
-
+	if(myval=='DOWN' && va=='3')
+  {
+ loopdn2();}
+    if(myval=='DOWN' && va=='2')
+  {
+  loopdn();}
+///////////////lett right///////////////////////
+  if(myval=='LEFT' && va=='2')
+  {
+ looplf();}
+	if(myval=='LEFT' && va=='3')
+  {
+looplf2();}
+		if(myval=='LEFT' && va=='4')
+  {
+ looplf3();}
+			if(myval=='RIGHT' && va=='4')
+  {
+looprt3();
+  }
+	if(myval=='RIGHT' && va=='3')
+  {
+ looprt2();}
+    if(myval=='RIGHT' && va=='2')
+  {
+  looprt();
+}
+  if(myval=='RIGHT' && va>4)
+  {
+ alert("Only 4 times counter is allowed");
+}  if(myval=='UP' && va>4)
+  {
+ alert("Only 4 times counter is allowed");
+}  if(myval=='DOWN' && va>4)
+  {
+ alert("Only 4 times counter is allowed");
+}  if(myval=='LEFT' && va>4)
+  {
+ alert("Only 4 times counter is allowed");
+}
+  if(myval=='UP' && va<2)
+  {
+ alert("Use block to move one step ahead");
+}  if(myval=='DOWN' && va<2)
+  {
+ alert("Use block to move one step ahead");
+}  if(myval=='LEFT' && va<2)
+  {
+ alert("Use block to move one step ahead");
+}  if(myval=='RIGHT' && va<2)
+  {
+ alert("Use block to move one step ahead");
+}
+///////////////////////////////////////////////
+	  
+  var code = '...';  //Build code here
+  return code;
+};
+////////////////////////teacherloop.//////////////////////
+Blockly.JavaScript['example_dropdownt'] = function(block) {
+	
+ // var myvar = Blockly.JavaScript.(block.getFieldValue('MYVAR'), Blockly.Variables.NAME_TYPE);
+  //var myvar = Blockly.JavaScript.(block.getSelectedValue(FIELDNAME));
+   var myval = block.getFieldValue('FIELDNAME');
+    var va = Blockly.JavaScript.valueToCode(block, 'FIRST', Blockly.JavaScript.ORDER_ATOMIC);
+    //  var myval2 = block.getFieldValue('FIELDNAME2');
+  console.log(va);
+  console.log(myval);
+  if(myval=='UP' && va=='2')
+  {
+	 loopupt();
+ }
+	if(myval=='UP' && va=='3')
+  {loopupt2();
  
+ }
+		if(myval=='UP' && va=='4')
+  {
+	  loopupt3();
+ }
+			if(myval=='DOWN' && va=='4')
+  {loopdnt3();
+}
+	if(myval=='DOWN' && va=='3')
+  {
+ loopdnt2();}
+    if(myval=='DOWN' && va=='2')
+  {
+  loopdnt();}
+///////////////lett right///////////////////////
+  if(myval=='LEFT' && va=='2')
+  {
+ looplft();}
+	if(myval=='LEFT' && va=='3')
+  {
+looplft2();}
+		if(myval=='LEFT' && va=='4')
+  {
+ looplft3();}
+			if(myval=='RIGHT' && va=='4')
+  {
+looprtt3();
+  }
+	if(myval=='RIGHT' && va=='3')
+  {
+ looprtt2();}
+    if(myval=='RIGHT' && va=='2')
+  {
+  looprtt();
+}
+  if(myval=='RIGHT' && va>4)
+  {
+ alert("Only 4 times counter is allowed");
+}
+  if(myval=='UP' && va>4)
+  {
+ alert("Only 4 times counter is allowed");
+}  if(myval=='LEFT' && va>4)
+  {
+ alert("Only 4 times counter is allowed");
+}  if(myval=='DOWN' && va>4)
+  {
+ alert("Only 4 times counter is allowed");
+}
+  if(myval=='UP' && va<2)
+  {
+ alert("Use block to move one step ahead");
+}  if(myval=='DOWN' && va<2)
+  {
+ alert("Use block to move one step ahead");
+}  if(myval=='LEFT' && va<2)
+  {
+ alert("Use block to move one step ahead");
+}  if(myval=='RIGHT' && va<2)
+  {
+ alert("Use block to move one step ahead");
+}
+///////////////////////////////////////////////
+	  
+  var code = '...';  //Build code here
+  return code;
+};
+////////////////////////////////////////////////////////////
+ // Blockly.JavaScript['repeat'] = function(block) {
+  // // Repeat n times.
+  // console.log("looooop");
+  // // if (block.getField('TIMES')) {
+    // // // Internal number.
+     // var repeats = block.getFieldValue('TIMES');
+	 // var code = block.getFieldValue('Number');
+     // console.log(repeats);
+     // console.log(code);
+     // return code;
+// };
+ 
+ 
+ 
+ // Blockly.JavaScript['number'] = function(block) {
+    // var code = block.getFieldValue('TYPE');
+	// console.log(code);
+    // return code;
+// }
+
+  
 Blockly.JavaScript['controls_if'] = function(block) {
   // If/elseif/else condition.
   var n = 0;

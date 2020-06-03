@@ -32,7 +32,7 @@ function Ball(x, y, radius, dx, dy){
 		c.fill();
 		c.stroke();
 		c.closePath();
-	    console.log("hahaha");
+	   // console.log("hahaha");
 	}
 
 	this.moveTeacherRight = function(){
@@ -77,7 +77,86 @@ function Ball(x, y, radius, dx, dy){
 		
 	}
 }
+function loopupt(){
+	for (var i = 0; i < 2; i++) 
+		{
 
+	    ball.moveTeacherUp();
+		}
+}
+//////////////
+function loopupt2(){
+	for (var i = 0; i < 3; i++) 
+		{
+
+	    ball.moveTeacherUp();
+		}
+}/////////////////////
+function loopupt2(){
+	for (var i = 0; i < 4; i++) 
+		{
+
+	    ball.moveTeacherUp();
+		}
+}////////////////////
+function loopdnt(){
+	for (var i = 0; i < 2; i++) 
+		{
+
+	    ball.moveTeacherDown();
+		}
+}////////////////////
+function loopdnt2(){
+	for (var i = 0; i < 3; i++) 
+		{
+
+	    ball.moveTeacherDown();
+		}
+}//////////////////////////
+function loopdnt3(){
+	for (var i = 0; i < 4; i++) 
+		{
+
+	    ball.moveTeacherDown();
+		}
+}//////////////////////
+function looplft(){
+	for (var i = 0; i < 2; i++) 
+		{
+
+	    ball.moveTeacherLeft();
+		}
+}function looplft2(){
+	for (var i = 0; i < 3; i++) 
+		{
+
+	    ball.moveTeacherLeft();
+		}
+}function looplft3(){
+	for (var i = 0; i < 4; i++) 
+		{
+
+	    ball.moveTeacherLeft();
+		}
+}function looprtt(){
+	for (var i = 0; i < 2; i++) 
+		{
+
+	    ball.moveTeacherRight();
+		}
+}function looprtt2(){
+	for (var i = 0; i < 3; i++) 
+		{
+
+	    ball.moveTeacherRight();
+		}
+}function looprtt3(){
+	for (var i = 0; i < 4; i++) 
+		{
+
+	    ball.moveTeacherRight();
+		}
+}
 //console.log("maze")
 var columns;
 var rows;
@@ -323,7 +402,7 @@ function start(){
         context.stroke();
     }
 	  
-	console.log("in start");
+//	console.log("in start");
 	  
 	stage_count=1;
 	

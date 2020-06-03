@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   <title>Blockly</title>
   <link rel="icon" href="data:,">
+  <!-- <script src="./static/js/blockly_compressed.js"></script> -->
+  <!-- <script src="./static/js/blocks_compressed.js"></script> -->
+  <!-- <script src="./static/js/msg/js/en.js"></script> -->
+  <!-- <script src="./static/js/dart_compressed.js"></script> -->
+  <!-- <script src="./static/js/javascript_compressed.js"></script> -->
   <script src="./static/js/blockly_compressed.js"></script>
   <script src="./static/js/blocks_compressed.js"></script>
   <script src="./static/js/msg/js/en.js"></script>
@@ -131,10 +136,10 @@ canvas{
 	       <block type="move_Right"></block>
 		   <block type="move_Left"></block>
 		   <block type="move_Down"></block>
-		
+		    
       </category>
       <category name="Logic" colour="210">
-			<!-- <block type="logic_boolean"></block> -->
+				<!-- <block type="logic_boolean"></block> -->
 			<block type="logic_compare"></block>
 		    <block type="logic_boolean"></block>
 		    <!-- <block type="logic_boo"></block> -->
@@ -143,14 +148,15 @@ canvas{
 		  
 	 </category>
      <category name="Loops" colour="120">
-	       <block type="controls_whileUntil"></block>
-	 	   <block type="controls_for"></block>
-	 	   <block type="repeat"></block>
+	       <!-- <block type="controls_whileUntil"></block> -->
+	 	   <!-- <block type="controls_for"></block> -->
+		    <block type="example_dropdown"></block>
+		
+	 	   <!-- <block type="repeat"></block> -->
      </category>
 	 <category name="Math" colour="230">
-	    <block type="number"></block>
-	    <!-- <block type="account_number"></block> -->
-		<block type="math_arithmetic"></block>
+	    <block type="math_number"></block>
+		<block type="math_arithmetic">
 	 </category>
      <category name="Colour" colour="20">
 	     <block type="colour_blend"></block>

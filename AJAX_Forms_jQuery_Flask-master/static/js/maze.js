@@ -1273,6 +1273,668 @@ function callfunctionDown(){
 
 		  }	
 }
+///////////////////////loop/////////////////////
+function loopup(){
+	if(stage_count ==1){
+		for (var i = 0; i < 2; i++) 
+		{
+
+	    ball.moveUp();
+		}
+		}
+		 else if(stage_count==2){
+			 for (var i = 0; i < 2; i++) 
+		 secondball.moveSecUP();
+		 console.log("button",stage_count);
+
+	  }
+	 else if(stage_count==3){
+		 for (var i = 0; i < 2; i++) 
+	   thirdball.moveThiUp();
+
+		  }
+	else if(stage_count==4){
+		for (var i = 0; i < 2; i++) 
+	   fourthball.moveFouUp();
+
+	}
+	else if(stage_count==5){
+		for (var i = 0; i < 2; i++) 
+	   fivthball.moveFivUp();
+
+		  }
+    else if(stage_count==6){
+		for (var i = 0; i < 2; i++) 
+	   sixthball.moveSixUp();
+
+		  }
+	else if(stage_count==7){
+		for (var i = 0; i < 2; i++) 
+	   seventhball.moveSevUp();
+
+		  }
+    else if(stage_count==8){
+		for (var i = 0; i < 2; i++) 
+	   eightball.moveEigUp();
+
+		  }
+	else if(stage_count==9){
+		for (var i = 0; i < 2; i++) 
+	   ninthball.moveNinUp();
+
+		  }
+	else if(stage_count==10){
+		for (var i = 0; i < 2; i++) 
+	   tenthball.moveTenUp();
+  
+}}
+//////////////////////////////////////////for 3 times///////////////
+function loopup2(){
+	if(stage_count ==1){
+		for (var i = 0; i < 3; i++) 
+		{
+
+	    ball.moveUp();
+		}
+		}
+		 else if(stage_count==2){
+			 for (var i = 0; i < 3; i++) 
+		 secondball.moveSecUP();
+		 console.log("button",stage_count);
+
+	  }
+	 else if(stage_count==3){
+		 for (var i = 0; i < 3; i++) 
+	   thirdball.moveThiUp();
+
+		  }
+	else if(stage_count==4){
+		for (var i = 0; i < 3; i++) 
+	   fourthball.moveFouUp();
+
+	}
+	else if(stage_count==5){
+		for (var i = 0; i < 3; i++) 
+	   fivthball.moveFivUp();
+
+		  }
+    else if(stage_count==6){
+		for (var i = 0; i < 3; i++) 
+	   sixthball.moveSixUp();
+
+		  }
+	else if(stage_count==7){
+		for (var i = 0; i < 3; i++) 
+	   seventhball.moveSevUp();
+
+		  }
+    else if(stage_count==8){
+		for (var i = 0; i < 3; i++) 
+	   eightball.moveEigUp();
+
+		  }
+	else if(stage_count==9){
+		for (var i = 0; i < 3; i++) 
+	   ninthball.moveNinUp();
+
+		  }
+	else if(stage_count==10){
+		for (var i = 0; i < 3; i++) 
+	   tenthball.moveTenUp();
+  
+}}
+////////////////////////////////////////////////////////////////////for 4 times up////////////////
+function loopup3(){
+	if(stage_count ==1){
+		for (var i = 0; i < 4; i++) 
+		{
+
+	    ball.moveUp();
+		}
+		}
+		 else if(stage_count==2){
+			 for (var i = 0; i < 4; i++) 
+		 secondball.moveSecUP();
+		 console.log("button",stage_count);
+
+	  }
+	 else if(stage_count==3){
+		 for (var i = 0; i < 4; i++) 
+	   thirdball.moveThiUp();
+
+		  }
+	else if(stage_count==4){
+		for (var i = 0; i < 4; i++) 
+	   fourthball.moveFouUp();
+
+	}
+	else if(stage_count==5){
+		for (var i = 0; i < 4; i++) 
+	   fivthball.moveFivUp();
+
+		  }
+    else if(stage_count==6){
+		for (var i = 0; i < 4; i++) 
+	   sixthball.moveSixUp();
+
+		  }
+	else if(stage_count==7){
+		for (var i = 0; i < 4; i++) 
+	   seventhball.moveSevUp();
+
+		  }
+    else if(stage_count==8){
+		for (var i = 0; i < 4; i++) 
+	   eightball.moveEigUp();
+
+		  }
+	else if(stage_count==9){
+		for (var i = 0; i < 4; i++) 
+	   ninthball.moveNinUp();
+
+		  }
+	else if(stage_count==10){
+		for (var i = 0; i < 4; i++) 
+	   tenthball.moveTenUp();
+  
+}}
+////////////////////////////////////////////////////Loopdown4///////////////////////////////////////////
+function loopdn3(){
+	if(stage_count ==1){
+		for (var i = 0; i < 4; i++) 
+		{
+
+	    ball.moveDown();
+		}
+		}
+		 else if(stage_count==2){
+			 for (var i = 0; i < 4; i++) 
+		 secondball.moveSecDown();
+		 console.log("button",stage_count);
+
+	  }
+	 else if(stage_count==3){
+		 for (var i = 0; i < 4; i++) 
+	   thirdball.moveThiDown();
+
+		  }
+	else if(stage_count==4){
+		for (var i = 0; i < 4; i++) 
+	   fourthball.moveFouDown();
+
+	}
+	else if(stage_count==5){
+		for (var i = 0; i < 4; i++) 
+	   fivthball.moveFivDown();
+
+		  }
+    else if(stage_count==6){
+		for (var i = 0; i < 4; i++) 
+	   sixthball.moveSixDown();
+
+		  }
+	else if(stage_count==7){
+		for (var i = 0; i < 4; i++) 
+	   seventhball.moveSevDown();
+
+		  }
+    else if(stage_count==8){
+		for (var i = 0; i < 4; i++) 
+	   eightball.moveEigDown();
+
+		  }
+	else if(stage_count==9){
+		for (var i = 0; i < 4; i++) 
+	   ninthball.moveNinDown();
+
+		  }
+	else if(stage_count==10){
+		for (var i = 0; i < 4; i++) 
+	   tenthball.moveDown();
+  
+}}
+////////////////////////////////////////////////////loopdown3/////////////////////
+function loopdn2(){
+	if(stage_count ==1){
+		for (var i = 0; i < 3; i++) 
+		{
+
+	    ball.moveDown();
+		}
+		}
+		 else if(stage_count==2){
+			 for (var i = 0; i < 3; i++) 
+		 secondball.moveSecDown();
+		 console.log("button",stage_count);
+
+	  }
+	 else if(stage_count==3){
+		 for (var i = 0; i < 3; i++) 
+	   thirdball.moveThiDown();
+
+		  }
+	else if(stage_count==4){
+		for (var i = 0; i < 3; i++) 
+	   fourthball.moveFouDown();
+
+	}
+	else if(stage_count==5){
+		for (var i = 0; i < 3; i++) 
+	   fivthball.moveFivDown();
+
+		  }
+    else if(stage_count==6){
+		for (var i = 0; i < 3; i++) 
+	   sixthball.moveSixDown();
+
+		  }
+	else if(stage_count==7){
+		for (var i = 0; i < 3; i++) 
+	   seventhball.moveSevDown();
+
+		  }
+    else if(stage_count==8){
+		for (var i = 0; i < 3; i++) 
+	   eightball.moveEigDown();
+
+		  }
+	else if(stage_count==9){
+		for (var i = 0; i < 3; i++) 
+	   ninthball.moveNinDown();
+
+		  }
+	else if(stage_count==10){
+		for (var i = 0; i < 3; i++) 
+	   tenthball.moveDown();
+  
+}}
+/////////////////////////////////////////////////////////////////////////////loopdown2//////////
+function loopdn(){
+	if(stage_count ==1){
+		for (var i = 0; i < 2; i++) 
+		{
+
+	    ball.moveDown();
+		}
+		}
+		 else if(stage_count==2){
+			 for (var i = 0; i < 2; i++) 
+		 secondball.moveSecDown();
+		 console.log("button",stage_count);
+
+	  }
+	 else if(stage_count==3){
+		 for (var i = 0; i < 2; i++) 
+	   thirdball.moveThiDown();
+
+		  }
+	else if(stage_count==4){
+		for (var i = 0; i < 2; i++) 
+	   fourthball.moveFouDown();
+
+	}
+	else if(stage_count==5){
+		for (var i = 0; i < 2; i++) 
+	   fivthball.moveFivDown();
+
+		  }
+    else if(stage_count==6){
+		for (var i = 0; i < 2; i++) 
+	   sixthball.moveSixDown();
+
+		  }
+	else if(stage_count==7){
+		for (var i = 0; i < 2; i++) 
+	   seventhball.moveSevDown();
+
+		  }
+    else if(stage_count==8){
+		for (var i = 0; i < 2; i++) 
+	   eightball.moveEigDown();
+
+		  }
+	else if(stage_count==9){
+		for (var i = 0; i < 2; i++) 
+	   ninthball.moveNinDown();
+
+		  }
+	else if(stage_count==10){
+		for (var i = 0; i < 2; i++) 
+	   tenthball.moveDown();
+  
+}}
+///////////////////////////loopleft2//////////////////////
+function looplf(){
+	if(stage_count ==1){
+		for (var i = 0; i < 2; i++) 
+		{
+
+	    ball.moveLeft();
+		}
+		}
+		 else if(stage_count==2){
+			 for (var i = 0; i < 2; i++) 
+		 secondball.moveSecLeft();
+		 console.log("button",stage_count);
+
+	  }
+	 else if(stage_count==3){
+		 for (var i = 0; i < 2; i++) 
+	   thirdball.moveThiLeft();
+
+		  }
+	else if(stage_count==4){
+		for (var i = 0; i < 2; i++) 
+	   fourthball.moveFouLeft();
+
+	}
+	else if(stage_count==5){
+		for (var i = 0; i < 2; i++) 
+	   fivthball.moveFivLeft();
+
+		  }
+    else if(stage_count==6){
+		for (var i = 0; i < 2; i++) 
+	   sixthball.moveSixLeft();
+
+		  }
+	else if(stage_count==7){
+		for (var i = 0; i < 2; i++) 
+	   seventhball.moveSevLeft();
+
+		  }
+    else if(stage_count==8){
+		for (var i = 0; i < 2; i++) 
+	   eightball.moveEigLeft();
+
+		  }
+	else if(stage_count==9){
+		for (var i = 0; i < 2; i++) 
+	   ninthball.moveNinLeft();
+
+		  }
+	else if(stage_count==10){
+		for (var i = 0; i < 2; i++) 
+	   tenthball.moveLeft();
+  
+}}
+///////////////////////////loopleft3/////////////////
+function looplf2(){
+	if(stage_count ==1){
+		for (var i = 0; i < 3; i++) 
+		{
+
+	    ball.moveLeft();
+		}
+		}
+		 else if(stage_count==2){
+			 for (var i = 0; i < 3; i++) 
+		 secondball.moveSecLeft();
+		 console.log("button",stage_count);
+
+	  }
+	 else if(stage_count==3){
+		 for (var i = 0; i < 3; i++) 
+	   thirdball.moveThiLeft();
+
+		  }
+	else if(stage_count==4){
+		for (var i = 0; i < 3; i++) 
+	   fourthball.moveFouLeft();
+
+	}
+	else if(stage_count==5){
+		for (var i = 0; i < 3; i++) 
+	   fivthball.moveFivLeft();
+
+		  }
+    else if(stage_count==6){
+		for (var i = 0; i < 3; i++) 
+	   sixthball.moveSixLeft();
+
+		  }
+	else if(stage_count==7){
+		for (var i = 0; i < 3; i++) 
+	   seventhball.moveSevLeft();
+
+		  }
+    else if(stage_count==8){
+		for (var i = 0; i < 2; i++) 
+	   eightball.moveEigLeft();
+
+		  }
+	else if(stage_count==9){
+		for (var i = 0; i < 3; i++) 
+	   ninthball.moveNinLeft();
+
+		  }
+	else if(stage_count==10){
+		for (var i = 0; i < 3; i++) 
+	   tenthball.moveLeft();
+  
+}}
+///////////////////////////////////////loopleft4//////////////
+function looplf3(){
+	if(stage_count ==1){
+		for (var i = 0; i < 4; i++) 
+		{
+
+	    ball.moveLeft();
+		}
+		}
+		 else if(stage_count==2){
+			 for (var i = 0; i < 4; i++) 
+		 secondball.moveSecLeft();
+		 console.log("button",stage_count);
+
+	  }
+	 else if(stage_count==3){
+		 for (var i = 0; i < 4; i++) 
+	   thirdball.moveThiLeft();
+
+		  }
+	else if(stage_count==4){
+		for (var i = 0; i < 4; i++) 
+	   fourthball.moveFouLeft();
+
+	}
+	else if(stage_count==5){
+		for (var i = 0; i < 4; i++) 
+	   fivthball.moveFivLeft();
+
+		  }
+    else if(stage_count==6){
+		for (var i = 0; i < 4; i++) 
+	   sixthball.moveSixLeft();
+
+		  }
+	else if(stage_count==7){
+		for (var i = 0; i < 4; i++) 
+	   seventhball.moveSevLeft();
+
+		  }
+    else if(stage_count==8){
+		for (var i = 0; i < 4; i++) 
+	   eightball.moveEigLeft();
+
+		  }
+	else if(stage_count==9){
+		for (var i = 0; i < 4; i++) 
+	   ninthball.moveNinLeft();
+
+		  }
+	else if(stage_count==10){
+		for (var i = 0; i < 3; i++) 
+	   tenthball.moveLeft();
+  
+}}
+///////////////////////////Loopright4/////////////////////////////////
+function looprt3(){
+	if(stage_count ==1){
+		for (var i = 0; i < 4; i++) 
+		{
+
+	    ball.moveRight();
+		}
+		}
+		 else if(stage_count==2){
+			 for (var i = 0; i < 4; i++) 
+		 secondball.moveSecRight();
+		 console.log("button",stage_count);
+
+	  }
+	 else if(stage_count==3){
+		 for (var i = 0; i < 4; i++) 
+	   thirdball.moveThiRight();
+
+		  }
+	else if(stage_count==4){
+		for (var i = 0; i < 4; i++) 
+	   fourthball.moveFouRight();
+
+	}
+	else if(stage_count==5){
+		for (var i = 0; i < 4; i++) 
+	   fivthball.moveFivRight();
+
+		  }
+    else if(stage_count==6){
+		for (var i = 0; i < 4; i++) 
+	   sixthball.moveSixRight();
+
+		  }
+	else if(stage_count==7){
+		for (var i = 0; i < 4; i++) 
+	   seventhball.moveSevRight();
+
+		  }
+    else if(stage_count==8){
+		for (var i = 0; i < 4; i++) 
+	   eightball.moveEigRight();
+
+		  }
+	else if(stage_count==9){
+		for (var i = 0; i < 4; i++) 
+	   ninthball.moveNinRight();
+
+		  }
+	else if(stage_count==10){
+		for (var i = 0; i < 3; i++) 
+	   tenthball.moveRight();
+  
+}}
+////////////////////////////Loopright3////////////////////////////
+function looprt2(){
+	if(stage_count ==1){
+		for (var i = 0; i < 3; i++) 
+		{
+
+	    ball.moveRight();
+		}
+		}
+		 else if(stage_count==2){
+			 for (var i = 0; i < 3; i++) 
+		 secondball.moveSecRight();
+		 console.log("button",stage_count);
+
+	  }
+	 else if(stage_count==3){
+		 for (var i = 0; i < 3; i++) 
+	   thirdball.moveThiRight();
+
+		  }
+	else if(stage_count==4){
+		for (var i = 0; i < 3; i++) 
+	   fourthball.moveFouRight();
+
+	}
+	else if(stage_count==5){
+		for (var i = 0; i < 3; i++) 
+	   fivthball.moveFivRight();
+
+		  }
+    else if(stage_count==6){
+		for (var i = 0; i < 3; i++) 
+	   sixthball.moveSixRight();
+
+		  }
+	else if(stage_count==7){
+		for (var i = 0; i < 3; i++) 
+	   seventhball.moveSevRight();
+
+		  }
+    else if(stage_count==8){
+		for (var i = 0; i < 3; i++) 
+	   eightball.moveEigRight();
+
+		  }
+	else if(stage_count==9){
+		for (var i = 0; i < 3; i++) 
+	   ninthball.moveNinRight();
+
+		  }
+	else if(stage_count==10){
+		for (var i = 0; i < 3; i++) 
+	   tenthball.moveRight();
+  
+}}
+//////////////////////////////////LoopRight2///////////////////////////////
+function looprt(){
+	if(stage_count ==1){
+		for (var i = 0; i < 2; i++) 
+		{
+
+	    ball.moveRight();
+		}
+		}
+		 else if(stage_count==2){
+			 for (var i = 0; i < 2; i++) 
+		 secondball.moveSecRight();
+		 console.log("button",stage_count);
+
+	  }
+	 else if(stage_count==3){
+		 for (var i = 0; i < 2; i++) 
+	   thirdball.moveThiRight();
+
+		  }
+	else if(stage_count==4){
+		for (var i = 0; i < 2; i++) 
+	   fourthball.moveFouRight();
+
+	}
+	else if(stage_count==5){
+		for (var i = 0; i < 2; i++) 
+	   fivthball.moveFivRight();
+
+		  }
+    else if(stage_count==6){
+		for (var i = 0; i < 2; i++) 
+	   sixthball.moveSixRight();
+
+		  }
+	else if(stage_count==7){
+		for (var i = 0; i < 2; i++) 
+	   seventhball.moveSevRight();
+
+		  }
+    else if(stage_count==8){
+		for (var i = 0; i < 2; i++) 
+	   eightball.moveEigRight();
+
+		  }
+	else if(stage_count==9){
+		for (var i = 0; i < 2; i++) 
+	   ninthball.moveNinRight();
+
+		  }
+	else if(stage_count==10){
+		for (var i = 0; i < 2; i++) 
+	   tenthball.moveRight();
+  
+}}
+///////////////////////////////////////////////////////////////////////////
+
 function callfunctionUp(){
 	
 	
@@ -1390,7 +2052,7 @@ function callfunctionRight(){
 
 		  }
     else if(stage_count==6){
-	   sixthball.moveSixRihgt();
+	   sixthball.moveSixRight();
 
 		  }
 	else if(stage_count==7){
