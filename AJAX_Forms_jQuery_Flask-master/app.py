@@ -203,7 +203,7 @@ def getteacher():
 @app.route('/MadeByTeacher',methods=['GET','POST'])
 def MadeByTeacher():
 
-        filename="TeacherDesignedStages/file.txt"
+        filename="TeacherDesignedStages/scenario.txt"
         numlines=0
         columns=0
         count=0
@@ -224,7 +224,7 @@ def MadeByTeacher():
         rowIndexofImages=[]
         colIndexofImages=[]
         backGroundImage=''
-        with open(filename,encoding='utf-8') as file:
+        with open(filename,encoding='utf-8-sig') as file:
                 i=0 # row no
                 text=file.readlines()
               
@@ -255,8 +255,8 @@ def MadeByTeacher():
 
         # save imags in list to load them
         
-        listdata = {'columns': columns, 'rows': numlines-1,'backGroundImage':backGroundImage, 'hurdlerowposition':RowIndexofhurdles, 'hurdlecolposition':ColIndexofhurdles,'imagelist':listofImages,'imagerowlist':rowIndexofImages,'imagecollist':colIndexofImages}
-        print(numlines,listofImages)
+        listdata = {'columns': columns, 'rows': numlines,'backGroundImage':backGroundImage, 'hurdlerowposition':RowIndexofhurdles, 'hurdlecolposition':ColIndexofhurdles,'imagelist':listofImages,'imagerowlist':rowIndexofImages,'imagecollist':colIndexofImages}
+        print(numlines,listofImages,)
        # print(listofImages,rowIndexofImages,colIndexofImages)  
         return render_template('scenarioFromFile.html',listdata=listdata)
 

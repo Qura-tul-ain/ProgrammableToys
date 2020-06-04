@@ -1261,7 +1261,7 @@ function callfunctionDown(){
 
 		  }
     else if(stage_count==8){
-	   eightball.moveEigDown();
+	   eighthball.moveEigDown();
 
 		  }
 	else if(stage_count==9){
@@ -1970,7 +1970,7 @@ function callfunctionUp(){
 
 		  }
     else if(stage_count==8){
-	   eightball.moveEigUp();
+	   eighthball.moveEigUp();
 
 		  }
 	else if(stage_count==9){
@@ -2016,7 +2016,7 @@ function callfunctionLeft(){
 
 		  }
     else if(stage_count==8){
-	   eightball.moveEigLeft();
+	   eighthball.moveEigLeft();
 
 		  }
 	else if(stage_count==9){
@@ -2060,7 +2060,7 @@ function callfunctionRight(){
 
 		  }
     else if(stage_count==8){
-	   eightball.moveEigRight();
+	   eighthball.moveEigRight();
 
 		  }
 	else if(stage_count==9){
@@ -2129,11 +2129,11 @@ let secondball=new Ball(50,35,20,7,7);
 let thirdball=new Ball(50,35,20,7,7);
 let fourthball=new Ball(50,35,20,7,7);
 let fivthball=new Ball(55,43,25,7,7);
-let sixthball=new Ball(50,35,20,7,7);
-let seventhball=new Ball(50,35,20,7,7);
-let eighthball=new Ball(50,35,20,7,7);
+let sixthball=new Ball(70,45,25,9,9);
+let seventhball=new Ball(50,35,15,5,5);
+let eighthball=new Ball(60,40,22,9,9);
 let ninthball=new Ball(50,35,20,7,7);
-let tenthball=new Ball(50,35,20,7,7);
+let tenthball=new Ball(50,28,15,5,5);
 
 // Check function if ball touchs walls
 function RectCircleColliding(circle,rect){

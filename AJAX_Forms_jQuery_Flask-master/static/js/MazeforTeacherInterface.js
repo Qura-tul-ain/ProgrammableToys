@@ -183,7 +183,7 @@ function getcol(col,row,backgroundImage,hurdlerowpos,hurdlecolpos,imagelist,imag
 	imageslist=imagelist;
 	imageRlist=imagerowlist;// rows having images except background
 	imageClist=imagecollist;
-//	console.log(hurdlerowlist,rows,backgroundImage,"........................................................");
+    console.log(imageslist,imageRlist,hurdlerowlist,rows,"........................................................");
 
 //                                      rewards
 	cvalue=697/columns;
@@ -237,8 +237,8 @@ function CheckonHurdles(){
 	   const stop= {
 		   x: XstopListForCheck[x],
 	       y: YstopListForCheck[x],
-	       width: 60, 
-		   height: 30,
+	       width: 80, 
+		   height: 50,
 	        }
 	   if(RectCircleColliding(ball, stop)){
 		    var audio = new Audio('/static/images/oh-no-sound-effect.mp3'); 
@@ -308,7 +308,7 @@ function CheckonRewards(){
 	
 }
    
-let ball = new Ball(45,30, 17, 5, 5);
+let ball = new Ball(85,40, 20, 5, 5);
 
 
 function start(){
@@ -332,8 +332,8 @@ function start(){
 	rowvalue=Number(rowvalue);// convert string to int
 	colvalue=colvalue.toFixed(0); // get only one value after point and return in string form
 	colvalue=Number(colvalue);// convert string to int
-	// console.log(rowvalue);
-     // console.log(colvalue);
+	console.log(rowvalue);
+     console.log(colvalue);
 	// console.log(colvalueForMovement);
     var cw = bw + (p*2) + 2;
     var ch = bh + (p*2) + 2;
@@ -374,7 +374,7 @@ function start(){
         colNo=hurdlecollist[x];		
 		//console.log(rowNo,colNo,"valeeeeeeeeeee"); 
 		base_image = new Image();
-	    base_image.src = '/static/images/stop.png';
+	    base_image.src = '/static/images/B.png';
 	    context.globalAlpha = 0.5;
 	    context.drawImage(base_image,(colvalue-75)+((colNo-1)*colvalue),(rowvalue-35)+((rowNo-1)*rowvalue),60,30);
 		// XstopListForCheck[x]=(colvalue-75)+((colNo-1)*colvalue) ;
