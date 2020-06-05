@@ -242,6 +242,14 @@ def MadeByTeacher():
                                          count+=1
                                  elif word == 'url("/static/images/self.jpg")' :
                                          backGroundImage= "static/images/self.jpg"
+                                 elif word == 'url("/static/images/reg.jpg")' :
+                                         backGroundImage= "static/images/reg.jpg"
+                                 elif word == 'url("/static/images/so.jpg")' :
+                                         backGroundImage= "static/images/so.jpg"
+                                 elif word == 'url("/static/images/a.jpg")' :
+                                         backGroundImage= "static/images/a.jpg"
+                                 elif word == 'url("/static/images/mot.jpg")' :
+                                         backGroundImage= "static/images/mot.jpg"
                                                   
                                  elif word != 'O' and word !='B' and word != 'url("/static/images/self.jpg")':
                                          listofImages.append(word)

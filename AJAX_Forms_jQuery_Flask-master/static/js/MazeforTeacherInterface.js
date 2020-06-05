@@ -308,7 +308,7 @@ function CheckonRewards(){
 	
 }
    
-let ball = new Ball(85,40, 20, 5, 5);
+let ball = new Ball(75,35, 17, 5, 5);
 
 
 function start(){

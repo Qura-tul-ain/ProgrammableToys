@@ -1,0 +1,8 @@
+﻿O B O O O
+O T O O O
+O B O O O
+O O O O O
+B O O O O
+O O O O O
+O O O c2 O
+url("/static/images/a.jpg")
