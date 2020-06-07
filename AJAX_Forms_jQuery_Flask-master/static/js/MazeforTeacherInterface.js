@@ -314,7 +314,7 @@ let ball = new Ball(75,35, 17, 5, 5);
 function start(){
 	//document.location.reload();
 	requestAnimationFrame(start);
-	//console.log(hurdlerowlist,rows,backGroundImage,imageslist,"........................................................");
+	console.log(hurdlecollist,rows,backGroundImage,imageslist,"........................................................");
 
 		
 	c.clearRect(0, 0, innerWidth, innerHeight);
@@ -353,11 +353,14 @@ function start(){
 		
 	    imageRowNo=imageRlist[x];
         imageColNo=imageClist[x];
+		imageRowNo=imageRowNo+1;
 		//console.log(imageColNo);
-		putimage=imageslist[x];
+		//imageColNo=imageColNo + 1;
+		//putimage=imageslist[x];
 	//	console.log(putimage);
 		base_image = new Image();
-	    base_image.src = '/static/images/'+ putimage+'.jpg';
+	  //  base_image.src = '/static/images/'+ putimage+'.jpg';
+		base_image.src = '/static/images/c3.jpg';
 	    context.globalAlpha = 0.5;
 	    context.drawImage(base_image,(colvalue-75)+((imageColNo-1)*colvalue),(rowvalue-35)+((imageRowNo-1)*rowvalue),60,30);
 	    context.globalAlpha = 1.0;
@@ -371,7 +374,9 @@ function start(){
 	var colNo;
     for (var x =0 ;x<hurdlecollist.length;x+=1){
 	    rowNo=hurdlerowlist[x];
-        colNo=hurdlecollist[x];		
+        colNo=hurdlecollist[x];	
+		rowNo=rowNo+1;
+       // colNo=colNo+1;		
 		//console.log(rowNo,colNo,"valeeeeeeeeeee"); 
 		base_image = new Image();
 	    base_image.src = '/static/images/B.png';

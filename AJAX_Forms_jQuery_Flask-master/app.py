@@ -259,7 +259,10 @@ def MadeByTeacher():
                                  j+=1       
        
                         i+=1
-                    
+        if backGroundImage == '' :
+                numlines=numlines
+        else :
+                numlines=numlines-1
 
         # save imags in list to load them
         
