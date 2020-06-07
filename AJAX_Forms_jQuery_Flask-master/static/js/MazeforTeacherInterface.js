@@ -195,7 +195,8 @@ function getcol(col,row,backgroundImage,hurdlerowpos,hurdlecolpos,imagelist,imag
 	cvalue=Number(cvalue);// convert string to int
     for (var x =0 ;x<imageslist.length;x+=1){
 	    rNo=imageRlist[x];
-        cNo=imageClist[x];		
+        cNo=imageClist[x];	
+        rNo=rNo+1;		
 		XrewardListForCheck[x]=(cvalue-75) +((cNo-1)*cvalue) ;
 		//console.log("............",XstopListForCheck);
 		YrewardListForCheck[x]=(rvalue-35)+((rNo-1)*rvalue);
@@ -206,7 +207,8 @@ function getcol(col,row,backgroundImage,hurdlerowpos,hurdlecolpos,imagelist,imag
 	hcvalue=cvalue;
     for (var x =0 ;x<hurdlerowlist.length;x+=1){
 	    hrNo=hurdlerowlist[x];
-        hcNo=hurdlecollist[x];		
+        hcNo=hurdlecollist[x];
+         hrNo=hrNo+1;
 		XstopListForCheck[x]=(hcvalue-75) +((hcNo-1)*hcvalue) ;
 		//console.log("............",XstopListForCheck);
 		YstopListForCheck[x]=(hrvalue-35)+((hrNo-1)*hrvalue);
