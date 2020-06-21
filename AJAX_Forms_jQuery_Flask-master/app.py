@@ -195,10 +195,17 @@ def gethome():
         return render_template('homepage.html',data=data)
 
 @app.route('/Teacherinterface',methods=['GET','POST'])
+
 def getteacher():
         data='3'
        
         return render_template('Teacherinterface.html',data=data)
+@app.route('/gameinstructions',methods=['GET','POST'])
+
+def getstu():
+       data='5'
+       
+       return render_template('gameinstructions.html',data=data)
 
 @app.route('/MadeByTeacher',methods=['GET','POST'])
 def MadeByTeacher():
@@ -270,6 +277,13 @@ def MadeByTeacher():
         print(numlines,listofImages,)
        # print(listofImages,rowIndexofImages,colIndexofImages)  
         return render_template('scenarioFromFile.html',listdata=listdata)
+@app.route('/teacherinstruction',methods=['GET','POST'])
+
+def getins():
+        data='4'
+       
+        return render_template('teacherinstruction.html',data=data)
+
 
 @app.route('/')
 def index():
