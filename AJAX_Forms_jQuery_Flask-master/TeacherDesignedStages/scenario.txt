@@ -1,6 +1,0 @@
-﻿O O O O O
-O B O T O
-T O O O O
-O O B O T
-T O O O O
-url("/static/images/a.jpg")
